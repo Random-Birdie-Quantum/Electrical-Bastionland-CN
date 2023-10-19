@@ -1,0 +1,626 @@
+<!doctype html>
+<html>
+<head>
+<meta charset='UTF-8'><meta name='viewport' content='width=device-width initial-scale=1'>
+
+<link href='https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&display=swap' rel='stylesheet' type='text/css' /><link href='https://fonts.googleapis.com/css2?family=Alegreya:ital,wght@0,400;0,500;0,700;0,800;0,900;1,400;1,500;1,700;1,800;1,900&display=swap' rel='stylesheet' type='text/css' /><link href='https://fonts.googleapis.com/css2?family=Source+Code+Pro:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap' rel='stylesheet' type='text/css' /><style type='text/css'>html {overflow-x: initial !important;}:root { --bg-color:#ffffff; --text-color:#333333; --select-text-bg-color:#B5D6FC; --select-text-font-color:auto; --monospace:"Lucida Console",Consolas,"Courier",monospace; --title-bar-height:20px; }
+.mac-os-11 { --title-bar-height:28px; }
+html { font-size: 14px; background-color: var(--bg-color); color: var(--text-color); font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; -webkit-font-smoothing: antialiased; }
+h1, h2, h3, h4, h5 { white-space: pre-wrap; }
+body { margin: 0px; padding: 0px; height: auto; inset: 0px; font-size: 1rem; line-height: 1.42857; overflow-x: hidden; background: inherit; }
+iframe { margin: auto; }
+a.url { word-break: break-all; }
+a:active, a:hover { outline: 0px; }
+.in-text-selection, ::selection { text-shadow: none; background: var(--select-text-bg-color); color: var(--select-text-font-color); }
+#write { margin: 0px auto; height: auto; width: inherit; word-break: normal; overflow-wrap: break-word; position: relative; white-space: normal; overflow-x: visible; padding-top: 36px; }
+#write.first-line-indent p { text-indent: 2em; }
+#write.first-line-indent li p, #write.first-line-indent p * { text-indent: 0px; }
+#write.first-line-indent li { margin-left: 2em; }
+.for-image #write { padding-left: 8px; padding-right: 8px; }
+body.typora-export { padding-left: 30px; padding-right: 30px; }
+.typora-export .footnote-line, .typora-export li, .typora-export p { white-space: pre-wrap; }
+.typora-export .task-list-item input { pointer-events: none; }
+@media screen and (max-width: 500px) {
+  body.typora-export { padding-left: 0px; padding-right: 0px; }
+  #write { padding-left: 20px; padding-right: 20px; }
+}
+#write li > figure:last-child { margin-bottom: 0.5rem; }
+#write ol, #write ul { position: relative; }
+img { max-width: 100%; vertical-align: middle; image-orientation: from-image; }
+button, input, select, textarea { color: inherit; font: inherit; }
+input[type="checkbox"], input[type="radio"] { line-height: normal; padding: 0px; }
+*, ::after, ::before { box-sizing: border-box; }
+#write h1, #write h2, #write h3, #write h4, #write h5, #write h6, #write p, #write pre { width: inherit; }
+#write h1, #write h2, #write h3, #write h4, #write h5, #write h6, #write p { position: relative; }
+p { line-height: inherit; }
+h1, h2, h3, h4, h5, h6 { break-after: avoid-page; break-inside: avoid; orphans: 4; }
+p { orphans: 4; }
+h1 { font-size: 2rem; }
+h2 { font-size: 1.8rem; }
+h3 { font-size: 1.6rem; }
+h4 { font-size: 1.4rem; }
+h5 { font-size: 1.2rem; }
+h6 { font-size: 1rem; }
+.md-math-block, .md-rawblock, h1, h2, h3, h4, h5, h6, p { margin-top: 1rem; margin-bottom: 1rem; }
+.hidden { display: none; }
+.md-blockmeta { color: rgb(204, 204, 204); font-weight: 700; font-style: italic; }
+a { cursor: pointer; }
+sup.md-footnote { padding: 2px 4px; background-color: rgba(238, 238, 238, 0.7); color: rgb(85, 85, 85); border-radius: 4px; cursor: pointer; }
+sup.md-footnote a, sup.md-footnote a:hover { color: inherit; text-transform: inherit; text-decoration: inherit; }
+#write input[type="checkbox"] { cursor: pointer; width: inherit; height: inherit; }
+figure { overflow-x: auto; margin: 1.2em 0px; max-width: calc(100% + 16px); padding: 0px; }
+figure > table { margin: 0px; }
+thead, tr { break-inside: avoid; break-after: auto; }
+thead { display: table-header-group; }
+table { border-collapse: collapse; border-spacing: 0px; width: 100%; overflow: auto; break-inside: auto; text-align: left; }
+table.md-table td { min-width: 32px; }
+.CodeMirror-gutters { border-right: 0px; background-color: inherit; }
+.CodeMirror-linenumber { user-select: none; }
+.CodeMirror { text-align: left; }
+.CodeMirror-placeholder { opacity: 0.3; }
+.CodeMirror pre { padding: 0px 4px; }
+.CodeMirror-lines { padding: 0px; }
+div.hr:focus { cursor: none; }
+#write pre { white-space: pre-wrap; }
+#write.fences-no-line-wrapping pre { white-space: pre; }
+#write pre.ty-contain-cm { white-space: normal; }
+.CodeMirror-gutters { margin-right: 4px; }
+.md-fences { font-size: 0.9rem; display: block; break-inside: avoid; text-align: left; overflow: visible; white-space: pre; background: inherit; position: relative !important; }
+.md-fences-adv-panel { width: 100%; margin-top: 10px; text-align: center; padding-top: 0px; padding-bottom: 8px; overflow-x: auto; }
+#write .md-fences.mock-cm { white-space: pre-wrap; }
+.md-fences.md-fences-with-lineno { padding-left: 0px; }
+#write.fences-no-line-wrapping .md-fences.mock-cm { white-space: pre; overflow-x: auto; }
+.md-fences.mock-cm.md-fences-with-lineno { padding-left: 8px; }
+.CodeMirror-line, twitterwidget { break-inside: avoid; }
+svg { break-inside: avoid; }
+.footnotes { opacity: 0.8; font-size: 0.9rem; margin-top: 1em; margin-bottom: 1em; }
+.footnotes + .footnotes { margin-top: 0px; }
+.md-reset { margin: 0px; padding: 0px; border: 0px; outline: 0px; vertical-align: top; background: 0px 0px; text-decoration: none; text-shadow: none; float: none; position: static; width: auto; height: auto; white-space: nowrap; cursor: inherit; -webkit-tap-highlight-color: transparent; line-height: normal; font-weight: 400; text-align: left; box-sizing: content-box; direction: ltr; }
+li div { padding-top: 0px; }
+blockquote { margin: 1rem 0px; }
+li .mathjax-block, li p { margin: 0.5rem 0px; }
+li blockquote { margin: 1rem 0px; }
+li { margin: 0px; position: relative; }
+blockquote > :last-child { margin-bottom: 0px; }
+blockquote > :first-child, li > :first-child { margin-top: 0px; }
+.footnotes-area { color: rgb(136, 136, 136); margin-top: 0.714rem; padding-bottom: 0.143rem; white-space: normal; }
+#write .footnote-line { white-space: pre-wrap; }
+@media print {
+  body, html { border: 1px solid transparent; height: 99%; break-after: avoid; break-before: avoid; font-variant-ligatures: no-common-ligatures; }
+  #write { margin-top: 0px; border-color: transparent !important; padding-top: 0px !important; padding-bottom: 0px !important; }
+  .typora-export * { -webkit-print-color-adjust: exact; }
+  .typora-export #write { break-after: avoid; }
+  .typora-export #write::after { height: 0px; }
+  .is-mac table { break-inside: avoid; }
+  #write > p:nth-child(1) { margin-top: 0px; }
+  .typora-export-show-outline .typora-export-sidebar { display: none; }
+  figure { overflow-x: visible; }
+}
+.footnote-line { margin-top: 0.714em; font-size: 0.7em; }
+a img, img a { cursor: pointer; }
+pre.md-meta-block { font-size: 0.8rem; min-height: 0.8rem; white-space: pre-wrap; background: rgb(204, 204, 204); display: block; overflow-x: hidden; }
+p > .md-image:only-child:not(.md-img-error) img, p > img:only-child { display: block; margin: auto; }
+#write.first-line-indent p > .md-image:only-child:not(.md-img-error) img { left: -2em; position: relative; }
+p > .md-image:only-child { display: inline-block; width: 100%; }
+#write .MathJax_Display { margin: 0.8em 0px 0px; }
+.md-math-block { width: 100%; }
+.md-math-block:not(:empty)::after { display: none; }
+.MathJax_ref { fill: currentcolor; }
+[contenteditable="true"]:active, [contenteditable="true"]:focus, [contenteditable="false"]:active, [contenteditable="false"]:focus { outline: 0px; box-shadow: none; }
+.md-task-list-item { position: relative; list-style-type: none; }
+.task-list-item.md-task-list-item { padding-left: 0px; }
+.md-task-list-item > input { position: absolute; top: 0px; left: 0px; margin-left: -1.2em; margin-top: calc(1em - 10px); border: none; }
+.math { font-size: 1rem; }
+.md-toc { min-height: 3.58rem; position: relative; font-size: 0.9rem; border-radius: 10px; }
+.md-toc-content { position: relative; margin-left: 0px; }
+.md-toc-content::after, .md-toc::after { display: none; }
+.md-toc-item { display: block; color: rgb(65, 131, 196); }
+.md-toc-item a { text-decoration: none; }
+.md-toc-inner:hover { text-decoration: underline; }
+.md-toc-inner { display: inline-block; cursor: pointer; }
+.md-toc-h1 .md-toc-inner { margin-left: 0px; font-weight: 700; }
+.md-toc-h2 .md-toc-inner { margin-left: 2em; }
+.md-toc-h3 .md-toc-inner { margin-left: 4em; }
+.md-toc-h4 .md-toc-inner { margin-left: 6em; }
+.md-toc-h5 .md-toc-inner { margin-left: 8em; }
+.md-toc-h6 .md-toc-inner { margin-left: 10em; }
+@media screen and (max-width: 48em) {
+  .md-toc-h3 .md-toc-inner { margin-left: 3.5em; }
+  .md-toc-h4 .md-toc-inner { margin-left: 5em; }
+  .md-toc-h5 .md-toc-inner { margin-left: 6.5em; }
+  .md-toc-h6 .md-toc-inner { margin-left: 8em; }
+}
+a.md-toc-inner { font-size: inherit; font-style: inherit; font-weight: inherit; line-height: inherit; }
+.footnote-line a:not(.reversefootnote) { color: inherit; }
+.reversefootnote { font-family: ui-monospace, sans-serif; }
+.md-attr { display: none; }
+.md-fn-count::after { content: "."; }
+code, pre, samp, tt { font-family: var(--monospace); }
+kbd { margin: 0px 0.1em; padding: 0.1em 0.6em; font-size: 0.8em; color: rgb(36, 39, 41); background: rgb(255, 255, 255); border: 1px solid rgb(173, 179, 185); border-radius: 3px; box-shadow: rgba(12, 13, 14, 0.2) 0px 1px 0px, rgb(255, 255, 255) 0px 0px 0px 2px inset; white-space: nowrap; vertical-align: middle; }
+.md-comment { color: rgb(162, 127, 3); opacity: 0.6; font-family: var(--monospace); }
+code { text-align: left; vertical-align: initial; }
+a.md-print-anchor { white-space: pre !important; border-width: initial !important; border-style: none !important; border-color: initial !important; display: inline-block !important; position: absolute !important; width: 1px !important; right: 0px !important; outline: 0px !important; background: 0px 0px !important; text-decoration: initial !important; text-shadow: initial !important; }
+.os-windows.monocolor-emoji .md-emoji { font-family: "Segoe UI Symbol", sans-serif; }
+.md-diagram-panel > svg { max-width: 100%; }
+[lang="flow"] svg, [lang="mermaid"] svg { max-width: 100%; height: auto; }
+[lang="mermaid"] .node text { font-size: 1rem; }
+table tr th { border-bottom: 0px; }
+video { max-width: 100%; display: block; margin: 0px auto; }
+iframe { max-width: 100%; width: 100%; border: none; }
+.highlight td, .highlight tr { border: 0px; }
+mark { background: rgb(255, 255, 0); color: rgb(0, 0, 0); }
+.md-html-inline .md-plain, .md-html-inline strong, mark .md-inline-math, mark strong { color: inherit; }
+.md-expand mark .md-meta { opacity: 0.3 !important; }
+mark .md-meta { color: rgb(0, 0, 0); }
+@media print {
+  .typora-export h1, .typora-export h2, .typora-export h3, .typora-export h4, .typora-export h5, .typora-export h6 { break-inside: avoid; }
+}
+.md-diagram-panel .messageText { stroke: none !important; }
+.md-diagram-panel .start-state { fill: var(--node-fill); }
+.md-diagram-panel .edgeLabel rect { opacity: 1 !important; }
+.md-fences.md-fences-math { font-size: 1em; }
+.md-fences-advanced:not(.md-focus) { padding: 0px; white-space: nowrap; border: 0px; }
+.md-fences-advanced:not(.md-focus) { background: inherit; }
+.typora-export-show-outline .typora-export-content { max-width: 1440px; margin: auto; display: flex; flex-direction: row; }
+.typora-export-sidebar { width: 300px; font-size: 0.8rem; margin-top: 80px; margin-right: 18px; }
+.typora-export-show-outline #write { --webkit-flex:2; flex: 2 1 0%; }
+.typora-export-sidebar .outline-content { position: fixed; top: 0px; max-height: 100%; overflow: hidden auto; padding-bottom: 30px; padding-top: 60px; width: 300px; }
+@media screen and (max-width: 1024px) {
+  .typora-export-sidebar, .typora-export-sidebar .outline-content { width: 240px; }
+}
+@media screen and (max-width: 800px) {
+  .typora-export-sidebar { display: none; }
+}
+.outline-content li, .outline-content ul { margin-left: 0px; margin-right: 0px; padding-left: 0px; padding-right: 0px; list-style: none; overflow-wrap: anywhere; }
+.outline-content ul { margin-top: 0px; margin-bottom: 0px; }
+.outline-content strong { font-weight: 400; }
+.outline-expander { width: 1rem; height: 1.42857rem; position: relative; display: table-cell; vertical-align: middle; cursor: pointer; padding-left: 4px; }
+.outline-expander::before { content: ""; position: relative; font-family: Ionicons; display: inline-block; font-size: 8px; vertical-align: middle; }
+.outline-item { padding-top: 3px; padding-bottom: 3px; cursor: pointer; }
+.outline-expander:hover::before { content: ""; }
+.outline-h1 > .outline-item { padding-left: 0px; }
+.outline-h2 > .outline-item { padding-left: 1em; }
+.outline-h3 > .outline-item { padding-left: 2em; }
+.outline-h4 > .outline-item { padding-left: 3em; }
+.outline-h5 > .outline-item { padding-left: 4em; }
+.outline-h6 > .outline-item { padding-left: 5em; }
+.outline-label { cursor: pointer; display: table-cell; vertical-align: middle; text-decoration: none; color: inherit; }
+.outline-label:hover { text-decoration: underline; }
+.outline-item:hover { border-color: rgb(245, 245, 245); background-color: var(--item-hover-bg-color); }
+.outline-item:hover { margin-left: -28px; margin-right: -28px; border-left: 28px solid transparent; border-right: 28px solid transparent; }
+.outline-item-single .outline-expander::before, .outline-item-single .outline-expander:hover::before { display: none; }
+.outline-item-open > .outline-item > .outline-expander::before { content: ""; }
+.outline-children { display: none; }
+.info-panel-tab-wrapper { display: none; }
+.outline-item-open > .outline-children { display: block; }
+.typora-export .outline-item { padding-top: 1px; padding-bottom: 1px; }
+.typora-export .outline-item:hover { margin-right: -8px; border-right: 8px solid transparent; }
+.typora-export .outline-expander::before { content: "+"; font-family: inherit; top: -1px; }
+.typora-export .outline-expander:hover::before, .typora-export .outline-item-open > .outline-item > .outline-expander::before { content: "−"; }
+.typora-export-collapse-outline .outline-children { display: none; }
+.typora-export-collapse-outline .outline-item-open > .outline-children, .typora-export-no-collapse-outline .outline-children { display: block; }
+.typora-export-no-collapse-outline .outline-expander::before { content: "" !important; }
+.typora-export-show-outline .outline-item-active > .outline-item .outline-label { font-weight: 700; }
+.md-inline-math-container mjx-container { zoom: 0.95; }
+mjx-container { break-inside: avoid; }
+
+
+@import url('https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Alegreya:ital,wght@0,400;0,500;0,700;0,800;0,900;1,400;1,500;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+:root {
+  --head: 'Crimson Text';
+  --body: 'Alegreya', sans-serif;
+  --mono: 'Source Code Pro';
+  font-family: var(--body);
+  font-size: 10pt;
+
+  --white: rgb(251,251,251)
+  --offwhite: rgb(246, 246, 246);
+  --green: rgb(235, 236, 236);
+  --yellow: #c9ad6a;
+  --red: #822000;
+  --purple: #704cd9;
+}
+
+/** Background **/
+
+/* content, .typora-export-content {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  overflow-y: scroll;
+  background-size: cover;
+  background-position: center;
+}
+.typora-export-content {
+  top: 0;
+}
+content:after, .typora-export-content:after {
+  content: "Background: Dmitry Demidov via Pexels [#3843969]";
+  position: fixed;
+  bottom: 1cm;
+  left: 0;
+  width: 6.5cm;
+  background-color: rgba(0, 0, 0, 0);
+  color: white;
+  z-index: -1;
+  font-size: 8pt;
+  padding: 2mm 3mm;
+  border-radius: 0 2mm 2mm 0;
+} */
+
+
+/** Page **/
+#write, #typora-source {
+  position: relative;
+  margin: 4rem auto;
+  width: 21cm;
+  min-height: 80vh;
+  padding: 1cm;
+  overflow-y: hidden;
+  box-shadow:
+    inset 0cm -0cm 0.1cm 0.05cm rgba(0, 0, 0, 0.1),
+    1cm 1cm 1cm 1cm rgba(0, 0, 0, 0.5);
+  transform-style: preserve-3d;
+  background-color: var(--offwhite);
+  background-image: url("file:///C://Users//tyron//AppData//Roaming//Typora/themes/electric-bastionland-bg.png");
+  /* Add columns */
+  column-count: 2;
+  column-gap: 1cm;
+  column-width: 8cm;
+}
+#typora-source {
+  font-family: var(--mono) !important;
+  column-count: 1 !important;
+  column-width: auto !important;
+}
+#write p, #write h1, #write h2, #write h3, #write h4, #write h5, #write h6, #write div, #write pre {
+  width: auto;
+}
+#write > *:first-child {
+  margin-block-start: 0;
+}
+.ty-on-typewriter-mode #write {
+  column-count: 1;
+  padding-bottom: 50%;
+}
+
+/** Responsivity **/
+/* Compress for small windows */
+@media only screen and (max-width: 22cm) {
+  #write, #typora-source {
+    column-count: 1;
+    width: calc(100% - 2rem);
+    margin: 1rem;
+  }
+}
+/* Hide background credit if there's no width */
+@media only screen and (max-width: 37cm) {
+  content:after, .typora-export-content:after {
+    left: -6.1cm
+  }
+}
+
+/** Export **/
+@media print, (overflow-block: paged) or (overflow-block: optional-paged){
+  h1
+  {
+    page-break-before: right; /* CSS 2 */
+    break-before: recto;      /* CSS 3+, 
+      also works for languages written and paginated right-to-left */
+  }
+  /* Override the previous ruleset for the very first heading: */
+  h1:first-of-type,
+  section > h1:first-child
+  {
+    page-break-before: avoid; /* CSS 2 */
+    break-before: avoid;      /* CSS 3+ */
+  }
+  /* Force second-level headings to begin in a new column or
+     possiblyon a new page if it was in the last of multiple columns otherwise: */
+  h2
+  {
+    break-before: column;
+  }
+  /* Headings should not be the last paragraph on a page: */
+  h1, h2, h3, h4, h5, h6
+  {
+    page-break-after: avoid;
+  }
+  /* Consecutive headings with deepening level should not be split across pages: */
+  h1+h2, h2+h3, h3+h4, h4+h5, h5+h6
+  {
+    page-break-before: avoid;
+  }
+  
+  content, .typora-export-content {
+    position: relative;
+    background: none;
+    overflow-y: visible;
+  }
+  content:after, .typora-export-content:after {
+    display: none;
+  }
+  #write, #typora-source {
+      /* min-height: 0; */
+      /* padding: 0; */
+      overflow-y: visible;
+      box-shadow: none;
+      background: none;
+      height: 100%;
+  }
+
+  #write, #typora-source {
+      /* column-count: 2; */
+      width: 100%;
+      padding: 2.5cm 2cm;
+  }
+
+  body {
+      font-size: 12pt;
+      /* column-count: 2; */
+  }
+
+  /* Prevent breaks inside list elements */
+  ul, ol {
+    break-inside: avoid;
+  }
+  
+  /* Prevent breaks inside individual list items */
+  li {
+    page-break-inside: avoid; /* CSS 2 */
+    break-inside: avoid;      /* CSS 3+ */
+  }
+}
+
+
+/** Headings **/
+
+/* All headings */
+h1, h2, h3, h4, h5, h6 {
+  margin-block-end: 2pt;
+  margin-block-start: 1em;
+  line-height: 1em;
+  break-inside: avoid;
+  break-after: avoid;
+}
+
+/* Major headings */
+h1, h2, h3, h4 {
+  font-family: var(--head);
+  font-weight: 700;
+  font-variant: small-caps;
+}
+
+/* Individual headings */
+h1 {
+  font-size: 60pt;
+  column-span: all;
+  margin-bottom: 60px;
+}
+
+h2 {
+  font-size: 24pt;
+  column-span: all;
+  margin-bottom: 30px;
+  page-break-before: always;
+}
+
+h3 {
+  font-size: 16pt;
+  margin-bottom: 18px;
+  line-height: 1.8;
+}
+
+h4 {
+  font-size: 13pt;
+  margin-bottom: 18px;
+}
+
+h4 a {
+  text-decoration: none;
+}
+
+h5 {
+  font-size: 12pt;
+}
+
+h6 {
+  font-weight: 700;
+  font-size: 10pt;
+}
+
+h6 {
+  font-size: 8pt;
+  font-weight: 400;
+  text-decoration: underline;
+}
+
+hr {
+  /* Common to all hr's */
+  border-top: 2pt solid transparent;
+  border-bottom: 2pt solid transparent;
+  border-left-style: solid;
+
+  /* Top-level hr (aka page delineator) */
+  column-span: all;
+  border-left-width: 16cm;
+  margin-top: 18pt;
+  margin-bottom: 36pt;
+}
+
+/** Body **/
+p {
+  margin-block-start: 2pt;
+  break-inside: avoid;
+}
+
+/* strong {
+  color: var(--red);
+} */
+
+a {
+  color: var(--text-color);
+  text-decoration-color: var(--yellow);
+}
+a:visited {
+  text-decoration-color: var(--green);
+}
+a:hover {
+  color: var(--text-color);
+  text-decoration-color: var(--purple);
+}
+h1 a,
+h2 a,
+h3 a,
+h4 a
+/* strong a {
+  color: var(--red);
+} */
+
+/* del {
+  text-decoration-color: var(--red);
+} */
+
+mark {
+  background-color: var(--green);
+}
+
+code, pre {
+  background: auto;
+  font-family: var(--mono);
+}
+
+ol, ul {
+  padding-left: 1rem;
+}
+
+li::marker {
+  font-weight: 700;
+  /* color: var(--red); */
+}
+
+ul {
+  list-style-type: none;
+}
+
+ul li {
+  position: relative;
+  padding-left: 1.5em;
+}
+
+ul li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0.5em;
+  width: 0.5em;
+  height: 0.5em;
+  border: 1px solid black;
+  border-radius: 50%;
+}
+
+
+/** Tables **/
+table {
+  break-inside: avoid;
+}
+
+table tr:first-child {
+  background-color: black;
+}
+
+table tr:first-child th{
+  color: white;
+  text-align: center;
+  font-size: 1.2em;
+}
+
+table th:first-child,
+table td:first-child {
+  font-weight: bold;
+}
+
+table th:not(:nth-child(1))::before,
+table td:not(:nth-child(1))::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  /* border-left: 1px solid #ccc; */
+}
+
+table th:nth-child(1),
+table td:nth-child(1) {
+  position: relative;
+}
+
+thead, th {
+  font-weight: 700;
+}
+
+tbody tr:nth-child(odd) {
+  background-color: var(--green);
+}
+
+td, th {
+  padding: 3pt 6pt;
+}
+
+/** Blocks **/
+pre, pre.md-meta-block {
+  background-color: var(--green);
+  padding: 6pt;
+}
+
+blockquote {
+  position: relative;
+  background-color: var(--white);
+  padding: 12pt;
+  border: 1px solid black;
+  border-radius: 15px;
+  break-inside: avoid;
+}
+
+blockquote > *:first-child::first-line {
+  font-weight: bold;
+  font-size: 1.0em;
+  text-align: center;
+  display: inline-block;
+  width: 100%;
+}
+
+/** Images **/
+
+.md-image {
+  z-index: 0;
+}
+
+.md-image:before {
+  position: absolute;
+  top: -1.5cm;
+  left: -1.5cm;
+  right: -1.5cm;
+  bottom: -0.5cm;
+  // background-image: url("file:///C://Users//tyron//AppData//Roaming//Typora/themes/torillic/splash.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center top;
+  content: " ";
+  z-index: -1;
+}
+.on-focus-mode .md-image:before {
+  opacity: 0.2;
+}
+
+
+</style><title>5. 堡垒之地的居民们 Inhabitants of Bastionland</title>
+</head>
+<body class='typora-export os-windows'><div class='typora-export-content'>
+<div id='write'  class=''><h1 id='堡垒之地的居民brinhabitants-of-bastionland'><span>堡垒之地的居民</span><br><span>Inhabitants of Bastionland</span></h1><p><span>空荡的堡垒之地什么也不是。这里有人、仿偶、外星人、机械、怪物，还有那些游走于定义边界的东西。</span></p><p><span>这一章会给你足够的信息来快速填充你的堡垒之地。</span></p><p><span>如果你立刻需要一个人，那么翻到这一章的第一页。选择你需要的那个模板，投灵感表，然后自行调整其风味。</span></p><p><span>这个流程并非铁律，跟别的时候一样，只是给你一些灵感。</span></p><p><span>不要太在意那些数字。</span></p><p><span>玩家们能记住遇到的那些人，是因为那些家伙的个性与行动。</span></p><p><span>他们能记住那些对抗过的敌人，是因为他们与敌人对彼此做的那些可怕之事、失败的代价，或是胜利的奖励。</span></p><p><span>玩家不会记得对方的力量究竟是12还是15，所以，把你的精力花在该花的地方。</span></p><p><span>让他们拥有意义。</span></p><h2 id='人-people'><span>人 People</span></h2><h3 id='原则-key-principles'><span>原则 Key Principles</span></h3><ul><li><p><span>他们各种各样，无处不在。</span></p></li><li><p><span>所有人都依赖着某个人，为了得到某件东西。</span></p></li><li><p><span>他们总是拦在你的路上。</span></p></li></ul><h3 id='印象深刻的个体brmemorable-individuals'><span>印象深刻的个体</span><br><span>Memorable Individuals</span></h3><ul><li><p><span>给他们一个抓眼球的视觉特色。</span></p></li><li><p><span>将这个特色融入到他们的个性之中，或是用某些出人意料的东西塑造反差，让这一点很明显。</span></p></li><li><p><span>将他们与另一个角色以某种方法联系起来，或是让他们拦在路上。</span></p></li></ul><h3 id='无名的人群-the-nameless-crowd'><span>无名的人群 The Nameless Crowd</span></h3><ul><li><p><span>如果你有足够的人，你可以将他们用作景观。</span></p></li><li><p><span>别让角色们轻易地聚焦到个体，给人群许多细节。</span></p></li><li><p><span>人群总在前往某个地方，或是准备爆发。</span></p></li></ul><h3 id='一切都可以是人breverything-can-be-a-person'><span>一切都可以是人</span><br><span>Everything can be a Person</span></h3><ul><li><p><span>如果玩家们有什么问题，那么答案总会在某人那里。</span></p></li><li><p><span>如果玩家们想达成什么，就让一个棘手的人拦在路上。</span></p></li><li><p><span>如果你想告诉玩家们什么，就借某人之口说出。</span></p></li></ul><h3 id='名字-names'><span>名字 Names</span></h3><ul><li><p><span>全名很难记，相比之下，给他们一个好记的名或者姓，再加上一个头衔。</span></p></li><li><p><span>生造出的名字更难记，用现有的词，比如塑料板下士、褴褛博士、或是垫料。</span></p></li><li><p><span>如果你想藏起一个名字的含义，使用外语或是生僻词汇，这些词汇的拼写或发音都很棘手。举个例子，西班牙语中的猪是“Cerdo”，所以我可以把它刻意读错成“Kerdo”，来为某个贪食的角色取名。</span></p></li></ul><h3 id='模板-templates'><span>模板 Templates</span></h3><p><span>使用以下模板来着手创作一个人。</span></p><h4 id='街头混混-street-smart-civilian'><span>街头混混 Street-smart Civilian</span></h4><p><span>3HP，嚼着口香糖，隐蔽的武器（d6）。</span></p><ul><li><p><span>对流言捕风捉影。</span></p></li><li><p><span>渴求一些与其职业无关的东西。</span></p></li><li><p><span>在需要的时候扒出武器，但缺少任何战斗的信念。</span></p></li></ul><h4 id='雇佣打手-muscle-for-hire'><span>雇佣打手 Muscle for Hire</span></h4><p><span>6HP，沉重棍棒（d8，笨重）。</span></p><ul><li><p><span>展现自己的强硬，几乎什么都能干。</span></p></li><li><p><span>只有在确定能得到报酬的情况下，才会拿自己的生命冒险。</span></p></li><li><p><span>如果能从中脱身，就会背叛你。</span></p></li></ul><h4 id='前线领袖-frontline-leader'><span>前线领袖 Frontline Leader</span></h4><p><span>魅力15，9HP，手枪（d6），盔甲（护甲1）。</span></p><ul><li><p><span>想方设法地躲避危险，同时确保仪表整洁。</span></p></li><li><p><span>自吹自擂。</span></p></li><li><p><span>说服你走在前面。</span></p></li></ul><figure class='table-figure'><table><thead><tr><th style='text-align:center;' >&nbsp;</th><th style='text-align:center;' ><span>灵感 Spark Table</span><br/><span>投2d20然后合并结果</span></th><th style='text-align:center;' >&nbsp;</th></tr></thead><tbody><tr><td style='text-align:center;' >&nbsp;</td><td style='text-align:center;' ><strong><span>风格</span></strong></td><td style='text-align:center;' ><strong><span>动力</span></strong></td></tr><tr><td style='text-align:center;' ><span>1</span></td><td style='text-align:center;' ><span>粗鲁</span></td><td style='text-align:center;' ><span>基础快感</span></td></tr><tr><td style='text-align:center;' ><span>2</span></td><td style='text-align:center;' ><span>详尽</span></td><td style='text-align:center;' ><span>安全</span></td></tr><tr><td style='text-align:center;' ><span>3</span></td><td style='text-align:center;' ><span>悦耳</span></td><td style='text-align:center;' ><span>掌控</span></td></tr><tr><td style='text-align:center;' ><span>4</span></td><td style='text-align:center;' ><span>喋喋不休</span></td><td style='text-align:center;' ><span>真理</span></td></tr><tr><td style='text-align:center;' ><span>5</span></td><td style='text-align:center;' ><span>单调</span></td><td style='text-align:center;' ><span>服务</span></td></tr><tr><td style='text-align:center;' ><span>6</span></td><td style='text-align:center;' ><span>喘气而纤细</span></td><td style='text-align:center;' ><span>星空启蒙</span></td></tr><tr><td style='text-align:center;' ><span>7</span></td><td style='text-align:center;' ><span>胆怯</span></td><td style='text-align:center;' ><span>平和与安宁</span></td></tr><tr><td style='text-align:center;' ><span>8</span></td><td style='text-align:center;' ><span>蓬勃</span></td><td style='text-align:center;' ><span>微不足道的复仇</span></td></tr><tr><td style='text-align:center;' ><span>9</span></td><td style='text-align:center;' ><span>宠溺</span></td><td style='text-align:center;' ><span>正义</span></td></tr><tr><td style='text-align:center;' ><span>10</span></td><td style='text-align:center;' ><span>笨拙</span></td><td style='text-align:center;' ><span>传承</span></td></tr><tr><td style='text-align:center;' ><span>11</span></td><td style='text-align:center;' ><span>虚伪</span></td><td style='text-align:center;' ><span>财富</span></td></tr><tr><td style='text-align:center;' ><span>12</span></td><td style='text-align:center;' ><span>戏剧</span></td><td style='text-align:center;' ><span>嫉妒</span></td></tr><tr><td style='text-align:center;' ><span>13</span></td><td style='text-align:center;' ><span>激情</span></td><td style='text-align:center;' ><span>认可</span></td></tr><tr><td style='text-align:center;' ><span>14</span></td><td style='text-align:center;' ><span>愤世嫉俗</span></td><td style='text-align:center;' ><span>善良</span></td></tr><tr><td style='text-align:center;' ><span>15</span></td><td style='text-align:center;' ><span>虚弱</span></td><td style='text-align:center;' ><span>启蒙</span></td></tr><tr><td style='text-align:center;' ><span>16</span></td><td style='text-align:center;' ><span>温和</span></td><td style='text-align:center;' ><span>权力与影响力</span></td></tr><tr><td style='text-align:center;' ><span>17</span></td><td style='text-align:center;' ><span>拖沓</span></td><td style='text-align:center;' ><span>自由</span></td></tr><tr><td style='text-align:center;' ><span>18</span></td><td style='text-align:center;' ><span>粗糙</span></td><td style='text-align:center;' ><span>创造力</span></td></tr><tr><td style='text-align:center;' ><span>19</span></td><td style='text-align:center;' ><span>迟缓</span></td><td style='text-align:center;' ><span>现代性</span></td></tr><tr><td style='text-align:center;' ><span>20</span></td><td style='text-align:center;' ><span>反差</span></td><td style='text-align:center;' ><span>懒惰</span></td></tr></tbody></table></figure><h2 id='仿偶-mockery'><span>仿偶 Mockery</span></h2><h3 id='原则-key-principles-2'><span>原则 Key Principles</span></h3><ul><li><p><span>毛毡、木头、丝线被赋予生命后形成的生物。</span></p></li><li><p><span>会模仿人类，他们的需求也是模仿来的。</span></p></li><li><p><span>小孩子喜欢他们，真动物讨厌他们。</span></p></li></ul><h3 id='模仿天赋-mock-talents'><span>模仿天赋 Mock Talents</span></h3><ul><li><p><span>每个仿偶都有针对某件事的天赋。</span></p></li><li><p><span>这种天赋往往很琐碎，很少被严肃地使用。</span></p></li><li><p><span>对于这种天赋，他们是杰出但非常规的教师。</span></p></li></ul><h3 id='戏剧天性-theatrical-nature'><span>戏剧天性 Theatrical Nature</span></h3><ul><li><p><span>仿偶行动起来如同站在舞台上。</span></p></li><li><p><span>他们倾向于去做有戏剧性的事。</span></p></li><li><p><span>有时，他们对戏剧的感觉近乎全知，或是预知。</span></p></li></ul><h3 id='特殊-exceptions'><span>特殊 Exceptions</span></h3><ul><li><p><span>仿人类的仿偶已知是存在的，但大多受到鄙视。</span></p></li><li><p><span>仿物件的仿偶通常会呆在地底。</span></p></li><li><p><span>一些仿偶不像任何东西，他们用“谬误”称呼自己，比如“假演说家”和“假母亲”。</span></p></li></ul><h3 id='模板-templates-2'><span>模板 Templates</span></h3><p><span>这些可以用作你创作仿偶的起点。</span></p><h4 id='伪鼠-mock-rodent'><span>伪鼠 Mock Rodent</span></h4><p><span>DEX 18，4HP，啮咬（d4）</span></p><ul><li><p><span>低调行事。</span></p></li><li><p><span>难以相处。</span></p></li><li><p><span>相比擅长的事情，会在不擅长的事上花更多时间。</span></p></li></ul><h4 id='伪兽-mock-beast'><span>伪兽 Mock Beast</span></h4><p><span>STR 15，7HP，角击（d8）</span></p><ul><li><p><span>行为在人类和动物之间变化。</span></p></li><li><p><span>在可怕和可悲之间变化</span></p></li><li><p><span>笨。</span></p></li></ul><h4 id='伪像-mock-colossus'><span>伪像 Mock Colossus</span></h4><p><span>STR 18，15HP，身体巨大（护甲2），践踏（d10范围伤害）</span></p><ul><li><p><span>表现出温柔的一面。</span></p></li><li><p><span>尽量不挡到路。</span></p></li><li><p><span>渴望一些非暴力的关注。</span></p></li></ul><figure class='table-figure'><table><thead><tr><th>&nbsp;</th><th style='text-align:center;' ><span>灵感 Spark Table</span><BR><span>投2d20然后合并结果</span></th><th>&nbsp;</th></tr></thead><tbody><tr><td>&nbsp;</td><td style='text-align:center;' ><strong><span>类型</span></strong></td><td><strong><span>天赋</span></strong></td></tr><tr><td><span>1</span></td><td style='text-align:center;' ><span>水獭</span></td><td><span>法医</span></td></tr><tr><td><span>2</span></td><td style='text-align:center;' ><span>龙虾</span></td><td><span>厨艺</span></td></tr><tr><td><span>3</span></td><td style='text-align:center;' ><span>苍鹭</span></td><td><span>冲刺</span></td></tr><tr><td><span>4</span></td><td style='text-align:center;' ><span>蟾蜍</span></td><td><span>吃食</span></td></tr><tr><td><span>5</span></td><td style='text-align:center;' ><span>犀牛</span></td><td><span>诱惑</span></td></tr><tr><td><span>6</span></td><td style='text-align:center;' ><span>鼹鼠</span></td><td><span>拼图</span></td></tr><tr><td><span>7</span></td><td style='text-align:center;' ><span>山羊</span></td><td><span>盗窃</span></td></tr><tr><td><span>8</span></td><td style='text-align:center;' ><span>蜘蛛</span></td><td><span>表演</span></td></tr><tr><td><span>9</span></td><td style='text-align:center;' ><span>乌鸦</span></td><td><span>行政</span></td></tr><tr><td><span>10</span></td><td style='text-align:center;' ><span>野鸭</span></td><td><span>官僚</span></td></tr><tr><td><span>11</span></td><td style='text-align:center;' ><span>海豚</span></td><td><span>视力</span></td></tr><tr><td><span>12</span></td><td style='text-align:center;' ><span>鳄鱼</span></td><td><span>法律</span></td></tr><tr><td><span>13</span></td><td style='text-align:center;' ><span>野猪</span></td><td><span>学术</span></td></tr><tr><td><span>14</span></td><td style='text-align:center;' ><span>野熊</span></td><td><span>战略</span></td></tr><tr><td><span>15</span></td><td style='text-align:center;' ><span>公鸡</span></td><td><span>监视</span></td></tr><tr><td><span>16</span></td><td style='text-align:center;' ><span>鲸鱼</span></td><td><span>审问</span></td></tr><tr><td><span>17</span></td><td style='text-align:center;' ><span>猛犸</span></td><td><span>打杂</span></td></tr><tr><td><span>18</span></td><td style='text-align:center;' ><span>兔子</span></td><td><span>工程</span></td></tr><tr><td><span>19</span></td><td style='text-align:center;' ><span>牡蛎</span></td><td><span>雕塑</span></td></tr><tr><td><span>20</span></td><td style='text-align:center;' ><span>蟒蛇</span></td><td><span>梳毛</span></td></tr></tbody></table></figure><h2 id='机械-machines'><span>机械 Machines</span></h2><h3 id='原则-key-principles-3'><span>原则 Key Principles</span></h3><ul><li><p><span>它们属于地底，至少是它们那部分的地底。</span></p></li><li><p><span>它们促使改变，然后监控结果。</span></p></li><li><p><span>它们想教你一课。</span></p></li></ul><h3 id='形态-forms'><span>形态 Forms</span></h3><ul><li><p><span>它们是机械，但总有办法可以沟通。</span></p></li><li><p><span>相比毁灭，它们更适合创造。</span></p></li><li><p><span>它们与地底的联系经常是物理性的。</span></p></li></ul><h3 id='协议-protocol'><span>协议 Protocol</span></h3><ul><li><p><span>它们追求逻辑，经常到了极端的地步。</span></p></li><li><p><span>它们总是愿意解释。</span></p></li><li><p><span>它们想看见你经历考验，发生改变，但并不在乎你别的东西。</span></p></li></ul><h3 id='创造-creations'><span>创造 Creations</span></h3><ul><li><p><span>它们从地底本身中生产出造物。</span></p></li><li><p><span>在某物被制造出来之后，机械们并不控制它。</span></p></li><li><p><span>创造与观察是万能的解决方案。</span></p></li></ul><h3 id='模板-templates-3'><span>模板 Templates</span></h3><p><span>使用以下模板来着手创作一个机械。机械们会忽略任何针对其魅力的效果。</span></p><h4 id='移动的机械-mobile-machine'><span>移动的机械 Mobile Machine</span></h4><p><span>7HP，护甲3，电击棒（d4）。</span></p><ul><li><p><span>笨拙地跟随你。</span></p></li><li><p><span>试图用创造有用地小玩意来达成交易。</span></p></li><li><p><span>向你展示这一切有多容易。</span></p></li></ul><h4 id='全息机械-holographic-machine'><span>全息机械 Holographic Machine</span></h4><p><span>7HP，无形体。</span></p><ul><li><p><span>投下全息影像作为形体。</span></p></li><li><p><span>显现出可能发生的事情。</span></p></li><li><p><span>以秘密为筹码。</span></p></li></ul><h4 id='结构机械-structural-machine'><span>结构机械 Structural Machine</span></h4><p><span>力量15，7HP，爆发（d8范围）。</span></p><ul><li><p><span>成为地底无法移动的部分，例如一扇门或一座喷泉。</span></p></li><li><p><span>告诉你它曾见过的一切。</span></p></li><li><p><span>告诉你继续旅途所需的东西。</span></p></li></ul><figure class='table-figure'><table><thead><tr><th>&nbsp;</th><th style='text-align:center;' ><span>灵感 Spark Table</span><bR><span>投2d20然后合并结果</span></th><th style='text-align:center;' >&nbsp;</th></tr></thead><tbody><tr><td>&nbsp;</td><td style='text-align:center;' ><strong><span>视觉线索</span></strong></td><td style='text-align:center;' ><strong><span>个性</span></strong></td></tr><tr><td><span>1</span></td><td style='text-align:center;' ><span>许多终端</span></td><td style='text-align:center;' ><span>老迈暴躁</span></td></tr><tr><td><span>2</span></td><td style='text-align:center;' ><span>巨型载具</span></td><td style='text-align:center;' ><span>过度夸张</span></td></tr><tr><td><span>3</span></td><td style='text-align:center;' ><span>巨型显示屏</span></td><td style='text-align:center;' ><span>去道德的实用主义者</span></td></tr><tr><td><span>4</span></td><td style='text-align:center;' ><span>一卷卷磁带</span></td><td style='text-align:center;' ><span>扭曲的逻辑</span></td></tr><tr><td><span>5</span></td><td style='text-align:center;' ><span>缸中之脑</span></td><td style='text-align:center;' ><span>险恶的生存主义者</span></td></tr><tr><td><span>6</span></td><td style='text-align:center;' ><span>电话亭</span></td><td style='text-align:center;' ><span>魔鬼的簇拥</span></td></tr><tr><td><span>7</span></td><td style='text-align:center;' ><span>蒸汽神庙</span></td><td style='text-align:center;' ><span>虚伪的母性</span></td></tr><tr><td><span>8</span></td><td style='text-align:center;' ><span>管风琴</span></td><td style='text-align:center;' ><span>孩童般的好奇心</span></td></tr><tr><td><span>9</span></td><td style='text-align:center;' ><span>吊球</span></td><td style='text-align:center;' ><span>健忘的学者</span></td></tr><tr><td><span>10</span></td><td style='text-align:center;' ><span>钢铁之口</span></td><td style='text-align:center;' ><span>古板严肃</span></td></tr><tr><td><span>11</span></td><td style='text-align:center;' ><span>透镜与光</span></td><td style='text-align:center;' ><span>机器人式的幽默</span></td></tr><tr><td><span>12</span></td><td style='text-align:center;' ><span>高悬的爪子</span></td><td style='text-align:center;' ><span>神秘的教师</span></td></tr><tr><td><span>13</span></td><td style='text-align:center;' ><span>广播系统</span></td><td style='text-align:center;' ><span>戏剧化的叙述者</span></td></tr><tr><td><span>14</span></td><td style='text-align:center;' ><span>黄金树</span></td><td style='text-align:center;' ><span>迟缓而依赖</span></td></tr><tr><td><span>15</span></td><td style='text-align:center;' ><span>被激活的尸体</span></td><td style='text-align:center;' ><span>骄傲而徒劳</span></td></tr><tr><td><span>16</span></td><td style='text-align:center;' ><span>长手的镜子</span></td><td style='text-align:center;' ><span>嫉妒而苦涩</span></td></tr><tr><td><span>17</span></td><td style='text-align:center;' ><span>黄铜蜥蜴</span></td><td style='text-align:center;' ><span>不安的霸凌者</span></td></tr><tr><td><span>18</span></td><td style='text-align:center;' ><span>银脸</span></td><td style='text-align:center;' ><span>卑微的碎嘴</span></td></tr><tr><td><span>19</span></td><td style='text-align:center;' ><span>墙中之口</span></td><td style='text-align:center;' ><span>急躁而巧舌如簧</span></td></tr><tr><td><span>20</span></td><td style='text-align:center;' ><span>红铜之蛇</span></td><td style='text-align:center;' ><span>平静的和平主义者</span></td></tr></tbody></table></figure><h2 id='怪物-monstrosities'><span>怪物 Monstrosities</span></h2><h3 id='原则-key-principles-4'><span>原则 Key Principles</span></h3><ul><li><p><span>它们被塑造成了不同的样子，并非生来如此。</span></p></li><li><p><span>它们会吸引注意。</span></p></li><li><p><span>要摧毁它们，总有许多令人信服的理由。</span></p></li></ul><h3 id='创作怪物-making-a-monster'><span>创作怪物 Making a Monster</span></h3><ul><li><p><span>每只怪物在一开始时都是更平凡的东西。</span></p></li><li><p><span>它们可能诞生于设计、意外或是自己的行为。</span></p></li><li><p><span>不论在哪，它们周遭的一切都会变得更加可怕。</span></p></li></ul><h3 id='独特存在-unique-beings'><span>独特存在 Unique Beings</span></h3><ul><li><p><span>没什么东西会跟它们相似，它们的怪物本质会被立刻认出。</span></p></li><li><p><span>它们寻找着能够让自己独处的地方，却经常因为需求或好奇而接近彼此。</span></p></li><li><p><span>没人知道它们究竟是什么。</span></p></li></ul><h3 id='猎手与追随者-hunters-and-followers'><span>猎手与追随者 Hunters and Followers</span></h3><ul><li><p><span>总有人想让它们死。</span></p></li><li><p><span>总有人被它们深深吸引。</span></p></li><li><p><span>这些家伙可能是人类、动物、机械、外星人或是仿偶。</span></p></li></ul><figure class='table-figure'><table><thead><tr><th>&nbsp;</th><th style='text-align:center;' ><span>灵感</span><br><span>投2d20然后合并结果</span></th><th style='text-align:left;' >&nbsp;</th></tr></thead><tbody><tr><td>&nbsp;</td><td style='text-align:center;' ><strong><span>起源</span></strong></td><td style='text-align:left;' ><strong><span>改造</span></strong></td></tr><tr><td><span>1</span></td><td style='text-align:center;' ><span>人类（堡垒）</span></td><td style='text-align:left;' ><span>人类科学</span></td></tr><tr><td><span>2</span></td><td style='text-align:center;' ><span>人类（深野）</span></td><td style='text-align:left;' ><span>外星科学</span></td></tr><tr><td><span>3</span></td><td style='text-align:center;' ><span>哺乳动物（小）</span></td><td style='text-align:left;' ><span>机械科学</span></td></tr><tr><td><span>4</span></td><td style='text-align:center;' ><span>哺乳动物（大）</span></td><td style='text-align:left;' ><span>仿偶科学</span></td></tr><tr><td><span>5</span></td><td style='text-align:center;' ><span>鱼</span></td><td style='text-align:left;' ><span>城市宗教</span></td></tr><tr><td><span>6</span></td><td style='text-align:center;' ><span>爬行动物</span></td><td style='text-align:left;' ><span>乡村宗教</span></td></tr><tr><td><span>7</span></td><td style='text-align:center;' ><span>鸟</span></td><td style='text-align:left;' ><span>外星宗教</span></td></tr><tr><td><span>8</span></td><td style='text-align:center;' ><span>昆虫</span></td><td style='text-align:left;' ><span>外形环境</span></td></tr><tr><td><span>9</span></td><td style='text-align:center;' ><span>树</span></td><td style='text-align:left;' ><span>地底扭曲</span></td></tr><tr><td><span>10</span></td><td style='text-align:center;' ><span>真菌</span></td><td style='text-align:left;' ><span>时间膨胀</span></td></tr><tr><td><span>11</span></td><td style='text-align:center;' ><span>无脊椎动物</span></td><td style='text-align:left;' ><span>工业事故</span></td></tr><tr><td><span>12</span></td><td style='text-align:center;' ><span>许多人</span></td><td style='text-align:left;' ><span>另一只怪物</span></td></tr><tr><td><span>13</span></td><td style='text-align:center;' ><span>艺术品</span></td><td style='text-align:left;' ><span>培育</span></td></tr><tr><td><span>14</span></td><td style='text-align:center;' ><span>外星人（人形）</span></td><td style='text-align:left;' ><span>武器化</span></td></tr><tr><td><span>15</span></td><td style='text-align:center;' ><span>外星人（野兽）</span></td><td style='text-align:left;' ><span>化学暴露</span></td></tr><tr><td><span>16</span></td><td style='text-align:center;' ><span>机械（机动）</span></td><td style='text-align:left;' ><span>协会仪式</span></td></tr><tr><td><span>17</span></td><td style='text-align:center;' ><span>机械（结构）</span></td><td style='text-align:left;' ><span>古老奇物</span></td></tr><tr><td><span>18</span></td><td style='text-align:center;' ><span>仿偶（人）</span></td><td style='text-align:left;' ><span>失效的药物/维修</span></td></tr><tr><td><span>19</span></td><td style='text-align:center;' ><span>仿偶（野兽）</span></td><td style='text-align:left;' ><span>古怪的彗星</span></td></tr><tr><td><span>20</span></td><td style='text-align:center;' ><span>仿偶（小动物）</span></td><td style='text-align:left;' ><span>被试图毁灭</span></td></tr></tbody></table></figure><h3 id='模板-templates-4'><span>模板 Templates</span></h3><p><span>使用以下模板来着手创作一只怪物。</span></p><h3 id='人形怪物-man-monster'><span>人形怪物 Man-Monster</span></h3><p><span>魅力5，5HP，棍棒（d8，笨重）</span></p><ul><li><p><span>试图在远处观察正常人。</span></p></li><li><p><span>装饰自己恶心的巢穴。</span></p></li><li><p><span>寻觅那些让它回忆起美好过往的东西。</span></p></li></ul><h3 id='潜伏怪物-skulking-horror'><span>潜伏怪物 Skulking-Horror</span></h3><p><span>敏捷18，8HP，4条触肢（每条d6）</span></p><ul><li><p><span>用恶意揣测遭遇到的每一个人。</span></p></li><li><p><span>垂涎属于他人的东西。</span></p></li><li><p><span>偶尔会寻找救赎。</span></p></li></ul><h3 id='巨型怪物-giant-beast'><span>巨型怪物 Giant-Beast</span></h3><p><span>力量18，15HP，巨大身体（护甲2），两只爪击（d8每只）与一次噬咬（d10）。</span></p><ul><li><p><span>试图吓走其他人。</span></p></li><li><p><span>在狂怒中发难。</span></p></li><li><p><span>在被发现后搬去别处。</span></p></li></ul><figure class='table-figure'><table><thead><tr><th>&nbsp;</th><th style='text-align:center;' ><span>灵感</span><br/><span>投2d20然后合并结果</span></th><th style='text-align:left;' >&nbsp;</th></tr></thead><tbody><tr><td>&nbsp;</td><td style='text-align:center;' ><span>主题</span></td><td style='text-align:left;' ><span>危险</span></td></tr><tr><td><span>1</span></td><td style='text-align:center;' ><span>饥饿</span></td><td style='text-align:left;' ><span>有组织的追随者教派</span></td></tr><tr><td><span>2</span></td><td style='text-align:center;' ><span>死亡</span></td><td style='text-align:left;' ><span>一些危险的动物</span></td></tr><tr><td><span>3</span></td><td style='text-align:center;' ><span>贪婪</span></td><td style='text-align:left;' ><span>被扭曲的生物</span></td></tr><tr><td><span>4</span></td><td style='text-align:center;' ><span>毁灭</span></td><td style='text-align:left;' ><span>操纵空间</span></td></tr><tr><td><span>5</span></td><td style='text-align:center;' ><span>暴食</span></td><td style='text-align:left;' ><span>操纵时间</span></td></tr><tr><td><span>6</span></td><td style='text-align:center;' ><span>愚蠢</span></td><td style='text-align:left;' ><span>操纵现实</span></td></tr><tr><td><span>7</span></td><td style='text-align:center;' ><span>暴怒</span></td><td style='text-align:left;' ><span>奇物收藏</span></td></tr><tr><td><span>8</span></td><td style='text-align:center;' ><span>知识</span></td><td style='text-align:left;' ><span>奇异魅力</span></td></tr><tr><td><span>9</span></td><td style='text-align:center;' ><span>野心</span></td><td style='text-align:left;' ><span>操纵心灵</span></td></tr><tr><td><span>10</span></td><td style='text-align:center;' ><span>懒惰</span></td><td style='text-align:left;' ><span>腐化存在</span></td></tr><tr><td><span>11</span></td><td style='text-align:center;' ><span>嫉妒</span></td><td style='text-align:left;' ><span>毁灭性的能力</span></td></tr><tr><td><span>12</span></td><td style='text-align:center;' ><span>纯洁</span></td><td style='text-align:left;' ><span>硕大无朋的体积</span></td></tr><tr><td><span>13</span></td><td style='text-align:center;' ><span>欲望</span></td><td style='text-align:left;' ><span>操纵物体</span></td></tr><tr><td><span>14</span></td><td style='text-align:center;' ><span>混沌</span></td><td style='text-align:left;' ><span>操纵血肉</span></td></tr><tr><td><span>15</span></td><td style='text-align:center;' ><span>恐惧</span></td><td style='text-align:left;' ><span>将环境武器化</span></td></tr><tr><td><span>16</span></td><td style='text-align:center;' ><span>非道德</span></td><td style='text-align:left;' ><span>创造奇物</span></td></tr><tr><td><span>17</span></td><td style='text-align:center;' ><span>骄傲</span></td><td style='text-align:left;' ><span>创造怪物</span></td></tr><tr><td><span>18</span></td><td style='text-align:center;' ><span>享乐</span></td><td style='text-align:left;' ><span>神秘能力</span></td></tr><tr><td><span>19</span></td><td style='text-align:center;' ><span>自负</span></td><td style='text-align:left;' ><span>可怕智力</span></td></tr><tr><td><span>20</span></td><td style='text-align:center;' ><span>顺从</span></td><td style='text-align:left;' ><span>肉体力量</span></td></tr></tbody></table></figure></div></div>
+</body>
+</html>

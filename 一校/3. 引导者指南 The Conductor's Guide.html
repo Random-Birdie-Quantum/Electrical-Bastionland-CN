@@ -1,0 +1,626 @@
+<!doctype html>
+<html>
+<head>
+<meta charset='UTF-8'><meta name='viewport' content='width=device-width initial-scale=1'>
+
+<link href='https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&display=swap' rel='stylesheet' type='text/css' /><link href='https://fonts.googleapis.com/css2?family=Alegreya:ital,wght@0,400;0,500;0,700;0,800;0,900;1,400;1,500;1,700;1,800;1,900&display=swap' rel='stylesheet' type='text/css' /><link href='https://fonts.googleapis.com/css2?family=Source+Code+Pro:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap' rel='stylesheet' type='text/css' /><style type='text/css'>html {overflow-x: initial !important;}:root { --bg-color:#ffffff; --text-color:#333333; --select-text-bg-color:#B5D6FC; --select-text-font-color:auto; --monospace:"Lucida Console",Consolas,"Courier",monospace; --title-bar-height:20px; }
+.mac-os-11 { --title-bar-height:28px; }
+html { font-size: 14px; background-color: var(--bg-color); color: var(--text-color); font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; -webkit-font-smoothing: antialiased; }
+h1, h2, h3, h4, h5 { white-space: pre-wrap; }
+body { margin: 0px; padding: 0px; height: auto; inset: 0px; font-size: 1rem; line-height: 1.42857; overflow-x: hidden; background: inherit; }
+iframe { margin: auto; }
+a.url { word-break: break-all; }
+a:active, a:hover { outline: 0px; }
+.in-text-selection, ::selection { text-shadow: none; background: var(--select-text-bg-color); color: var(--select-text-font-color); }
+#write { margin: 0px auto; height: auto; width: inherit; word-break: normal; overflow-wrap: break-word; position: relative; white-space: normal; overflow-x: visible; padding-top: 36px; }
+#write.first-line-indent p { text-indent: 2em; }
+#write.first-line-indent li p, #write.first-line-indent p * { text-indent: 0px; }
+#write.first-line-indent li { margin-left: 2em; }
+.for-image #write { padding-left: 8px; padding-right: 8px; }
+body.typora-export { padding-left: 30px; padding-right: 30px; }
+.typora-export .footnote-line, .typora-export li, .typora-export p { white-space: pre-wrap; }
+.typora-export .task-list-item input { pointer-events: none; }
+@media screen and (max-width: 500px) {
+  body.typora-export { padding-left: 0px; padding-right: 0px; }
+  #write { padding-left: 20px; padding-right: 20px; }
+}
+#write li > figure:last-child { margin-bottom: 0.5rem; }
+#write ol, #write ul { position: relative; }
+img { max-width: 100%; vertical-align: middle; image-orientation: from-image; }
+button, input, select, textarea { color: inherit; font: inherit; }
+input[type="checkbox"], input[type="radio"] { line-height: normal; padding: 0px; }
+*, ::after, ::before { box-sizing: border-box; }
+#write h1, #write h2, #write h3, #write h4, #write h5, #write h6, #write p, #write pre { width: inherit; }
+#write h1, #write h2, #write h3, #write h4, #write h5, #write h6, #write p { position: relative; }
+p { line-height: inherit; }
+h1, h2, h3, h4, h5, h6 { break-after: avoid-page; break-inside: avoid; orphans: 4; }
+p { orphans: 4; }
+h1 { font-size: 2rem; }
+h2 { font-size: 1.8rem; }
+h3 { font-size: 1.6rem; }
+h4 { font-size: 1.4rem; }
+h5 { font-size: 1.2rem; }
+h6 { font-size: 1rem; }
+.md-math-block, .md-rawblock, h1, h2, h3, h4, h5, h6, p { margin-top: 1rem; margin-bottom: 1rem; }
+.hidden { display: none; }
+.md-blockmeta { color: rgb(204, 204, 204); font-weight: 700; font-style: italic; }
+a { cursor: pointer; }
+sup.md-footnote { padding: 2px 4px; background-color: rgba(238, 238, 238, 0.7); color: rgb(85, 85, 85); border-radius: 4px; cursor: pointer; }
+sup.md-footnote a, sup.md-footnote a:hover { color: inherit; text-transform: inherit; text-decoration: inherit; }
+#write input[type="checkbox"] { cursor: pointer; width: inherit; height: inherit; }
+figure { overflow-x: auto; margin: 1.2em 0px; max-width: calc(100% + 16px); padding: 0px; }
+figure > table { margin: 0px; }
+thead, tr { break-inside: avoid; break-after: auto; }
+thead { display: table-header-group; }
+table { border-collapse: collapse; border-spacing: 0px; width: 100%; overflow: auto; break-inside: auto; text-align: left; }
+table.md-table td { min-width: 32px; }
+.CodeMirror-gutters { border-right: 0px; background-color: inherit; }
+.CodeMirror-linenumber { user-select: none; }
+.CodeMirror { text-align: left; }
+.CodeMirror-placeholder { opacity: 0.3; }
+.CodeMirror pre { padding: 0px 4px; }
+.CodeMirror-lines { padding: 0px; }
+div.hr:focus { cursor: none; }
+#write pre { white-space: pre-wrap; }
+#write.fences-no-line-wrapping pre { white-space: pre; }
+#write pre.ty-contain-cm { white-space: normal; }
+.CodeMirror-gutters { margin-right: 4px; }
+.md-fences { font-size: 0.9rem; display: block; break-inside: avoid; text-align: left; overflow: visible; white-space: pre; background: inherit; position: relative !important; }
+.md-fences-adv-panel { width: 100%; margin-top: 10px; text-align: center; padding-top: 0px; padding-bottom: 8px; overflow-x: auto; }
+#write .md-fences.mock-cm { white-space: pre-wrap; }
+.md-fences.md-fences-with-lineno { padding-left: 0px; }
+#write.fences-no-line-wrapping .md-fences.mock-cm { white-space: pre; overflow-x: auto; }
+.md-fences.mock-cm.md-fences-with-lineno { padding-left: 8px; }
+.CodeMirror-line, twitterwidget { break-inside: avoid; }
+svg { break-inside: avoid; }
+.footnotes { opacity: 0.8; font-size: 0.9rem; margin-top: 1em; margin-bottom: 1em; }
+.footnotes + .footnotes { margin-top: 0px; }
+.md-reset { margin: 0px; padding: 0px; border: 0px; outline: 0px; vertical-align: top; background: 0px 0px; text-decoration: none; text-shadow: none; float: none; position: static; width: auto; height: auto; white-space: nowrap; cursor: inherit; -webkit-tap-highlight-color: transparent; line-height: normal; font-weight: 400; text-align: left; box-sizing: content-box; direction: ltr; }
+li div { padding-top: 0px; }
+blockquote { margin: 1rem 0px; }
+li .mathjax-block, li p { margin: 0.5rem 0px; }
+li blockquote { margin: 1rem 0px; }
+li { margin: 0px; position: relative; }
+blockquote > :last-child { margin-bottom: 0px; }
+blockquote > :first-child, li > :first-child { margin-top: 0px; }
+.footnotes-area { color: rgb(136, 136, 136); margin-top: 0.714rem; padding-bottom: 0.143rem; white-space: normal; }
+#write .footnote-line { white-space: pre-wrap; }
+@media print {
+  body, html { border: 1px solid transparent; height: 99%; break-after: avoid; break-before: avoid; font-variant-ligatures: no-common-ligatures; }
+  #write { margin-top: 0px; border-color: transparent !important; padding-top: 0px !important; padding-bottom: 0px !important; }
+  .typora-export * { -webkit-print-color-adjust: exact; }
+  .typora-export #write { break-after: avoid; }
+  .typora-export #write::after { height: 0px; }
+  .is-mac table { break-inside: avoid; }
+  #write > p:nth-child(1) { margin-top: 0px; }
+  .typora-export-show-outline .typora-export-sidebar { display: none; }
+  figure { overflow-x: visible; }
+}
+.footnote-line { margin-top: 0.714em; font-size: 0.7em; }
+a img, img a { cursor: pointer; }
+pre.md-meta-block { font-size: 0.8rem; min-height: 0.8rem; white-space: pre-wrap; background: rgb(204, 204, 204); display: block; overflow-x: hidden; }
+p > .md-image:only-child:not(.md-img-error) img, p > img:only-child { display: block; margin: auto; }
+#write.first-line-indent p > .md-image:only-child:not(.md-img-error) img { left: -2em; position: relative; }
+p > .md-image:only-child { display: inline-block; width: 100%; }
+#write .MathJax_Display { margin: 0.8em 0px 0px; }
+.md-math-block { width: 100%; }
+.md-math-block:not(:empty)::after { display: none; }
+.MathJax_ref { fill: currentcolor; }
+[contenteditable="true"]:active, [contenteditable="true"]:focus, [contenteditable="false"]:active, [contenteditable="false"]:focus { outline: 0px; box-shadow: none; }
+.md-task-list-item { position: relative; list-style-type: none; }
+.task-list-item.md-task-list-item { padding-left: 0px; }
+.md-task-list-item > input { position: absolute; top: 0px; left: 0px; margin-left: -1.2em; margin-top: calc(1em - 10px); border: none; }
+.math { font-size: 1rem; }
+.md-toc { min-height: 3.58rem; position: relative; font-size: 0.9rem; border-radius: 10px; }
+.md-toc-content { position: relative; margin-left: 0px; }
+.md-toc-content::after, .md-toc::after { display: none; }
+.md-toc-item { display: block; color: rgb(65, 131, 196); }
+.md-toc-item a { text-decoration: none; }
+.md-toc-inner:hover { text-decoration: underline; }
+.md-toc-inner { display: inline-block; cursor: pointer; }
+.md-toc-h1 .md-toc-inner { margin-left: 0px; font-weight: 700; }
+.md-toc-h2 .md-toc-inner { margin-left: 2em; }
+.md-toc-h3 .md-toc-inner { margin-left: 4em; }
+.md-toc-h4 .md-toc-inner { margin-left: 6em; }
+.md-toc-h5 .md-toc-inner { margin-left: 8em; }
+.md-toc-h6 .md-toc-inner { margin-left: 10em; }
+@media screen and (max-width: 48em) {
+  .md-toc-h3 .md-toc-inner { margin-left: 3.5em; }
+  .md-toc-h4 .md-toc-inner { margin-left: 5em; }
+  .md-toc-h5 .md-toc-inner { margin-left: 6.5em; }
+  .md-toc-h6 .md-toc-inner { margin-left: 8em; }
+}
+a.md-toc-inner { font-size: inherit; font-style: inherit; font-weight: inherit; line-height: inherit; }
+.footnote-line a:not(.reversefootnote) { color: inherit; }
+.reversefootnote { font-family: ui-monospace, sans-serif; }
+.md-attr { display: none; }
+.md-fn-count::after { content: "."; }
+code, pre, samp, tt { font-family: var(--monospace); }
+kbd { margin: 0px 0.1em; padding: 0.1em 0.6em; font-size: 0.8em; color: rgb(36, 39, 41); background: rgb(255, 255, 255); border: 1px solid rgb(173, 179, 185); border-radius: 3px; box-shadow: rgba(12, 13, 14, 0.2) 0px 1px 0px, rgb(255, 255, 255) 0px 0px 0px 2px inset; white-space: nowrap; vertical-align: middle; }
+.md-comment { color: rgb(162, 127, 3); opacity: 0.6; font-family: var(--monospace); }
+code { text-align: left; vertical-align: initial; }
+a.md-print-anchor { white-space: pre !important; border-width: initial !important; border-style: none !important; border-color: initial !important; display: inline-block !important; position: absolute !important; width: 1px !important; right: 0px !important; outline: 0px !important; background: 0px 0px !important; text-decoration: initial !important; text-shadow: initial !important; }
+.os-windows.monocolor-emoji .md-emoji { font-family: "Segoe UI Symbol", sans-serif; }
+.md-diagram-panel > svg { max-width: 100%; }
+[lang="flow"] svg, [lang="mermaid"] svg { max-width: 100%; height: auto; }
+[lang="mermaid"] .node text { font-size: 1rem; }
+table tr th { border-bottom: 0px; }
+video { max-width: 100%; display: block; margin: 0px auto; }
+iframe { max-width: 100%; width: 100%; border: none; }
+.highlight td, .highlight tr { border: 0px; }
+mark { background: rgb(255, 255, 0); color: rgb(0, 0, 0); }
+.md-html-inline .md-plain, .md-html-inline strong, mark .md-inline-math, mark strong { color: inherit; }
+.md-expand mark .md-meta { opacity: 0.3 !important; }
+mark .md-meta { color: rgb(0, 0, 0); }
+@media print {
+  .typora-export h1, .typora-export h2, .typora-export h3, .typora-export h4, .typora-export h5, .typora-export h6 { break-inside: avoid; }
+}
+.md-diagram-panel .messageText { stroke: none !important; }
+.md-diagram-panel .start-state { fill: var(--node-fill); }
+.md-diagram-panel .edgeLabel rect { opacity: 1 !important; }
+.md-fences.md-fences-math { font-size: 1em; }
+.md-fences-advanced:not(.md-focus) { padding: 0px; white-space: nowrap; border: 0px; }
+.md-fences-advanced:not(.md-focus) { background: inherit; }
+.typora-export-show-outline .typora-export-content { max-width: 1440px; margin: auto; display: flex; flex-direction: row; }
+.typora-export-sidebar { width: 300px; font-size: 0.8rem; margin-top: 80px; margin-right: 18px; }
+.typora-export-show-outline #write { --webkit-flex:2; flex: 2 1 0%; }
+.typora-export-sidebar .outline-content { position: fixed; top: 0px; max-height: 100%; overflow: hidden auto; padding-bottom: 30px; padding-top: 60px; width: 300px; }
+@media screen and (max-width: 1024px) {
+  .typora-export-sidebar, .typora-export-sidebar .outline-content { width: 240px; }
+}
+@media screen and (max-width: 800px) {
+  .typora-export-sidebar { display: none; }
+}
+.outline-content li, .outline-content ul { margin-left: 0px; margin-right: 0px; padding-left: 0px; padding-right: 0px; list-style: none; overflow-wrap: anywhere; }
+.outline-content ul { margin-top: 0px; margin-bottom: 0px; }
+.outline-content strong { font-weight: 400; }
+.outline-expander { width: 1rem; height: 1.42857rem; position: relative; display: table-cell; vertical-align: middle; cursor: pointer; padding-left: 4px; }
+.outline-expander::before { content: ""; position: relative; font-family: Ionicons; display: inline-block; font-size: 8px; vertical-align: middle; }
+.outline-item { padding-top: 3px; padding-bottom: 3px; cursor: pointer; }
+.outline-expander:hover::before { content: ""; }
+.outline-h1 > .outline-item { padding-left: 0px; }
+.outline-h2 > .outline-item { padding-left: 1em; }
+.outline-h3 > .outline-item { padding-left: 2em; }
+.outline-h4 > .outline-item { padding-left: 3em; }
+.outline-h5 > .outline-item { padding-left: 4em; }
+.outline-h6 > .outline-item { padding-left: 5em; }
+.outline-label { cursor: pointer; display: table-cell; vertical-align: middle; text-decoration: none; color: inherit; }
+.outline-label:hover { text-decoration: underline; }
+.outline-item:hover { border-color: rgb(245, 245, 245); background-color: var(--item-hover-bg-color); }
+.outline-item:hover { margin-left: -28px; margin-right: -28px; border-left: 28px solid transparent; border-right: 28px solid transparent; }
+.outline-item-single .outline-expander::before, .outline-item-single .outline-expander:hover::before { display: none; }
+.outline-item-open > .outline-item > .outline-expander::before { content: ""; }
+.outline-children { display: none; }
+.info-panel-tab-wrapper { display: none; }
+.outline-item-open > .outline-children { display: block; }
+.typora-export .outline-item { padding-top: 1px; padding-bottom: 1px; }
+.typora-export .outline-item:hover { margin-right: -8px; border-right: 8px solid transparent; }
+.typora-export .outline-expander::before { content: "+"; font-family: inherit; top: -1px; }
+.typora-export .outline-expander:hover::before, .typora-export .outline-item-open > .outline-item > .outline-expander::before { content: "−"; }
+.typora-export-collapse-outline .outline-children { display: none; }
+.typora-export-collapse-outline .outline-item-open > .outline-children, .typora-export-no-collapse-outline .outline-children { display: block; }
+.typora-export-no-collapse-outline .outline-expander::before { content: "" !important; }
+.typora-export-show-outline .outline-item-active > .outline-item .outline-label { font-weight: 700; }
+.md-inline-math-container mjx-container { zoom: 0.95; }
+mjx-container { break-inside: avoid; }
+
+
+@import url('https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Alegreya:ital,wght@0,400;0,500;0,700;0,800;0,900;1,400;1,500;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+:root {
+  --head: 'Crimson Text';
+  --body: 'Alegreya', sans-serif;
+  --mono: 'Source Code Pro';
+  font-family: var(--body);
+  font-size: 10pt;
+
+  --white: rgb(251,251,251)
+  --offwhite: rgb(246, 246, 246);
+  --green: rgb(235, 236, 236);
+  --yellow: #c9ad6a;
+  --red: #822000;
+  --purple: #704cd9;
+}
+
+/** Background **/
+
+/* content, .typora-export-content {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  overflow-y: scroll;
+  background-size: cover;
+  background-position: center;
+}
+.typora-export-content {
+  top: 0;
+}
+content:after, .typora-export-content:after {
+  content: "Background: Dmitry Demidov via Pexels [#3843969]";
+  position: fixed;
+  bottom: 1cm;
+  left: 0;
+  width: 6.5cm;
+  background-color: rgba(0, 0, 0, 0);
+  color: white;
+  z-index: -1;
+  font-size: 8pt;
+  padding: 2mm 3mm;
+  border-radius: 0 2mm 2mm 0;
+} */
+
+
+/** Page **/
+#write, #typora-source {
+  position: relative;
+  margin: 4rem auto;
+  width: 21cm;
+  min-height: 80vh;
+  padding: 1cm;
+  overflow-y: hidden;
+  box-shadow:
+    inset 0cm -0cm 0.1cm 0.05cm rgba(0, 0, 0, 0.1),
+    1cm 1cm 1cm 1cm rgba(0, 0, 0, 0.5);
+  transform-style: preserve-3d;
+  background-color: var(--offwhite);
+  background-image: url("file:///C://Users//tyron//AppData//Roaming//Typora/themes/electric-bastionland-bg.png");
+  /* Add columns */
+  column-count: 2;
+  column-gap: 1cm;
+  column-width: 8cm;
+}
+#typora-source {
+  font-family: var(--mono) !important;
+  column-count: 1 !important;
+  column-width: auto !important;
+}
+#write p, #write h1, #write h2, #write h3, #write h4, #write h5, #write h6, #write div, #write pre {
+  width: auto;
+}
+#write > *:first-child {
+  margin-block-start: 0;
+}
+.ty-on-typewriter-mode #write {
+  column-count: 1;
+  padding-bottom: 50%;
+}
+
+/** Responsivity **/
+/* Compress for small windows */
+@media only screen and (max-width: 22cm) {
+  #write, #typora-source {
+    column-count: 1;
+    width: calc(100% - 2rem);
+    margin: 1rem;
+  }
+}
+/* Hide background credit if there's no width */
+@media only screen and (max-width: 37cm) {
+  content:after, .typora-export-content:after {
+    left: -6.1cm
+  }
+}
+
+/** Export **/
+@media print, (overflow-block: paged) or (overflow-block: optional-paged){
+  h1
+  {
+    page-break-before: right; /* CSS 2 */
+    break-before: recto;      /* CSS 3+, 
+      also works for languages written and paginated right-to-left */
+  }
+  /* Override the previous ruleset for the very first heading: */
+  h1:first-of-type,
+  section > h1:first-child
+  {
+    page-break-before: avoid; /* CSS 2 */
+    break-before: avoid;      /* CSS 3+ */
+  }
+  /* Force second-level headings to begin in a new column or
+     possiblyon a new page if it was in the last of multiple columns otherwise: */
+  h2
+  {
+    break-before: column;
+  }
+  /* Headings should not be the last paragraph on a page: */
+  h1, h2, h3, h4, h5, h6
+  {
+    page-break-after: avoid;
+  }
+  /* Consecutive headings with deepening level should not be split across pages: */
+  h1+h2, h2+h3, h3+h4, h4+h5, h5+h6
+  {
+    page-break-before: avoid;
+  }
+  
+  content, .typora-export-content {
+    position: relative;
+    background: none;
+    overflow-y: visible;
+  }
+  content:after, .typora-export-content:after {
+    display: none;
+  }
+  #write, #typora-source {
+      /* min-height: 0; */
+      /* padding: 0; */
+      overflow-y: visible;
+      box-shadow: none;
+      background: none;
+      height: 100%;
+  }
+
+  #write, #typora-source {
+      /* column-count: 2; */
+      width: 100%;
+      padding: 2.5cm 2cm;
+  }
+
+  body {
+      font-size: 12pt;
+      /* column-count: 2; */
+  }
+
+  /* Prevent breaks inside list elements */
+  ul, ol {
+    break-inside: avoid;
+  }
+  
+  /* Prevent breaks inside individual list items */
+  li {
+    page-break-inside: avoid; /* CSS 2 */
+    break-inside: avoid;      /* CSS 3+ */
+  }
+}
+
+
+/** Headings **/
+
+/* All headings */
+h1, h2, h3, h4, h5, h6 {
+  margin-block-end: 2pt;
+  margin-block-start: 1em;
+  line-height: 1em;
+  break-inside: avoid;
+  break-after: avoid;
+}
+
+/* Major headings */
+h1, h2, h3, h4 {
+  font-family: var(--head);
+  font-weight: 700;
+  font-variant: small-caps;
+}
+
+/* Individual headings */
+h1 {
+  font-size: 60pt;
+  column-span: all;
+  margin-bottom: 60px;
+}
+
+h2 {
+  font-size: 24pt;
+  column-span: all;
+  margin-bottom: 30px;
+  page-break-before: always;
+}
+
+h3 {
+  font-size: 16pt;
+  margin-bottom: 18px;
+  line-height: 1.8;
+}
+
+h4 {
+  font-size: 13pt;
+  margin-bottom: 18px;
+}
+
+h4 a {
+  text-decoration: none;
+}
+
+h5 {
+  font-size: 12pt;
+}
+
+h6 {
+  font-weight: 700;
+  font-size: 10pt;
+}
+
+h6 {
+  font-size: 8pt;
+  font-weight: 400;
+  text-decoration: underline;
+}
+
+hr {
+  /* Common to all hr's */
+  border-top: 2pt solid transparent;
+  border-bottom: 2pt solid transparent;
+  border-left-style: solid;
+
+  /* Top-level hr (aka page delineator) */
+  column-span: all;
+  border-left-width: 16cm;
+  margin-top: 18pt;
+  margin-bottom: 36pt;
+}
+
+/** Body **/
+p {
+  margin-block-start: 2pt;
+  break-inside: avoid;
+}
+
+/* strong {
+  color: var(--red);
+} */
+
+a {
+  color: var(--text-color);
+  text-decoration-color: var(--yellow);
+}
+a:visited {
+  text-decoration-color: var(--green);
+}
+a:hover {
+  color: var(--text-color);
+  text-decoration-color: var(--purple);
+}
+h1 a,
+h2 a,
+h3 a,
+h4 a
+/* strong a {
+  color: var(--red);
+} */
+
+/* del {
+  text-decoration-color: var(--red);
+} */
+
+mark {
+  background-color: var(--green);
+}
+
+code, pre {
+  background: auto;
+  font-family: var(--mono);
+}
+
+ol, ul {
+  padding-left: 1rem;
+}
+
+li::marker {
+  font-weight: 700;
+  /* color: var(--red); */
+}
+
+ul {
+  list-style-type: none;
+}
+
+ul li {
+  position: relative;
+  padding-left: 1.5em;
+}
+
+ul li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0.5em;
+  width: 0.5em;
+  height: 0.5em;
+  border: 1px solid black;
+  border-radius: 50%;
+}
+
+
+/** Tables **/
+table {
+  break-inside: avoid;
+}
+
+table tr:first-child {
+  background-color: black;
+}
+
+table tr:first-child th{
+  color: white;
+  text-align: center;
+  font-size: 1.2em;
+}
+
+table th:first-child,
+table td:first-child {
+  font-weight: bold;
+}
+
+table th:not(:nth-child(1))::before,
+table td:not(:nth-child(1))::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  /* border-left: 1px solid #ccc; */
+}
+
+table th:nth-child(1),
+table td:nth-child(1) {
+  position: relative;
+}
+
+thead, th {
+  font-weight: 700;
+}
+
+tbody tr:nth-child(odd) {
+  background-color: var(--green);
+}
+
+td, th {
+  padding: 3pt 6pt;
+}
+
+/** Blocks **/
+pre, pre.md-meta-block {
+  background-color: var(--green);
+  padding: 6pt;
+}
+
+blockquote {
+  position: relative;
+  background-color: var(--white);
+  padding: 12pt;
+  border: 1px solid black;
+  border-radius: 15px;
+  break-inside: avoid;
+}
+
+blockquote > *:first-child::first-line {
+  font-weight: bold;
+  font-size: 1.0em;
+  text-align: center;
+  display: inline-block;
+  width: 100%;
+}
+
+/** Images **/
+
+.md-image {
+  z-index: 0;
+}
+
+.md-image:before {
+  position: absolute;
+  top: -1.5cm;
+  left: -1.5cm;
+  right: -1.5cm;
+  bottom: -0.5cm;
+  // background-image: url("file:///C://Users//tyron//AppData//Roaming//Typora/themes/torillic/splash.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center top;
+  content: " ";
+  z-index: -1;
+}
+.on-focus-mode .md-image:before {
+  opacity: 0.2;
+}
+
+
+</style><title>3. 引导者指南 The Conductor&#39;s Guide</title>
+</head>
+<body class='typora-export os-windows'><div class='typora-export-content'>
+<div id='write'  class=''><h1 id='引导者指南--brthe-conductors-guide'><span>引导者指南  </span><br/><span>The Conductor&#39;s Guide</span></h1><p><span>每一个对于</span><strong><span>堡垒之地[Bastionland]</span></strong><span> 的幻想，都会有所不同。</span></p><p><span>你的堡垒之地将会从你住得最近的那座城市中汲取灵感。它将从你第一次独自探索、并被人潮所淹没的那座城市中汲取灵感。它将从你一直想去看看的那座遥远而宏伟的城市汲取灵感。</span></p><p><span>你自己对孤立隔绝和思想落后之人的恐惧，会喂养出</span><strong><span>深野[Deep Country]</span></strong><span> 。</span></p><p><strong><span>地底[The Underground]</span></strong><span> 则可以成为你需要让它成为的任何东西。地底只是想把万物连接起来。</span></p><p><span>本节详细介绍了如何在堡垒之地中创作你自己的内容，但这里并没有明确的答案。甚至本章中包含的少数真相也可以被你完全推翻。</span></p><p><span>你将了解堡垒、深野与地底的本质，并对它们想象出属于你自己的表现方式。最重要的是，你将知晓如何创造一个为你的游戏服务的世界。</span></p><p><span>这个世界需要在游戏中被探索，而非在书页里挖掘。</span></p><h1 id='准备游戏brpreparing-the-game'><span>准备游戏</span><br/><span>Preparing the Game</span></h1><p><span>作为准备游戏的第一步，给出一件玩家们想要的东西（宝藏），并把它放在某个危险但有趣的地方。</span></p><h3 id='宝藏-the-treasure'><span>宝藏 The Treasure</span></h3><p><span>寻宝便是这个游戏的核心。</span></p><p><strong><span>宝藏的核心原则[The Key Principles of Treasure]</span></strong><span> 是：</span></p><ul><li><p><span>其价值超出其用处。</span></p></li><li><p><span>它还没被拿走是有理由的。</span></p></li><li><p><span>它不必很复杂，但可以激发想象力。</span></p></li></ul><p><span>要同时达成以上原则的最好方法，就是把宝藏设计成某种庞大、沉重、无用而珍贵的东西。</span></p><ul><li><p><span>如果你觉得玩家可以在一次团里夺取它，那么它在合适的赞助人那价值 £1k。</span></p></li><li><p><span>如果这个过程需要不止一次团，那它价值 £10k。</span></p></li><li><p><span>价值成千上万的宝藏肯定尤为特别。</span></p></li><li><p><span>像创造主要宝藏那样创造几个次要宝藏（每个价值主要宝藏的十分之一）并把它们藏起来。</span></p></li></ul><figure class='table-figure'><table><thead><tr><th>&nbsp;</th><th><span>宝藏例子</span></th></tr></thead><tbody><tr><td><span>1</span></td><td><strong><span>深域丝绸</span></strong><span>（完整一卷价值 £1k）：很容易着火、被弄脏、被撕裂，等等。</span></td></tr><tr><td><span>2</span></td><td><strong><span>亡香酒</span></strong><span>（50cl 瓶装价值 £1k，2cl 装价值 £100）：装在一个不必要地脆弱的瓶子里。如果没有瓶子，价值减半。</span></td></tr><tr><td><span>3</span></td><td><strong><span>恶心的艺术品</span></strong><span>（£1k）：收藏家有 50%的几率喜欢它，有 50%的几率被它恶心到。</span></td></tr><tr><td><span>4</span></td><td><strong><span>星之面具</span></strong><span>（£10k）：有一头大象那么大，两头大象那么重。</span></td></tr><tr><td><span>5</span></td><td><strong><span>蜥蜴伙伴</span></strong><span>（£1k）：一种有智慧的变色龙。作为富家子弟的宠物而备受追捧。</span></td></tr><tr><td><span>6</span></td><td><strong><span>结晶催化剂</span></strong><span>（每瓶 £1k）：本身没什么用处，但却是再制造恐怖的气体武器的缺失环节。</span></td></tr></tbody></table></figure><h3 id='探险-expedition'><span>探险 Expedition</span></h3><ul><li><p><span>把宝藏放在危险但有趣的地方，引导玩家们踏上探险的道路。</span></p></li><li><p><span>参考相关章节来绘制堡垒、深野与地底的地图。</span></p></li><li><p><span>除了地图之外，一个好的遭遇对象表会是对你游戏最为重要的提前准备。</span></p></li></ul><h3 id='对手-rival'><span>对手 Rival</span></h3><ul><li><p><span>总是有某个外人和队伍成员一样拥有通往宝藏的线索。</span></p></li><li><p><span>要么把对手设定为队伍中某人的镜像（并且比他更好），要么让他们截然相反。</span></p></li><li><p><span>给对手几个手下，但把重点放在对手本人身上。</span></p></li></ul><h3 id='遭遇对象-encounter'><span>遭遇对象 Encounter</span></h3><ul><li><p><span>制作一个有 6 个遭遇对象的表格，当触发随机遭遇对象时，投一个 d6。不同的结果可以用来代表同一类型的人物或生物，只要其行为或队伍组成有所不同就行。</span></p></li><li><p><span>把至少一个遭遇对象设置得非常危险。</span></p></li><li><p><span>所有遭遇对象都是威胁，至少是一个潜在的威胁；但在敌意之余，他们总会有一个目标。让他们正在忙活一些手头上的事情。</span></p></li></ul><h3 id='属性值与-hp-ability-scores-and-hp'><span>属性值与 HP Ability Scores and HP</span></h3><ul><li><p><span>属性值介于 3 到 18 之间，10 是人类平均水平。</span></p></li><li><p><span>如果不确定，就把属性设置为 10。</span></p></li><li><p><span>给菜鸟 3HP，专家 6HP，老手 10HP。</span></p></li></ul><h3 id='行为-behaviors'><span>行为 Behaviors</span></h3><ul><li><p><span>列出这个遭遇对象会去做的三件事情，通常是其最常见的回应或是最有趣的能力。</span></p></li><li><p><span>尽你所能地将他们的动力与目的融入到这些行为之中。</span></p></li><li><p><span>对那些绑定到特定地点的遭遇对象，尽量将这些地点的环境融入到遭遇对象行为中去。</span></p></li></ul><h3 id='清单-the-checklist'><span>清单 The Checklist</span></h3><p><span>在检查你的遭遇对象表时，确保每个条目都符合以下三个要求：</span></p><ul><li><p><strong><span>动力[Drive]：</span></strong><span> 他们应该有动力去做一些事情。</span></p></li><li><p><strong><span>影响[Impact]：</span></strong><span> 他们应该具有永久地改变角色的潜力。</span></p></li><li><p><strong><span>风味[Flavor]：</span></strong><span> 他们应该令人难忘，并与环境风味相呼应。</span></p></li></ul><h3 id='创作开场白-create-the-opening'><span>创作开场白 Create the Opening</span></h3><ul><li><p><span>告诉玩家宝藏的信息和某个愿高价收购宝藏的赞助人的信息。</span></p></li><li><p><span>告诉他们几个与探险地点有关的最可怕的事情，但剩下的让他们自己发掘。</span></p></li><li><p><span>对于你的好点子，不要藏着掖着留到日后使用，马上把它们用起来。</span></p></li></ul><h3 id='分层描述-layered-description'><span>分层描述 Layered Description</span></h3><ul><li><p><span>在写笔记时，列出房间、角色、通道等最为明显的特征。</span></p></li><li><p><span>在括号里，列出角色们只有通过调查和互动才能发现的细节。</span></p></li><li><p><span>尽可能多地在地图上写下你的注释，只有在必要时才使用额外的成段笔记。</span></p></li></ul><h3 id='创造威胁-create-threats'><span>创造威胁 Create Threats</span></h3><ul><li><p><span>威胁越危险，它就越明显。</span></p></li><li><p><span>尽管上面这么说，但不要设置软弱无力的威胁。威胁应该让人难忘，并对角色造成影响。</span></p></li><li><p><span>只要广为人知而且给出了警告，创造一个无法克服的威胁也是可行的。</span></p></li></ul><h3 id='风险和回报-risk-and-reward'><span>风险和回报 Risk and Reward</span></h3><ul><li><p><span>一般来说，高回报意味着高风险。</span></p></li><li><p><span>回报和风险对玩家来说都应该是显而易见的。奖励会吸引他们，而风险会让他们思考如何行动。</span></p></li><li><p><span>如果陷入了疑惑，就多给玩家信息，甚至多到你觉得不太应该也没关系。</span></p></li></ul><h1 id='准备游戏续-brpreparing-the-game-cont'><span>准备游戏，续 </span><br/><span>Preparing the Game Cont.</span></h1><h3 id='为你的点子调味-seasoning-your-ideas'><span>为你的点子调味 Seasoning Your Ideas</span></h3><ul><li><p><span>从一堆宽泛的点子开始，例如“缸中之脑“。</span></p></li><li><p><span>一个个检视这堆点子，并加上不太符合直觉的新细节，例如”喜欢音乐的缸中之脑“。</span></p></li><li><p><span>重复这个过程，直到你的世界变得鲜活起来，例如”喜欢音乐，厌恶老迈的感觉，并渴望着当代年轻人敬仰的缸中之脑“。</span></p></li></ul><h3 id='台前的成长-foreground-growth'><span>台前的成长 Foreground Growth</span></h3><ul><li><p><span>角色的成长发生在玩游戏的过程之中，而非两次团之间休整的时候。</span></p></li><li><p><span>一个角色的成长被他们特定的经历所确定。</span></p></li><li><p><span>这种成长凌乱无章，不受规划。</span></p></li><li><p><span>角色会变得更加有趣，而不一定更加强力。</span></p></li></ul><h3 id='重大后果-high-impact'><span>重大后果 High Impact</span></h3><ul><li><p><span>探险应该总是给角色们重大的影响，让他们产生明显的改变。</span></p></li><li><p><span>后果可以很残酷，像是死亡；或者也可以很复杂，例如后果可能蔓延到角色在堡垒墙后的生活。</span></p></li><li><p><span>有的存在可以永久性地改变一个角色，不仅限于给他们留下伤痕。</span></p></li></ul><h3 id='收集奇物-collecting-oddities'><span>收集奇物 Collecting Oddities</span></h3><ul><li><p><span>任何有宝藏的地方都可能散落着奇物。</span></p></li><li><p><span>奇物会展示出它们的存在与它们的一般用途，尽管可能不会揭露它们的细节。</span></p></li><li><p><span>奇物与宝藏的不同之处在于，它们的用途和趣味通常超过其价值。</span></p></li></ul><h3 id='有趣的抉择-interesting-choices'><span>有趣的抉择 Interesting Choices</span></h3><p><span>不论你计划着什么，其最终的目标都是为玩家们构造有趣的抉择。试着将下面的要点全部落实到位：</span></p><ul><li><p><strong><span>信息[Information]：</span></strong><span> 没有足够的信息，就没有真正的抉择。构造会让他们沉浸的场景，并做好比别的时候更为开放与坦诚的心理准备。</span></p></li><li><p><strong><span>抉择[Choice]：</span></strong><span> 无脑的抉择并不有趣。构造那种会至少引发片刻犹豫不决的场景。</span></p></li><li><p><strong><span>后果[Impact]：</span></strong><span> 没有后果，抉择便一文不值。思考你所列出的选项会引向什么后果。如果并没有后果，那就把事情变得更危险或者更复杂，藉此来给情况加码。</span></p></li></ul><h3 id='随机游戏灵感--random-game-inspiration'><span>随机游戏灵感  Random Game Inspiration</span></h3><figure class='table-figure'><table><thead><tr><th>&nbsp;</th><th style='text-align:center;' ><span>灵感表</span></th><th><span>投 2d20 然后合并结果</span></th></tr></thead><tbody><tr><td>&nbsp;</td><td style='text-align:center;' ><strong><span>地点</span></strong></td><td><strong><span>人物</span></strong></td></tr><tr><td><span>1</span></td><td style='text-align:center;' ><span>议会办公室</span></td><td><span>教授</span></td></tr><tr><td><span>2</span></td><td style='text-align:center;' ><span>军事要塞</span></td><td><span>慈善家</span></td></tr><tr><td><span>3</span></td><td style='text-align:center;' ><span>花园区</span></td><td><span>飞贼</span></td></tr><tr><td><span>4</span></td><td style='text-align:center;' ><span>野生公园</span></td><td><span>神秘的圣人</span></td></tr><tr><td><span>5</span></td><td style='text-align:center;' ><span>贫民窟节日</span></td><td><span>企业家</span></td></tr><tr><td><span>6</span></td><td style='text-align:center;' ><span>河船</span></td><td><span>邪教教主</span></td></tr><tr><td><span>7</span></td><td style='text-align:center;' ><span>科学院</span></td><td><span>运动英雄</span></td></tr><tr><td><span>8</span></td><td style='text-align:center;' ><span>废弃工厂</span></td><td><span>革命者</span></td></tr><tr><td><span>9</span></td><td style='text-align:center;' ><span>沼泽村落</span></td><td><span>过时贵族</span></td></tr><tr><td><span>10</span></td><td style='text-align:center;' ><span>沙漠小镇</span></td><td><span>保镖</span></td></tr><tr><td><span>11</span></td><td style='text-align:center;' ><span>沿海度假村</span></td><td><span>赏金猎人</span></td></tr><tr><td><span>12</span></td><td style='text-align:center;' ><span>采矿殖民地</span></td><td><span>探险家</span></td></tr><tr><td><span>13</span></td><td style='text-align:center;' ><span>遥远的岛屿</span></td><td><span>命运多舛的恋人</span></td></tr><tr><td><span>14</span></td><td style='text-align:center;' ><span>天文台前哨站</span></td><td><span>旅行的学生</span></td></tr><tr><td><span>15</span></td><td style='text-align:center;' ><span>铁路隧道</span></td><td><span>咄咄逼人的记者</span></td></tr><tr><td><span>16</span></td><td style='text-align:center;' ><span>地下墓穴</span></td><td><span>考古学家</span></td></tr><tr><td><span>17</span></td><td style='text-align:center;' ><span>保险地窖</span></td><td><span>音乐家乐队</span></td></tr><tr><td><span>18</span></td><td style='text-align:center;' ><span>地下监狱</span></td><td><span>遭受折磨的艺术家</span></td></tr><tr><td><span>19</span></td><td style='text-align:center;' ><span>城堡废墟</span></td><td><span>富有的隐居者</span></td></tr><tr><td><span>20</span></td><td style='text-align:center;' ><span>豪华酒店</span></td><td><span>复仇心切的生还者</span></td></tr></tbody></table></figure><figure class='table-figure'><table><thead><tr><th>&nbsp;</th><th><span>灵感表</span></th><th><span>投 2d20 然后合并结果</span></th></tr></thead><tbody><tr><td>&nbsp;</td><td><strong><span>物品</span></strong></td><td><strong><span>潜伏的威胁</span></strong></td></tr><tr><td><span>1</span></td><td><span>无价值的皇冠</span></td><td><span>星辰间的入侵</span></td></tr><tr><td><span>2</span></td><td><span>古怪的武器</span></td><td><span>民粹主义的反抗</span></td></tr><tr><td><span>3</span></td><td><span>名册</span></td><td><span>地质紊乱</span></td></tr><tr><td><span>4</span></td><td><span>照片</span></td><td><span>专制者当选</span></td></tr><tr><td><span>5</span></td><td><span>退役的火车</span></td><td><span>暗杀计划</span></td></tr><tr><td><span>6</span></td><td><span>丢失的钥匙</span></td><td><span>附近的怪物</span></td></tr><tr><td><span>7</span></td><td><span>电力护甲</span></td><td><span>风暴逼近</span></td></tr><tr><td><span>8</span></td><td><span>青铜雕像</span></td><td><span>工业灾难</span></td></tr><tr><td><span>9</span></td><td><span>传奇配方</span></td><td><span>邪教仪式</span></td></tr><tr><td><span>10</span></td><td><span>解毒剂</span></td><td><span>失控的骚乱</span></td></tr><tr><td><span>11</span></td><td><span>热带水果</span></td><td><span>炸弹阴谋</span></td></tr><tr><td><span>12</span></td><td><span>原型载具</span></td><td><span>机器叛乱</span></td></tr><tr><td><span>13</span></td><td><span>一管血</span></td><td><span>布道者崛起</span></td></tr><tr><td><span>14</span></td><td><span>科学理论</span></td><td><span>来袭的陨石</span></td></tr><tr><td><span>15</span></td><td><span>望远镜</span></td><td><span>亡者复活</span></td></tr><tr><td><span>16</span></td><td><span>漂亮的衣裳</span></td><td><span>深野劫掠者</span></td></tr><tr><td><span>17</span></td><td><span>婚戒</span></td><td><span>饥荒</span></td></tr><tr><td><span>18</span></td><td><span>圣遗物</span></td><td><span>瘟疫</span></td></tr><tr><td><span>19</span></td><td><span>史上有名的匕首</span></td><td><span>热浪</span></td></tr><tr><td><span>20</span></td><td><span>巨大宝石</span></td><td><span>致命寒潮</span></td></tr></tbody></table></figure><h1 id='引导游戏brconducting-the-game'><span>引导游戏</span><br><span>Conducting the Game</span></h1><p><strong><span>引导[Conducting]</span></strong><span> 是主持，裁判和游玩的结合体。</span></p><p><span>首先，慷慨地给出</span><strong><span>信息[Information]</span></strong><span> 。</span></p><h3 id='信息--information'><span>信息  Information</span></h3><ul><li><p><span>让玩家了解当前的状况。</span></p></li><li><p><span>当他们问问题时，给出你的答案，然后反问他们一个问题。  </span></p><ul><li><p><span>如果你认为他们有所误解，那就澄清它们。</span></p></li></ul></li></ul><p><span>当玩家们宣称要行动时，按以下顺序考虑你的回应：</span></p><ul><li><p><span>这可能是一个有趣的</span><strong><span>困境[Dilemma]</span></strong><span> 吗？  </span></p></li><li><p><span>为什么不干脆</span><strong><span>让它发生[Make it Happen]</span></strong><span> 呢？  </span></p></li><li><p><span>要求进行一次</span><strong><span>豁免[Save]</span></strong><span> 。</span></p></li></ul><p><span>不论你怎么回应，描述其</span><strong><span>后果[Impact]</span></strong><span> 。</span></p><h3 id='困境--dilemma'><span>困境  Dilemma</span></h3><p><span>困境是一种艰难的选择。当描述一个困境时，让他们</span><strong><span>选择[Pick]</span></strong><span> 或者</span><strong><span>推进[Push]</span></strong><span> 。</span></p><ul><li><p><span>给出两种理想或不理想的选项。</span></p></li><li><p><span>玩家们要么选择其中一个选项，要么同时推进两个选项。</span></p></li><li><p><span>如果他们选择推进两个选项，这意味着他们得消耗资源，面临风险，或是想出一个绝妙的计划。</span></p></li></ul><h3 id='让它发生--make-it-happen'><span>让它发生  Make it Happen</span></h3><p><span>如果没有一个有趣的困境可以呈现，那么最简单的事情就是直接让它发生。立即转到后果。</span></p><h3 id='豁免--save'><span>豁免  Save</span></h3><ul><li><p><span>在要求豁免之前，说明可能的后果，给玩家最后的机会来改变自己的想法。  </span></p></li><li><p><span>大多数需要豁免的风险都是完全绕过 HP 的。  </span></p></li><li><p><span>处于风险中的角色才进行豁免。玩家必须掷出与之相等或低于相应能力的点数来避免风险。</span></p></li></ul><h3 id='豁免的种类--types-of-save'><span>豁免的种类  Types of Save</span></h3><p><span>使用</span><strong><span>力量豁免[STR Save]</span></strong><span> 的时候：</span></p><ul><li><p><span>闯过一个障碍</span></p></li><li><p><span>抵抗肉体损伤  </span></p><ul><li><p><span>发挥体能力量</span></p></li></ul></li></ul><p><span>使用</span><strong><span>敏捷豁免[DEX save]</span></strong><span> 的时候：</span></p><ul><li><p><span>快速移动</span></p></li><li><p><span>精准行动</span></p></li><li><p><span>巧妙使用</span></p></li></ul><p><span>使用</span><strong><span>魅力豁免[CHA save]</span></strong><span> 的时候：</span></p><ul><li><p><span>考验关系  </span></p></li><li><p><span>保持镇静  </span></p></li><li><p><span>碰碰运气</span></p></li></ul><h3 id='后果--impact'><span>后果  Impact</span></h3><ul><li><p><span>立刻告诉他们发生了什么。</span></p></li><li><p><span>只要有机会，就扩大后果。  </span></p><ul><li><p><span>如果他们给你了一个创造长期后果的绝佳机会，不要错过它。</span></p></li></ul></li></ul><h3 id='回答问题--answering-questions'><span>回答问题  Answering Questions</span></h3><ul><li><p><span>给出足够的信息来让事情保持有趣。  </span></p></li><li><p><span>建议一种通过调查来获取信息的方法。</span></p></li><li><p><span>建议某个了解更多情况的专家。</span></p></li></ul><h3 id='成为优秀的引导者--being-a-good-conductor'><span>成为优秀的引导者  Being a Good Conductor</span></h3><ul><li><p><span>要</span><strong><span>诚实[Honest]</span></strong><span> ：就算你不扔烟雾弹，堡垒之地也已经够古怪了。告诉玩家当前正在发生什么，让他们做出明智的决定。  </span></p><ul><li><p><span>要</span><strong><span>公正[Fair]</span></strong><span> ：你们都身处游戏之中，但你必须不偏不倚。让骰子公开落下，发出警告，但言出必行，确保失败和成功都是可能的结果。  </span></p></li><li><p><span>要</span><strong><span>自信[Confident]</span></strong><span> ：相信你的想法，给玩家一个将被铭记于心的经历。描述地点，就好像你亲历过那里一般，使用夸张的角色声音，并试试那个你不确定如何该运作的奇怪怪物。</span></p></li></ul></li></ul><h3 id='当他们承受或造成伤害时--when-they-take-or-deal-damage'><span>当他们承受或造成伤害时  When They Take or Deal Damage</span></h3><ul><li><p><span>如果他们还有 HP 剩下，描述这次攻击堪堪打失。</span></p></li><li><p><span>如果他们失去了力量值，描述一次造成伤害的攻击，并让他们投一个力量豁免来避免重伤。  </span></p><ul><li><p><span>如果他们的 HP 正好降到 0，给他们一个伤疤。</span></p></li></ul></li></ul><h3 id='当他们碰见某人时--when-they-meet-people'><span>当他们碰见某人时  When They Meet People</span></h3><ul><li><p><span>用这些人来问那些你希望能亲自问玩家的问题。  </span></p></li><li><p><span>用他们来让角色们的生活更加复杂。</span></p></li><li><p><span>为他们提供另一个人作为加时赛。</span></p></li></ul><h3 id='当他们战斗时--when-they-fight'><span>当他们战斗时  When They Fight</span></h3><ul><li><p><span>避免在空房间里原地互殴，确保环境的趣味，或者让别的事情同步发生。  </span></p></li><li><p><span>定期重新描述当下的情况，尤其是那些危险的情况。  </span></p></li><li><p><span>在每轮开始的时候，描述一些已经发生的变化。</span></p></li></ul><h1 id='引导游戏续-brrunning-the-game-cont'><span>引导游戏，续 </span><br/><span>Running the Game Cont.</span></h1><h3 id='遭遇对象骰-encounter-rolls'><span>遭遇对象骰 Encounter Rolls</span></h3><p><span>当他们探索，休整或在危险的地方陷入犹豫时：</span></p><ul><li><p><span>投 1d6 并参考下表。  </span></p></li><li><p><span>描述情况，引导他们的感官。  </span></p></li><li><p><span>询问玩家他们要做什么。</span></p></li></ul><figure class='table-figure'><table><thead><tr><th>&nbsp;</th><th><span>遭遇对象骰</span></th></tr></thead><tbody><tr><td><span>1</span></td><td><strong><span>偶遇：</span></strong><span> 投一个随机遭遇对象。遭遇对象马上就会抵达这里。</span></td></tr><tr><td><span>2-3</span></td><td><strong><span>线索：</span></strong><span> 投一个随机遭遇对象。给出迹象，表明他就在附近、或者已经经过这里。</span></td></tr><tr><td><span>4+</span></td><td><strong><span>无事：</span></strong><span> 附近没有任何人的迹象。</span></td></tr></tbody></table></figure><p><span>在更长的时间段之中，每四个小时投一次遭遇对象骰。这基本上对应着：</span></p><ul><li><p><span>早晨  </span></p></li><li><p><span>午后  </span></p></li><li><p><span>入夜  </span></p></li><li><p><span>夜晚  </span></p></li><li><p><span>午夜  </span></p></li><li><p><span>黎明</span></p></li></ul><h3 id='遭遇对象--encounters'><span>遭遇对象  Encounters</span></h3><ul><li><p><strong><span>描述[Describe]</span></strong><span> 这个遭遇对象，询问玩家要如何应对。</span></p></li><li><p><span>如果遭遇对象正处于犹豫中，让领头的角色进行一次魅力豁免来看他们是否能够获得更为友善的</span><strong><span>回应[Reaction]</span></strong><span> 。  </span></p><ul><li><p><span>如果不确定谁先行动，让所有角色进行敏捷豁免，那些通过豁免的会夺得</span><strong><span>先机[Initiative]</span></strong><span> ，在对手之前行动。</span></p></li></ul></li></ul><h3 id='幸运骰--luck-rolls'><span>幸运骰  Luck Rolls</span></h3><p><span>有时候你会需要用骰子展现运气与世间的随机性。遭遇对象表就是一个好例子，但你同样也可以用别的方法使用骰子。</span></p><p><span>这些骰子都有着类似的结构，并且需要用到一颗 d6。</span></p><figure class='table-figure'><table><thead><tr><th>&nbsp;</th><th style='text-align:left;' ><span>幸运骰</span></th></tr></thead><tbody><tr><td><span>1</span></td><td style='text-align:left;' ><strong><span>危机/罕见：</span></strong><span> 一些需要立刻处理的情况出现了，通常不是好事。</span></td></tr><tr><td><span>2-3</span></td><td style='text-align:left;' ><strong><span>警告/少见：</span></strong><span> 一个可能很快引起麻烦的威胁或状况。</span></td></tr><tr><td><span>4+</span></td><td style='text-align:left;' ><strong><span>正常：</span></strong><span> 你预期中最为可能的状况，通常是威胁度最低的。</span></td></tr></tbody></table></figure><p><span>请记住，这些表格应该被用来决定玩家选择的结果。这些表格不应用来取代玩家的选择。相反，它们代表那些基本不受角色控制的因素。</span></p><h1 id='范例幸运表-example-luck-tables'><span>范例幸运表 Example Luck Tables</span></h1><figure class='table-figure'><table><thead><tr><th style='text-align:center;' >&nbsp;</th><th><span>夜间补给豁免</span></th></tr></thead><tbody><tr><td style='text-align:center;' ><span>1</span></td><td><span>你拥有的一切补给都丢了/坏了/失踪了，明天开始时你陷入窘困。</span></td></tr><tr><td style='text-align:center;' ><span>2-3</span></td><td><span>你的东西勉强够吃这顿。明天结束前，除非你能找到其他食物来源，你会陷入窘困。</span></td></tr><tr><td style='text-align:center;' ><span>4+</span></td><td><span>你的食物和必需品都没问题。</span></td></tr></tbody></table></figure><figure class='table-figure'><table><thead><tr><th>&nbsp;</th><th><span>故地重游</span></th></tr></thead><tbody><tr><td><span>1</span></td><td><span>一切都糟透了，这里正面临着危机。</span></td></tr><tr><td><span>2-3</span></td><td><span>他们面临的问题变得更糟糕了。</span></td></tr><tr><td><span>4+</span></td><td><span>没什么变化。</span></td></tr></tbody></table></figure><figure class='table-figure'><table><thead><tr><th>&nbsp;</th><th><span>无目标的闲逛</span></th></tr></thead><tbody><tr><td><span>1</span></td><td><span>你去往了错误的方向，到了某个糟糕的地方。</span></td></tr><tr><td><span>2-3</span></td><td><span>你被引到了别处，但如果你成功穿越这里，你知道前往目的地的路。</span></td></tr><tr><td><span>4+</span></td><td><span>你设法得到了想要的。</span></td></tr></tbody></table></figure><figure class='table-figure'><table><thead><tr><th>&nbsp;</th><th><span>赌博</span></th></tr></thead><tbody><tr><td><span>1</span></td><td><span>你输光了赌注，还结了个仇人。</span></td></tr><tr><td><span>2-3</span></td><td><span>你小赚了一笔，但和输家结了仇。</span></td></tr><tr><td><span>4+</span></td><td><span>你没输没赢，但设法交了几个朋友或是搞到了些情报。</span></td></tr></tbody></table></figure><figure class='table-figure'><table><thead><tr><th>&nbsp;</th><th><span>使用劣质装备</span></th></tr></thead><tbody><tr><td><span>1</span></td><td><span>它以最暴力的方式坏掉了。</span></td></tr><tr><td><span>2-3</span></td><td><span>它正发出哀嚎。再用一次就会坏掉。</span></td></tr><tr><td><span>4+</span></td><td><span>它能用！</span></td></tr></tbody></table></figure><figure class='table-figure'><table><thead><tr><th>&nbsp;</th><th><span>赴会</span></th></tr></thead><tbody><tr><td><span>1</span></td><td><span>你醒来时只有模糊的记忆。你干了些很蠢的事情。</span></td></tr><tr><td><span>2-3</span></td><td><span>你醒来时头痛欲裂，口袋空空。</span></td></tr><tr><td><span>4+</span></td><td><span>你玩得很开心，交了几个朋友，聊了不少八卦。</span></td></tr></tbody></table></figure><figure class='table-figure'><table><thead><tr><th>&nbsp;</th><th><span>点“特色菜”</span></th></tr></thead><tbody><tr><td><span>1</span></td><td><span>它糟透了，但要是你不吃，可能会被视作侮辱，甚至是在犯罪。</span></td></tr><tr><td><span>2-3</span></td><td><span>这玩意是他们用库存过剩的食材做的。稍后进行力量豁免来避免生病。</span></td></tr><tr><td><span>4+</span></td><td><span>棒极了！这里的员工都因为你点了它而敬佩你的品味。</span></td></tr></tbody></table></figure><figure class='table-figure'><table><thead><tr><th style='text-align:center;' >&nbsp;</th><th><span>与官僚系统打交道</span></th></tr></thead><tbody><tr><td style='text-align:center;' ><span>1</span></td><td><span>你的任何进度都重置，你需要拜访的办公室被移到了城市的另一头。</span></td></tr><tr><td style='text-align:center;' ><span>2-3</span></td><td><span>你需要很久以前的一份相当不起眼的文件，这是必须的，但不会记入你原有的进度。</span></td></tr><tr><td style='text-align:center;' ><span>4+</span></td><td><span>花了一个小时，但在进度上推进了 1/3。</span></td></tr></tbody></table></figure></div></div>
+</body>
+</html>

@@ -1,0 +1,633 @@
+<!doctype html>
+<html>
+<head>
+<meta charset='UTF-8'><meta name='viewport' content='width=device-width initial-scale=1'>
+
+<link href='https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&display=swap' rel='stylesheet' type='text/css' /><link href='https://fonts.googleapis.com/css2?family=Alegreya:ital,wght@0,400;0,500;0,700;0,800;0,900;1,400;1,500;1,700;1,800;1,900&display=swap' rel='stylesheet' type='text/css' /><link href='https://fonts.googleapis.com/css2?family=Source+Code+Pro:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap' rel='stylesheet' type='text/css' /><style type='text/css'>html {overflow-x: initial !important;}:root { --bg-color:#ffffff; --text-color:#333333; --select-text-bg-color:#B5D6FC; --select-text-font-color:auto; --monospace:"Lucida Console",Consolas,"Courier",monospace; --title-bar-height:20px; }
+.mac-os-11 { --title-bar-height:28px; }
+html { font-size: 14px; background-color: var(--bg-color); color: var(--text-color); font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; -webkit-font-smoothing: antialiased; }
+h1, h2, h3, h4, h5 { white-space: pre-wrap; }
+body { margin: 0px; padding: 0px; height: auto; inset: 0px; font-size: 1rem; line-height: 1.42857; overflow-x: hidden; background: inherit; }
+iframe { margin: auto; }
+a.url { word-break: break-all; }
+a:active, a:hover { outline: 0px; }
+.in-text-selection, ::selection { text-shadow: none; background: var(--select-text-bg-color); color: var(--select-text-font-color); }
+#write { margin: 0px auto; height: auto; width: inherit; word-break: normal; overflow-wrap: break-word; position: relative; white-space: normal; overflow-x: visible; padding-top: 36px; }
+#write.first-line-indent p { text-indent: 2em; }
+#write.first-line-indent li p, #write.first-line-indent p * { text-indent: 0px; }
+#write.first-line-indent li { margin-left: 2em; }
+.for-image #write { padding-left: 8px; padding-right: 8px; }
+body.typora-export { padding-left: 30px; padding-right: 30px; }
+.typora-export .footnote-line, .typora-export li, .typora-export p { white-space: pre-wrap; }
+.typora-export .task-list-item input { pointer-events: none; }
+@media screen and (max-width: 500px) {
+  body.typora-export { padding-left: 0px; padding-right: 0px; }
+  #write { padding-left: 20px; padding-right: 20px; }
+}
+#write li > figure:last-child { margin-bottom: 0.5rem; }
+#write ol, #write ul { position: relative; }
+img { max-width: 100%; vertical-align: middle; image-orientation: from-image; }
+button, input, select, textarea { color: inherit; font: inherit; }
+input[type="checkbox"], input[type="radio"] { line-height: normal; padding: 0px; }
+*, ::after, ::before { box-sizing: border-box; }
+#write h1, #write h2, #write h3, #write h4, #write h5, #write h6, #write p, #write pre { width: inherit; }
+#write h1, #write h2, #write h3, #write h4, #write h5, #write h6, #write p { position: relative; }
+p { line-height: inherit; }
+h1, h2, h3, h4, h5, h6 { break-after: avoid-page; break-inside: avoid; orphans: 4; }
+p { orphans: 4; }
+h1 { font-size: 2rem; }
+h2 { font-size: 1.8rem; }
+h3 { font-size: 1.6rem; }
+h4 { font-size: 1.4rem; }
+h5 { font-size: 1.2rem; }
+h6 { font-size: 1rem; }
+.md-math-block, .md-rawblock, h1, h2, h3, h4, h5, h6, p { margin-top: 1rem; margin-bottom: 1rem; }
+.hidden { display: none; }
+.md-blockmeta { color: rgb(204, 204, 204); font-weight: 700; font-style: italic; }
+a { cursor: pointer; }
+sup.md-footnote { padding: 2px 4px; background-color: rgba(238, 238, 238, 0.7); color: rgb(85, 85, 85); border-radius: 4px; cursor: pointer; }
+sup.md-footnote a, sup.md-footnote a:hover { color: inherit; text-transform: inherit; text-decoration: inherit; }
+#write input[type="checkbox"] { cursor: pointer; width: inherit; height: inherit; }
+figure { overflow-x: auto; margin: 1.2em 0px; max-width: calc(100% + 16px); padding: 0px; }
+figure > table { margin: 0px; }
+thead, tr { break-inside: avoid; break-after: auto; }
+thead { display: table-header-group; }
+table { border-collapse: collapse; border-spacing: 0px; width: 100%; overflow: auto; break-inside: auto; text-align: left; }
+table.md-table td { min-width: 32px; }
+.CodeMirror-gutters { border-right: 0px; background-color: inherit; }
+.CodeMirror-linenumber { user-select: none; }
+.CodeMirror { text-align: left; }
+.CodeMirror-placeholder { opacity: 0.3; }
+.CodeMirror pre { padding: 0px 4px; }
+.CodeMirror-lines { padding: 0px; }
+div.hr:focus { cursor: none; }
+#write pre { white-space: pre-wrap; }
+#write.fences-no-line-wrapping pre { white-space: pre; }
+#write pre.ty-contain-cm { white-space: normal; }
+.CodeMirror-gutters { margin-right: 4px; }
+.md-fences { font-size: 0.9rem; display: block; break-inside: avoid; text-align: left; overflow: visible; white-space: pre; background: inherit; position: relative !important; }
+.md-fences-adv-panel { width: 100%; margin-top: 10px; text-align: center; padding-top: 0px; padding-bottom: 8px; overflow-x: auto; }
+#write .md-fences.mock-cm { white-space: pre-wrap; }
+.md-fences.md-fences-with-lineno { padding-left: 0px; }
+#write.fences-no-line-wrapping .md-fences.mock-cm { white-space: pre; overflow-x: auto; }
+.md-fences.mock-cm.md-fences-with-lineno { padding-left: 8px; }
+.CodeMirror-line, twitterwidget { break-inside: avoid; }
+svg { break-inside: avoid; }
+.footnotes { opacity: 0.8; font-size: 0.9rem; margin-top: 1em; margin-bottom: 1em; }
+.footnotes + .footnotes { margin-top: 0px; }
+.md-reset { margin: 0px; padding: 0px; border: 0px; outline: 0px; vertical-align: top; background: 0px 0px; text-decoration: none; text-shadow: none; float: none; position: static; width: auto; height: auto; white-space: nowrap; cursor: inherit; -webkit-tap-highlight-color: transparent; line-height: normal; font-weight: 400; text-align: left; box-sizing: content-box; direction: ltr; }
+li div { padding-top: 0px; }
+blockquote { margin: 1rem 0px; }
+li .mathjax-block, li p { margin: 0.5rem 0px; }
+li blockquote { margin: 1rem 0px; }
+li { margin: 0px; position: relative; }
+blockquote > :last-child { margin-bottom: 0px; }
+blockquote > :first-child, li > :first-child { margin-top: 0px; }
+.footnotes-area { color: rgb(136, 136, 136); margin-top: 0.714rem; padding-bottom: 0.143rem; white-space: normal; }
+#write .footnote-line { white-space: pre-wrap; }
+@media print {
+  body, html { border: 1px solid transparent; height: 99%; break-after: avoid; break-before: avoid; font-variant-ligatures: no-common-ligatures; }
+  #write { margin-top: 0px; border-color: transparent !important; padding-top: 0px !important; padding-bottom: 0px !important; }
+  .typora-export * { -webkit-print-color-adjust: exact; }
+  .typora-export #write { break-after: avoid; }
+  .typora-export #write::after { height: 0px; }
+  .is-mac table { break-inside: avoid; }
+  #write > p:nth-child(1) { margin-top: 0px; }
+  .typora-export-show-outline .typora-export-sidebar { display: none; }
+  figure { overflow-x: visible; }
+}
+.footnote-line { margin-top: 0.714em; font-size: 0.7em; }
+a img, img a { cursor: pointer; }
+pre.md-meta-block { font-size: 0.8rem; min-height: 0.8rem; white-space: pre-wrap; background: rgb(204, 204, 204); display: block; overflow-x: hidden; }
+p > .md-image:only-child:not(.md-img-error) img, p > img:only-child { display: block; margin: auto; }
+#write.first-line-indent p > .md-image:only-child:not(.md-img-error) img { left: -2em; position: relative; }
+p > .md-image:only-child { display: inline-block; width: 100%; }
+#write .MathJax_Display { margin: 0.8em 0px 0px; }
+.md-math-block { width: 100%; }
+.md-math-block:not(:empty)::after { display: none; }
+.MathJax_ref { fill: currentcolor; }
+[contenteditable="true"]:active, [contenteditable="true"]:focus, [contenteditable="false"]:active, [contenteditable="false"]:focus { outline: 0px; box-shadow: none; }
+.md-task-list-item { position: relative; list-style-type: none; }
+.task-list-item.md-task-list-item { padding-left: 0px; }
+.md-task-list-item > input { position: absolute; top: 0px; left: 0px; margin-left: -1.2em; margin-top: calc(1em - 10px); border: none; }
+.math { font-size: 1rem; }
+.md-toc { min-height: 3.58rem; position: relative; font-size: 0.9rem; border-radius: 10px; }
+.md-toc-content { position: relative; margin-left: 0px; }
+.md-toc-content::after, .md-toc::after { display: none; }
+.md-toc-item { display: block; color: rgb(65, 131, 196); }
+.md-toc-item a { text-decoration: none; }
+.md-toc-inner:hover { text-decoration: underline; }
+.md-toc-inner { display: inline-block; cursor: pointer; }
+.md-toc-h1 .md-toc-inner { margin-left: 0px; font-weight: 700; }
+.md-toc-h2 .md-toc-inner { margin-left: 2em; }
+.md-toc-h3 .md-toc-inner { margin-left: 4em; }
+.md-toc-h4 .md-toc-inner { margin-left: 6em; }
+.md-toc-h5 .md-toc-inner { margin-left: 8em; }
+.md-toc-h6 .md-toc-inner { margin-left: 10em; }
+@media screen and (max-width: 48em) {
+  .md-toc-h3 .md-toc-inner { margin-left: 3.5em; }
+  .md-toc-h4 .md-toc-inner { margin-left: 5em; }
+  .md-toc-h5 .md-toc-inner { margin-left: 6.5em; }
+  .md-toc-h6 .md-toc-inner { margin-left: 8em; }
+}
+a.md-toc-inner { font-size: inherit; font-style: inherit; font-weight: inherit; line-height: inherit; }
+.footnote-line a:not(.reversefootnote) { color: inherit; }
+.reversefootnote { font-family: ui-monospace, sans-serif; }
+.md-attr { display: none; }
+.md-fn-count::after { content: "."; }
+code, pre, samp, tt { font-family: var(--monospace); }
+kbd { margin: 0px 0.1em; padding: 0.1em 0.6em; font-size: 0.8em; color: rgb(36, 39, 41); background: rgb(255, 255, 255); border: 1px solid rgb(173, 179, 185); border-radius: 3px; box-shadow: rgba(12, 13, 14, 0.2) 0px 1px 0px, rgb(255, 255, 255) 0px 0px 0px 2px inset; white-space: nowrap; vertical-align: middle; }
+.md-comment { color: rgb(162, 127, 3); opacity: 0.6; font-family: var(--monospace); }
+code { text-align: left; vertical-align: initial; }
+a.md-print-anchor { white-space: pre !important; border-width: initial !important; border-style: none !important; border-color: initial !important; display: inline-block !important; position: absolute !important; width: 1px !important; right: 0px !important; outline: 0px !important; background: 0px 0px !important; text-decoration: initial !important; text-shadow: initial !important; }
+.os-windows.monocolor-emoji .md-emoji { font-family: "Segoe UI Symbol", sans-serif; }
+.md-diagram-panel > svg { max-width: 100%; }
+[lang="flow"] svg, [lang="mermaid"] svg { max-width: 100%; height: auto; }
+[lang="mermaid"] .node text { font-size: 1rem; }
+table tr th { border-bottom: 0px; }
+video { max-width: 100%; display: block; margin: 0px auto; }
+iframe { max-width: 100%; width: 100%; border: none; }
+.highlight td, .highlight tr { border: 0px; }
+mark { background: rgb(255, 255, 0); color: rgb(0, 0, 0); }
+.md-html-inline .md-plain, .md-html-inline strong, mark .md-inline-math, mark strong { color: inherit; }
+.md-expand mark .md-meta { opacity: 0.3 !important; }
+mark .md-meta { color: rgb(0, 0, 0); }
+@media print {
+  .typora-export h1, .typora-export h2, .typora-export h3, .typora-export h4, .typora-export h5, .typora-export h6 { break-inside: avoid; }
+}
+.md-diagram-panel .messageText { stroke: none !important; }
+.md-diagram-panel .start-state { fill: var(--node-fill); }
+.md-diagram-panel .edgeLabel rect { opacity: 1 !important; }
+.md-fences.md-fences-math { font-size: 1em; }
+.md-fences-advanced:not(.md-focus) { padding: 0px; white-space: nowrap; border: 0px; }
+.md-fences-advanced:not(.md-focus) { background: inherit; }
+.typora-export-show-outline .typora-export-content { max-width: 1440px; margin: auto; display: flex; flex-direction: row; }
+.typora-export-sidebar { width: 300px; font-size: 0.8rem; margin-top: 80px; margin-right: 18px; }
+.typora-export-show-outline #write { --webkit-flex:2; flex: 2 1 0%; }
+.typora-export-sidebar .outline-content { position: fixed; top: 0px; max-height: 100%; overflow: hidden auto; padding-bottom: 30px; padding-top: 60px; width: 300px; }
+@media screen and (max-width: 1024px) {
+  .typora-export-sidebar, .typora-export-sidebar .outline-content { width: 240px; }
+}
+@media screen and (max-width: 800px) {
+  .typora-export-sidebar { display: none; }
+}
+.outline-content li, .outline-content ul { margin-left: 0px; margin-right: 0px; padding-left: 0px; padding-right: 0px; list-style: none; overflow-wrap: anywhere; }
+.outline-content ul { margin-top: 0px; margin-bottom: 0px; }
+.outline-content strong { font-weight: 400; }
+.outline-expander { width: 1rem; height: 1.42857rem; position: relative; display: table-cell; vertical-align: middle; cursor: pointer; padding-left: 4px; }
+.outline-expander::before { content: ""; position: relative; font-family: Ionicons; display: inline-block; font-size: 8px; vertical-align: middle; }
+.outline-item { padding-top: 3px; padding-bottom: 3px; cursor: pointer; }
+.outline-expander:hover::before { content: ""; }
+.outline-h1 > .outline-item { padding-left: 0px; }
+.outline-h2 > .outline-item { padding-left: 1em; }
+.outline-h3 > .outline-item { padding-left: 2em; }
+.outline-h4 > .outline-item { padding-left: 3em; }
+.outline-h5 > .outline-item { padding-left: 4em; }
+.outline-h6 > .outline-item { padding-left: 5em; }
+.outline-label { cursor: pointer; display: table-cell; vertical-align: middle; text-decoration: none; color: inherit; }
+.outline-label:hover { text-decoration: underline; }
+.outline-item:hover { border-color: rgb(245, 245, 245); background-color: var(--item-hover-bg-color); }
+.outline-item:hover { margin-left: -28px; margin-right: -28px; border-left: 28px solid transparent; border-right: 28px solid transparent; }
+.outline-item-single .outline-expander::before, .outline-item-single .outline-expander:hover::before { display: none; }
+.outline-item-open > .outline-item > .outline-expander::before { content: ""; }
+.outline-children { display: none; }
+.info-panel-tab-wrapper { display: none; }
+.outline-item-open > .outline-children { display: block; }
+.typora-export .outline-item { padding-top: 1px; padding-bottom: 1px; }
+.typora-export .outline-item:hover { margin-right: -8px; border-right: 8px solid transparent; }
+.typora-export .outline-expander::before { content: "+"; font-family: inherit; top: -1px; }
+.typora-export .outline-expander:hover::before, .typora-export .outline-item-open > .outline-item > .outline-expander::before { content: "−"; }
+.typora-export-collapse-outline .outline-children { display: none; }
+.typora-export-collapse-outline .outline-item-open > .outline-children, .typora-export-no-collapse-outline .outline-children { display: block; }
+.typora-export-no-collapse-outline .outline-expander::before { content: "" !important; }
+.typora-export-show-outline .outline-item-active > .outline-item .outline-label { font-weight: 700; }
+.md-inline-math-container mjx-container { zoom: 0.95; }
+mjx-container { break-inside: avoid; }
+
+
+@import url('https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Alegreya:ital,wght@0,400;0,500;0,700;0,800;0,900;1,400;1,500;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+:root {
+  --head: 'Crimson Text';
+  --body: 'Alegreya', sans-serif;
+  --mono: 'Source Code Pro';
+  font-family: var(--body);
+  font-size: 10pt;
+
+  --white: rgb(251,251,251)
+  --offwhite: rgb(246, 246, 246);
+  --green: rgb(235, 236, 236);
+  --yellow: #c9ad6a;
+  --red: #822000;
+  --purple: #704cd9;
+}
+
+/** Background **/
+
+/* content, .typora-export-content {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  overflow-y: scroll;
+  background-size: cover;
+  background-position: center;
+}
+.typora-export-content {
+  top: 0;
+}
+content:after, .typora-export-content:after {
+  content: "Background: Dmitry Demidov via Pexels [#3843969]";
+  position: fixed;
+  bottom: 1cm;
+  left: 0;
+  width: 6.5cm;
+  background-color: rgba(0, 0, 0, 0);
+  color: white;
+  z-index: -1;
+  font-size: 8pt;
+  padding: 2mm 3mm;
+  border-radius: 0 2mm 2mm 0;
+} */
+
+
+/** Page **/
+#write, #typora-source {
+  position: relative;
+  margin: 4rem auto;
+  width: 21cm;
+  min-height: 80vh;
+  padding: 1cm;
+  overflow-y: hidden;
+  box-shadow:
+    inset 0cm -0cm 0.1cm 0.05cm rgba(0, 0, 0, 0.1),
+    1cm 1cm 1cm 1cm rgba(0, 0, 0, 0.5);
+  transform-style: preserve-3d;
+  background-color: var(--offwhite);
+  background-image: url("file:///C://Users//tyron//AppData//Roaming//Typora/themes/electric-bastionland-bg.png");
+  /* Add columns */
+  column-count: 2;
+  column-gap: 1cm;
+  column-width: 8cm;
+}
+#typora-source {
+  font-family: var(--mono) !important;
+  column-count: 1 !important;
+  column-width: auto !important;
+}
+#write p, #write h1, #write h2, #write h3, #write h4, #write h5, #write h6, #write div, #write pre {
+  width: auto;
+}
+#write > *:first-child {
+  margin-block-start: 0;
+}
+.ty-on-typewriter-mode #write {
+  column-count: 1;
+  padding-bottom: 50%;
+}
+
+/** Responsivity **/
+/* Compress for small windows */
+@media only screen and (max-width: 22cm) {
+  #write, #typora-source {
+    column-count: 1;
+    width: calc(100% - 2rem);
+    margin: 1rem;
+  }
+}
+/* Hide background credit if there's no width */
+@media only screen and (max-width: 37cm) {
+  content:after, .typora-export-content:after {
+    left: -6.1cm
+  }
+}
+
+/** Export **/
+@media print, (overflow-block: paged) or (overflow-block: optional-paged){
+  h1
+  {
+    page-break-before: right; /* CSS 2 */
+    break-before: recto;      /* CSS 3+, 
+      also works for languages written and paginated right-to-left */
+  }
+  /* Override the previous ruleset for the very first heading: */
+  h1:first-of-type,
+  section > h1:first-child
+  {
+    page-break-before: avoid; /* CSS 2 */
+    break-before: avoid;      /* CSS 3+ */
+  }
+  /* Force second-level headings to begin in a new column or
+     possiblyon a new page if it was in the last of multiple columns otherwise: */
+  h2
+  {
+    break-before: column;
+  }
+  /* Headings should not be the last paragraph on a page: */
+  h1, h2, h3, h4, h5, h6
+  {
+    page-break-after: avoid;
+  }
+  /* Consecutive headings with deepening level should not be split across pages: */
+  h1+h2, h2+h3, h3+h4, h4+h5, h5+h6
+  {
+    page-break-before: avoid;
+  }
+  
+  content, .typora-export-content {
+    position: relative;
+    background: none;
+    overflow-y: visible;
+  }
+  content:after, .typora-export-content:after {
+    display: none;
+  }
+  #write, #typora-source {
+      /* min-height: 0; */
+      /* padding: 0; */
+      overflow-y: visible;
+      box-shadow: none;
+      background: none;
+      height: 100%;
+  }
+
+  #write, #typora-source {
+      /* column-count: 2; */
+      width: 100%;
+      padding: 2.5cm 2cm;
+  }
+
+  body {
+      font-size: 12pt;
+      /* column-count: 2; */
+  }
+
+  /* Prevent breaks inside list elements */
+  ul, ol {
+    break-inside: avoid;
+  }
+  
+  /* Prevent breaks inside individual list items */
+  li {
+    page-break-inside: avoid; /* CSS 2 */
+    break-inside: avoid;      /* CSS 3+ */
+  }
+}
+
+
+/** Headings **/
+
+/* All headings */
+h1, h2, h3, h4, h5, h6 {
+  margin-block-end: 2pt;
+  margin-block-start: 1em;
+  line-height: 1em;
+  break-inside: avoid;
+  break-after: avoid;
+}
+
+/* Major headings */
+h1, h2, h3, h4 {
+  font-family: var(--head);
+  font-weight: 700;
+  font-variant: small-caps;
+}
+
+/* Individual headings */
+h1 {
+  font-size: 60pt;
+  column-span: all;
+  margin-bottom: 60px;
+}
+
+h2 {
+  font-size: 24pt;
+  column-span: all;
+  margin-bottom: 30px;
+  page-break-before: always;
+}
+
+h3 {
+  font-size: 16pt;
+  margin-bottom: 18px;
+  line-height: 1.8;
+}
+
+h4 {
+  font-size: 13pt;
+  margin-bottom: 18px;
+}
+
+h4 a {
+  text-decoration: none;
+}
+
+h5 {
+  font-size: 12pt;
+}
+
+h6 {
+  font-weight: 700;
+  font-size: 10pt;
+}
+
+h6 {
+  font-size: 8pt;
+  font-weight: 400;
+  text-decoration: underline;
+}
+
+hr {
+  /* Common to all hr's */
+  border-top: 2pt solid transparent;
+  border-bottom: 2pt solid transparent;
+  border-left-style: solid;
+
+  /* Top-level hr (aka page delineator) */
+  column-span: all;
+  border-left-width: 16cm;
+  margin-top: 18pt;
+  margin-bottom: 36pt;
+}
+
+/** Body **/
+p {
+  margin-block-start: 2pt;
+  break-inside: avoid;
+}
+
+/* strong {
+  color: var(--red);
+} */
+
+a {
+  color: var(--text-color);
+  text-decoration-color: var(--yellow);
+}
+a:visited {
+  text-decoration-color: var(--green);
+}
+a:hover {
+  color: var(--text-color);
+  text-decoration-color: var(--purple);
+}
+h1 a,
+h2 a,
+h3 a,
+h4 a
+/* strong a {
+  color: var(--red);
+} */
+
+/* del {
+  text-decoration-color: var(--red);
+} */
+
+mark {
+  background-color: var(--green);
+}
+
+code, pre {
+  background: auto;
+  font-family: var(--mono);
+}
+
+ol, ul {
+  padding-left: 1rem;
+}
+
+li::marker {
+  font-weight: 700;
+  /* color: var(--red); */
+}
+
+ul {
+  list-style-type: none;
+}
+
+ul li {
+  position: relative;
+  padding-left: 1.5em;
+}
+
+ul li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0.5em;
+  width: 0.5em;
+  height: 0.5em;
+  border: 1px solid black;
+  border-radius: 50%;
+}
+
+
+/** Tables **/
+table {
+  break-inside: avoid;
+}
+
+table tr:first-child {
+  background-color: black;
+}
+
+table tr:first-child th{
+  color: white;
+  text-align: center;
+  font-size: 1.2em;
+}
+
+table th:first-child,
+table td:first-child {
+  font-weight: bold;
+}
+
+table th:not(:nth-child(1))::before,
+table td:not(:nth-child(1))::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  /* border-left: 1px solid #ccc; */
+}
+
+table th:nth-child(1),
+table td:nth-child(1) {
+  position: relative;
+}
+
+thead, th {
+  font-weight: 700;
+}
+
+tbody tr:nth-child(odd) {
+  background-color: var(--green);
+}
+
+td, th {
+  padding: 3pt 6pt;
+}
+
+/** Blocks **/
+pre, pre.md-meta-block {
+  background-color: var(--green);
+  padding: 6pt;
+}
+
+blockquote {
+  position: relative;
+  background-color: var(--white);
+  padding: 12pt;
+  border: 1px solid black;
+  border-radius: 15px;
+  break-inside: avoid;
+}
+
+blockquote > *:first-child::first-line {
+  font-weight: bold;
+  font-size: 1.0em;
+  text-align: center;
+  display: inline-block;
+  width: 100%;
+}
+
+/** Images **/
+
+.md-image {
+  z-index: 0;
+}
+
+.md-image:before {
+  position: absolute;
+  top: -1.5cm;
+  left: -1.5cm;
+  right: -1.5cm;
+  bottom: -0.5cm;
+  // background-image: url("file:///C://Users//tyron//AppData//Roaming//Typora/themes/torillic/splash.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center top;
+  content: " ";
+  z-index: -1;
+}
+.on-focus-mode .md-image:before {
+  opacity: 0.2;
+}
+
+
+</style><title>4. 堡垒之地的怪异世界 The Odd World of Bastionland</title>
+</head>
+<body class='typora-export os-windows'><div class='typora-export-content'>
+<div id='write'  class=''><h1 id='堡垒之地的怪异世界brthe-odd-world-of-bastionland'><span>堡垒之地的怪异世界</span><br><span>The Odd World of Bastionland</span></h1><h3 id='没有地图的世界-a-world-without-maps'><span>没有地图的世界 A World Without Maps</span></h3><ul><li><p><span>堡垒的变化是如此之快，地图在绘制完成的那天就已经过时了。</span></p></li><li><p><span>深野无限地延申着，话又说回来，谁在乎那里有什么？</span></p></li><li><p><span>地底与活体群星超脱了凡俗的地理限制。</span></p></li></ul><h3 id='没有时间线的世界-a-world-without-timelines'><span>没有时间线的世界 A World Without Timelines</span></h3><ul><li><p><span>这里有历史的痕迹，也有人在乎它，但你不需要了解。</span></p></li><li><p><span>这代人最重大的改变便是电力。</span></p></li><li><p><span>堡垒代表了当下，深野则是过去，而活体群星就是未来。地底将它们连接在一起。</span></p></li></ul><h3 id='满是怪异的世界-a-world-of-oddity'><span>满是怪异的世界 A World of Oddity</span></h3><ul><li><p><span>这里有许多熟悉的东西，但总有什么会感觉不太对劲。</span></p></li><li><p><span>就当你以为了解了什么东西时，转折就会被呈现在你面前。</span></p></li><li><p><span>你越是与这个世界互动，你就会变得愈发古怪。</span></p></li></ul><h3 id='满是危险的世界-a-world-of-danger'><span>满是危险的世界 A World of Danger</span></h3><ul><li><p><span>没有哪是真正安全的。</span></p></li><li><p><span>危险总是公平的。</span></p></li><li><p><span>危险并不只限于物理层面上的伤害。</span></p></li></ul><h3 id='充满可能性的世界-a-world-of-possibilities'><span>充满可能性的世界 A World of Possibilities</span></h3><ul><li><p><span>如果你有个绝妙的点子，那么这世界上总会有能用到它的地方。</span></p></li><li><p><span>你游戏中的堡垒之地会与其他人的完全不同。</span></p></li><li><p><span>没有谁的堡垒之地是错的。</span></p></li></ul><h1 id='堡垒-bastion'><span>堡垒 Bastion</span></h1><h2 id='理解堡垒-understanding-bastion'><span>理解堡垒 Understanding Bastion</span></h2><h3 id='原则-the-priciples'><span>原则 The Priciples</span></h3><ul><li><p><span>一切都在这里。</span></p></li><li><p><span>一切都很复杂。</span></p></li><li><p><span>一切都被共享。</span></p></li></ul><h3 id='一座共享之城-a-shared-city'><span>一座共享之城 A Shared City</span></h3><ul><li><p><span>你所找到的一切、你想要的一切都以某种方式与某人联系在一起。</span></p></li><li><p><span>所有人都在这里：人、仿偶、外星人、机械。</span></p></li><li><p><span>没人知道谁掌控着局面。</span></p></li></ul><h3 id='三重规则-the-triple-rule'><span>三重规则 The Triple Rule</span></h3><p><span>任何东西都有三种用途：</span></p><ul><li><p><strong><span>原始用途</span></strong><span> - 原本是什么？</span></p></li><li><p><strong><span>当前用途</span></strong><span> - 它现在正做什么？</span></p></li><li><p><strong><span>次要用途</span></strong><span> - 它的次要用途是什么？</span></p></li></ul><figure class='table-figure'><table><thead><tr><th>&nbsp;</th><th><span>灵感表 Spark Table</span><br><span>掷 2d20 并合并</span></th><th>&nbsp;</th></tr></thead><tbody><tr><td>&nbsp;</td><td><strong><span>前缀</span></strong></td><td><strong><span>后缀</span></strong></td></tr><tr><td><span>1</span></td><td><span>糕点</span></td><td><span>社团</span></td></tr><tr><td><span>2</span></td><td><span>高层</span></td><td><span>工厂</span></td></tr><tr><td><span>3</span></td><td><span>熏烤</span></td><td><span>艺术</span></td></tr><tr><td><span>4</span></td><td><span>轰炸</span></td><td><span>运河</span></td></tr><tr><td><span>5</span></td><td><span>肥胖</span></td><td><span>旅游</span></td></tr><tr><td><span>6</span></td><td><span>豪华</span></td><td><span>蜥蜴</span></td></tr><tr><td><span>7</span></td><td><span>野生</span></td><td><span>墓地</span></td></tr><tr><td><span>8</span></td><td><span>破碎</span></td><td><span>委员会</span></td></tr><tr><td><span>9</span></td><td><span>原型</span></td><td><span>贫民窟</span></td></tr><tr><td><span>10</span></td><td><span>手工</span></td><td><span>音乐</span></td></tr><tr><td><span>11</span></td><td><span>纸质</span></td><td><span>酒厂</span></td></tr><tr><td><span>12</span></td><td><span>杀戮</span></td><td><span>年轻人</span></td></tr><tr><td><span>13</span></td><td><span>电气</span></td><td><span>办公室</span></td></tr><tr><td><span>14</span></td><td><span>玻璃</span></td><td><span>大学</span></td></tr><tr><td><span>15</span></td><td><span>肮脏</span></td><td><span>博物馆</span></td></tr><tr><td><span>16</span></td><td><span>改建</span></td><td><span>人群</span></td></tr><tr><td><span>17</span></td><td><span>有争议的</span></td><td><span>债务</span></td></tr><tr><td><span>18</span></td><td><span>烧毁</span></td><td><span>烟囱</span></td></tr><tr><td><span>19</span></td><td><span>过度生长</span></td><td><span>堆</span></td></tr><tr><td><span>20</span></td><td><span>响亮</span></td><td><span>补品</span></td></tr></tbody></table></figure><h3 id='城区-boroughs'><span>城区 Boroughs</span></h3><ul><li><p><span>每个城区都建立在某种行业或文化遗产上，但每个城区也都发生着其他的事情。</span></p></li><li><p><span>城区理事会干涉着一切，但很少直接控制。</span></p></li><li><p><span>一切都要征税，因此总能找到质量不一的免费公共选项。</span></p></li></ul><h3 id='理事会-councils'><span>理事会 Councils</span></h3><ul><li><p><span>城区、工会、教会和俱乐部都会有一个试图掌控情况的理事会。</span></p></li><li><p><span>他们主要负责召开会议与安排筹款活动。</span></p></li><li><p><span>任何事物都至少受两个理事会的权威管辖，而每个理事会都至少肩负两项责任。</span></p></li></ul><h3 id='哲学-philosophers'><span>哲学 Philosophers</span></h3><ul><li><p><strong><span>外星人主义者</span></strong><span>崇拜外星人并凝视着活体群星，但崇拜的对象与方式总是无穷无尽的。</span></p></li><li><p><strong><span>机械主义者</span></strong><span>从地下机械那寻求捷径，但每个机械的回应都各不相同。</span></p></li><li><p><strong><span>人类主义者</span></strong><span>认为人类应该居于顶端，他们要要么浪漫化过去的简单日子，要么则崇拜着现代化。</span></p></li></ul><h3 id='现代化-modernity'><span>现代化 Modernity</span></h3><ul><li><p><span>现代事物存在，但以老式风格呈现着。</span></p></li><li><p><span>技术分布不均。</span></p></li><li><p><span>那些拥有现代外观与现代思维的人会备受关注。</span></p></li></ul><h3 id='活生生的城市-the-living-city'><span>活生生的城市 The Living City</span></h3><ul><li><p><span>堡垒的一部分是新的，但没人承认建造过它。</span></p></li><li><p><span>每栋建筑、每条街道上都能找到自然的痕迹。</span></p></li><li><p><span>为了生存，生命已经适应了这里。</span></p></li></ul><h3 id='电气堡垒-electric-bastion'><span>电气堡垒 Electric Bastion</span></h3><ul><li><p><span>如果什么东西可以被电气化，那就一定有人已经付诸行动了。</span></p></li><li><p><span>旧事物与新事物并存着。</span></p></li><li><p><span>副作用无可避免。广播带来奇怪的讯息、电站产生不良的影响，连机械也会变得自主起来。</span></p></li></ul><h3 id='战争-the-war'><span>战争 The War</span></h3><ul><li><p><span>从官僚主义的角度说，让整个城市一致对抗同一个敌人是不可能的。</span></p></li><li><p><span>大多数城区已经将某个人或某个地方宣称为敌人。</span></p></li><li><p><span>大多数情况下，这是高税收、库存短缺与征兵的借口。</span></p></li></ul><h2 id='绘制堡垒-mapping-bastion'><span>绘制堡垒 Mapping Bastion</span></h2><p><span>比起重要地点间的主干道，堡垒街道的确切地理位置并不重要。</span></p><p><span>因此，你可以像绘制铁路网络一样绘制堡垒中的城区。</span></p><p><span>尽可能把笔记直接写在地图上，只将额外信息写在另一张纸上。</span></p><h3 id='路线-routes'><span>路线 Routes</span></h3><ul><li><p><span>用不同的颜色，绘制两条或更多的闭环线路，确保它们相交，这些是不同的交通路线。</span></p></li><li><p><span>在每个路线中添加至少一条支线，如果你想的话，可以用不同的颜色。</span></p></li><li><p><span>将每条不同颜色的路线标记为人行道、电车轨、运河、缆车或其他的线路。</span></p></li></ul><h3 id='地标和道路-landmarks-and-paths'><span>地标和道路 Landmarks and Paths</span></h3><ul><li><p><span>在每个路线交叉点，分支，弯曲和终点上放置一个点。</span></p></li><li><p><span>把每个点设置为地标，例如公园或纪念碑。注意周围可能有的东西，例如高档商店或工厂贫民窟。</span></p></li><li><p><span>对于每个地标之间的路径，详细说明通过时可能的意外状况。</span></p></li></ul><h3 id='意外-complications'><span>意外 Complications</span></h3><ul><li><p><span>意外可以简单，例如过路费或拥堵的交通。</span></p></li><li><p><span>它们可以很复杂，例如必须穿过的敌对环境，或是会引诱团队远离路线的东西。</span></p></li><li><p><span>它们应该展示堡垒和这些城区的个性。</span></p></li></ul><h3 id='走出网格-going-off-grid'><span>走出网格 Going Off-Grid</span></h3><ul><li><p><span>如果队伍想要通过另一条路线在两个地标间通行，那么总会有一条小黑巷或不方便的捷径。</span></p></li><li><p><span>当角色尝试探索超出地图范围的区域时也是如此。</span></p></li><li><p><span>当地人比你更了解这里的退路。</span></p></li></ul><h3 id='导航-navigation'><span>导航 Navigation</span></h3><ul><li><p><span>没人有堡垒的完整地图。</span></p></li><li><p><span>在城区中导航需要依赖路标和问路。</span></p></li><li><p><span>你可以向玩家提供一张删去细节的地图副本。</span></p></li></ul><h2 id='填充堡垒-stocking-bastion'><span>填充堡垒 Stocking Bastion</span></h2><h3 id='财宝-treature'><span>财宝 Treature</span></h3><p><span>在堡垒中发现的财宝可能：</span></p><ul><li><p><span>迷失在废弃或危险的区域中。</span></p></li><li><p><span>属于某个有权势的人，并被安全地保护着。</span></p></li><li><p><span>被某个对它一无所知的人扔在明处。</span></p></li></ul><h3 id='赞助人-patrons'><span>赞助人 Patrons</span></h3><ul><li><p><span>在堡垒中，总会有合适的买家。</span></p></li><li><p><span>与他们打交道总是会有风险。</span></p></li><li><p><span>他们总是知道接下来要买什么。</span></p></li></ul><h3 id='专家-specialists'><span>专家 Specialists</span></h3><ul><li><p><span>角色们拥有各种的常见技能与知识，但如果你想把事情做得额外漂亮，你会需要一名专家。</span></p></li><li><p><span>除了其专业领域以外，每个专家都会有别的一面。</span></p></li><li><p><span>在堡垒中，没有人会单打独斗。</span></p></li></ul><h3 id='雇佣兵-mercenaries'><span>雇佣兵 Mercenaries</span></h3><ul><li><p><span>你可以雇佣贫民窟中的流氓和罪犯，他们一般会全家出动。</span></p></li><li><p><span>在酒馆中可以找到老兵和学生，工会或信仰把他们团结在一起。</span></p></li><li><p><span>在俱乐部里能找到探险家与刺客，他们都会带着自己的跟班。</span></p></li></ul><h3 id='商店-shops'><span>商店 Shops</span></h3><ul><li><p><span>所谓的通用商店并不存在。要找到合适的东西，你得找到正确的商店，但是只要能找到那，他们就会提供专项服务。</span></p></li><li><p><span>每家商店都在卖着别的东西，虽然有些古怪，但这些东西跟商店的主营商品会很搭。</span></p></li><li><p><span>升级推销，额外推销与替代付款方式无处不在。</span></p></li></ul><h3 id='商业机会-enterprise-opportunities'><span>商业机会 Enterprise Opportunities</span></h3><ul><li><p><span>如果一切顺利，你的投资每个月都会增长 10％。</span></p></li><li><p><span>你总是可以进行风险投资，如果能成功，你的资金会翻倍。</span></p></li><li><p><span>你的资产总会面临威胁，如果不加以处理，你的资金减半。</span></p></li></ul><h2 id='引导堡垒-conducting-bastion'><span>引导堡垒 Conducting Bastion</span></h2><h3 id='当玩家想要'><span>当玩家想要…</span></h3><h3 id='找一个地方-find-a-place'><span>找一个地方 Find a Place</span></h3><ul><li><p><span>描述两个选项。</span></p></li><li><p><span>将它们放在相反的方向上。</span></p></li><li><p><span>让它们都有自己的复杂之处。</span></p></li></ul><h3 id='寻找专家-find-a-specialist'><span>寻找专家 Find a Specialist</span></h3><ul><li><p><span>给他们另一个不相关的专长。</span></p></li><li><p><span>给他们一个与本职专长截然相反的特征。</span></p></li><li><p><span>让他们卷入跟另一个角色有关的复杂情况之中。</span></p></li></ul><h3 id='社交-go-socialising'><span>社交 Go Socialising</span></h3><ul><li><p><span>询问他们想要从中获得什么，给他们不同的选项来达成目的。</span></p></li><li><p><span>让其中一个听起来不错，但十分昂贵。</span></p></li><li><p><span>让另一个听起来令人兴奋，但十分危险。</span></p></li></ul><h3 id='前往地底-get-to-the-underground'><span>前往地底 Get to the Underground</span></h3><ul><li><p><span>入口总是看起来很正常。</span></p></li><li><p><span>走得越深，事物就会变得越古怪。</span></p></li><li><p><span>总有人在监视其入口。</span></p></li></ul><h3 id='前往深野-get-to-deep-country'><span>前往深野 Get to Deep Country</span></h3><ul><li><p><span>地底的交通快速但危险。</span></p></li><li><p><span>火车和船上人满为患。</span></p></li><li><p><span>走路的话能得走到猴年马月。</span></p></li></ul><h3 id='前往活体群星-get-to-living-stars'><span>前往活体群星 Get to Living Stars</span></h3><ul><li><p><span>不论你愿意与否，你得去往更深的地底。</span></p></li><li><p><span>船只必须穿过让现实破碎的迷雾。</span></p></li><li><p><span>总有人在想新法子去到那里。</span></p></li></ul><figure class='table-figure'><table><thead><tr><th><span>D6</span></th><th><span>低地城区遭遇</span></th></tr></thead><tbody><tr><td><span>1</span></td><td><span>拟獾（4HP，力量 14）：提供自由的街头演讲，从一群狗中逃脱。</span></td></tr><tr><td><span>2</span></td><td><span>巨型袋人（3HP，力量 17）：提着行李在唱着悲伤的歌曲。</span></td></tr><tr><td><span>3</span></td><td><span>10 个大胃族朝地下行进，寻找暴食机械。</span></td></tr><tr><td><span>4</span></td><td><span>鬣狗群（5HP，魅力 5）：啃食腐肉，追逐街头的乞丐。</span></td></tr><tr><td><span>5</span></td><td><span>2 个外星捕鲸者（5HP，敏捷 14，金属盒头）：寻找运河鲸鱼，试图购买狩猎装备，但无法说话。</span></td></tr><tr><td><span>6</span></td><td><span>失落的孩子（2HP，力量 8）：厌恶地四处张望，为回家的方向提供了太多的钱。</span></td></tr></tbody></table></figure><figure class='table-figure'><table><thead><tr><th><span>D6</span></th><th><span>电气恐怖</span></th></tr></thead><tbody><tr><td><span>1</span></td><td><span>磁性步枪 - 笨重，d8，+d10 用于具有金属盔甲或金属身体的目标。子弹被超级磁化，意味着金属丰富的环境中的任何攻击都会受到损害，因为它们会偏离轨道。</span></td></tr><tr><td><span>2</span></td><td><span>钳子斧 - d6。如果这导致伤疤或力量伤害，你总可以选择接受一条肢体。</span></td></tr><tr><td><span>3</span></td><td><span>真空炮 - 笨重，d8 射击或吸入，将未能通过力量 SAVE 的任何目标拉向你。无论使用哪种设置，都极其响亮。</span></td></tr><tr><td><span>4</span></td><td><span>睡眠盒 - 任何被封闭在这个类似棺材的盒子中的人都会受到轻微的电击轰炸，直到他们昏迷。他们只能通过打开盒子来醒来，使用者报告睡眠非常充足。</span></td></tr><tr><td><span>5</span></td><td><span>膨胀套装 - 穿着者可以随时触发膨胀机制。他们无法移动，但获得护甲 2，并且当前从事近战的任何人都会受到 d6 伤害的电击，无视护甲。缩放充气机构需要 5 分钟，并且需要助手。</span></td></tr><tr><td><span>6</span></td><td><span>Altobrella - 厚重的雨伞像直升机的叶片一样展开。非常有限的机动性，只能让你向上或控制下降。</span></td></tr></tbody></table></figure><figure class='table-figure'><table><thead><tr><th><span>D6</span></th><th><span>高城区遭遇</span></th></tr></thead><tbody><tr><td><span>1</span></td><td><span>5 个被锁链绑住的年轻人 (4HP, 魅力 5):清洁排水沟，受人群辱骂。</span></td></tr><tr><td><span>2</span></td><td><span>3 个蠕虫女孩 (2HP, 力量 4): 寻找新的尸体时尚服装，嘲笑普通人。</span></td></tr><tr><td><span>3</span></td><td><span>5 只火花猫 (6HP, 敏捷 16): 在建筑物外部进行杂技表演，请求捐款。</span></td></tr><tr><td><span>4</span></td><td><span>调查老妇人 (1HP, 魅力 15)：调查一起小罪行，提供甜点。</span></td></tr><tr><td><span>5</span></td><td><span>乡村狗贼 (3HP, 敏捷 6): 吹嘘他最近的盗窃，注视着财产。</span></td></tr><tr><td><span>6</span></td><td><span>8 个锡兵 (5HP, 敏捷 6): 擦拭他们的盔甲和步枪，以一定的费用提供保护。</span></td></tr></tbody></table></figure><figure class='table-figure'><table><thead><tr><th><span>D6</span></th><th><span>残破的城区</span></th></tr></thead><tbody><tr><td><span>1</span></td><td><span>老鼠和钥匙的高城区 (High Borough of Mouse-and-Key) - 被废弃的工程原型测试贫民窟。</span></td></tr><tr><td><span>2</span></td><td><span>Veztm 神庙区 - 现在完全由游客居住，当地居民早已搬离。</span></td></tr><tr><td><span>3</span></td><td><span>Luon 的死亡区 - 以前是豪华宫殿区，现在到处是蜥蜴。</span></td></tr><tr><td><span>4</span></td><td><span>牢笼镣铐 - 曾经文明的地方，现在只是暴力狂徒的家园，寻找更糟糕的打斗方式。</span></td></tr><tr><td><span>5</span></td><td><span>Ecky Burgh - 原始绿色烟雾的家园。曾被认为有益健康，结果导致腐败行为。</span></td></tr><tr><td><span>6</span></td><td><span>Piling District - 东西到这里就会被弄坏。如果你没有携带废品，当地人会拿走你所有的东西。</span></td></tr></tbody></table></figure><h2 id='引导堡垒续-conducting-bastion-cont'><span>引导堡垒，续 Conducting Bastion Cont.</span></h2><h3 id='基石-touchstones'><span>基石 Touchstones</span></h3><p><span>这些是影响人们生活的常见事物，也是经常谈论的话题。</span>
+<span>随机启发，掷一颗 d8 和 d4 。</span></p><h4 id='1---工业-industry'><span>1 - 工业 Industry</span></h4><ol start='' ><li><p><span>大规模生产</span></p></li><li><p><span>工厂污秽</span></p></li><li><p><span>无情的效率</span></p></li><li><p><span>工业破坏</span></p></li></ol><h4 id='2---观星-stargazing'><span>2 - 观星 Stargazing</span></h4><ol start='' ><li><p><span>通往天堂的路</span></p></li><li><p><span>活星中的讯息</span></p></li><li><p><span>外星偶像崇拜</span></p></li><li><p><span>星际殖民地</span></p></li></ol><h4 id='3---官僚主义-bureaucracy'><span>3 - 官僚主义 Bureaucracy</span></h4><ol start='' ><li><p><span>官僚强制执行者</span></p></li><li><p><span>理事会的控制崩溃</span></p></li><li><p><span>文件中的秘密</span></p></li><li><p><span>重新发现的条例</span></p></li></ol><h4 id='4---工会化-unionisation'><span>4 - 工会化 Unionisation</span></h4><ol start='' ><li><p><span>工人起义</span></p></li><li><p><span>同志之间的秘密</span></p></li><li><p><span>权力斗争</span></p></li><li><p><span>攻击替罪羊</span></p></li></ol><h4 id='5---学术界-academia'><span>5 - 学术界 Academia</span></h4><ol start='' ><li><p><span>奇怪的研究</span></p></li><li><p><span>文物宝库</span></p></li><li><p><span>现实转移发现</span></p></li><li><p><span>个人敌对关系</span></p></li></ol><h4 id='6---活生生的城市-the-living-city'><span>6 - 活生生的城市 The Living City</span></h4><ol start='' ><li><p><span>野生城区</span></p></li><li><p><span>无控制的人口</span></p></li><li><p><span>城市过度生长</span></p></li><li><p><span>适应性生物</span></p></li></ol><h4 id='7---革命-revolution'><span>7 - 革命 Revolution</span></h4><ol start='' ><li><p><span>阶级清洗</span></p></li><li><p><span>经过批准的骚乱</span></p></li><li><p><span>活动家广播</span></p></li><li><p><span>反反革命</span></p></li></ol><h4 id='8---现代化-modernity'><span>8 - 现代化 Modernity</span></h4><ol start='' ><li><p><span>年轻时尚与俚语</span></p></li><li><p><span>狂野音乐</span></p></li><li><p><span>颠覆性艺术</span></p></li><li><p><span>被动攻击</span></p></li></ol><figure class='table-figure'><table><thead><tr><th>&nbsp;</th><th style='text-align:center;' ><span>鸡尾酒 Cocktails</span><br><span>投 2d20 然后合并结果</span></th><th>&nbsp;</th></tr></thead><tbody><tr><td>&nbsp;</td><td style='text-align:center;' ><strong><span>烈酒</span></strong></td><td><strong><span>调制剂</span></strong></td></tr><tr><td><span>1</span></td><td style='text-align:center;' ><span>杜松子酒</span></td><td><span>草本葡萄酒</span></td></tr><tr><td><span>2</span></td><td style='text-align:center;' ><span>烟熏威士忌</span></td><td><span>糖蜜</span></td></tr><tr><td><span>3</span></td><td style='text-align:center;' ><span>黑朗姆</span></td><td><span>苦艾酒</span></td></tr><tr><td><span>4</span></td><td style='text-align:center;' ><span>甘蔗朗姆酒</span></td><td><span>樱桃葡萄酒</span></td></tr><tr><td><span>5</span></td><td style='text-align:center;' ><span>玉米威士忌</span></td><td><span>苦艾酒</span></td></tr><tr><td><span>6</span></td><td style='text-align:center;' ><span>月光酒</span></td><td><span>香料糖浆</span></td></tr><tr><td><span>7</span></td><td style='text-align:center;' ><span>土豆伏特加</span></td><td><span>柠檬</span></td></tr><tr><td><span>8</span></td><td style='text-align:center;' ><span>苹果白兰地</span></td><td><span>茴香酒</span></td></tr><tr><td><span>9</span></td><td style='text-align:center;' ><span>梨白兰地</span></td><td><span>薄荷油</span></td></tr><tr><td><span>10</span></td><td style='text-align:center;' ><span>葡萄白兰地</span></td><td><span>树皮提取物</span></td></tr><tr><td><span>11</span></td><td style='text-align:center;' ><span>龙舌兰酒</span></td><td><span>橙利口酒</span></td></tr><tr><td><span>12</span></td><td style='text-align:center;' ><span>樱桃烈酒</span></td><td><span>银鱼酱汁</span></td></tr><tr><td><span>13</span></td><td style='text-align:center;' ><span>蜂蜜烈酒</span></td><td><span>冷咖啡</span></td></tr><tr><td><span>14</span></td><td style='text-align:center;' ><span>工业朗姆酒</span></td><td><span>波特酒</span></td></tr><tr><td><span>15</span></td><td style='text-align:center;' ><span>透明烈酒</span></td><td><span>可可豆</span></td></tr><tr><td><span>16</span></td><td style='text-align:center;' ><span>草本烈酒</span></td><td><span>草莓果酱</span></td></tr><tr><td><span>17</span></td><td style='text-align:center;' ><span>浆果白兰地</span></td><td><span>牛肉汤</span></td></tr><tr><td><span>18</span></td><td style='text-align:center;' ><span>白麦芽酒</span></td><td><span>番茄汁</span></td></tr><tr><td><span>19</span></td><td style='text-align:center;' ><span>坚果烈酒</span></td><td><span>玫瑰水</span></td></tr><tr><td><span>20</span></td><td style='text-align:center;' ><span>椰子朗姆酒</span></td><td><span>黑啤酒</span></td></tr></tbody></table></figure><figure class='table-figure'><table><thead><tr><th>&nbsp;</th><th style='text-align:center;' ><span>客厅派对游戏 Parlour Games</span><br><span>投 2d20 然后合并结果</span></th><th style='text-align:center;' >&nbsp;</th></tr></thead><tbody><tr><td>&nbsp;</td><td style='text-align:center;' ><strong><span>前缀</span></strong></td><td style='text-align:center;' ><strong><span>后缀</span></strong></td></tr><tr><td><span>1</span></td><td style='text-align:center;' ><span>说谎者</span></td><td style='text-align:center;' ><span>碎片</span></td></tr><tr><td><span>2</span></td><td style='text-align:center;' ><span>羞赧</span></td><td style='text-align:center;' ><span>故事</span></td></tr><tr><td><span>3</span></td><td style='text-align:center;' ><span>速度</span></td><td style='text-align:center;' ><span>测验</span></td></tr><tr><td><span>4</span></td><td style='text-align:center;' ><span>情侣</span></td><td style='text-align:center;' ><span>扭打</span></td></tr><tr><td><span>5</span></td><td style='text-align:center;' ><span>盲目</span></td><td style='text-align:center;' ><span>技巧</span></td></tr><tr><td><span>6</span></td><td style='text-align:center;' ><span>沉默</span></td><td style='text-align:center;' ><span>愚弄</span></td></tr><tr><td><span>7</span></td><td style='text-align:center;' ><span>士兵</span></td><td style='text-align:center;' ><span>舞会</span></td></tr><tr><td><span>8</span></td><td style='text-align:center;' ><span>热情</span></td><td style='text-align:center;' ><span>谋杀</span></td></tr><tr><td><span>9</span></td><td style='text-align:center;' ><span>寒冷</span></td><td style='text-align:center;' ><span>抓取</span></td></tr><tr><td><span>10</span></td><td style='text-align:center;' ><span>滑溜</span></td><td style='text-align:center;' ><span>眨眼</span></td></tr><tr><td><span>11</span></td><td style='text-align:center;' ><span>泥泞</span></td><td style='text-align:center;' ><span>布丁</span></td></tr><tr><td><span>12</span></td><td style='text-align:center;' ><span>女王</span></td><td style='text-align:center;' ><span>子弹</span></td></tr><tr><td><span>13</span></td><td style='text-align:center;' ><span>发梢</span></td><td style='text-align:center;' ><span>龙</span></td></tr><tr><td><span>14</span></td><td style='text-align:center;' ><span>乡村</span></td><td style='text-align:center;' ><span>钟</span></td></tr><tr><td><span>15</span></td><td style='text-align:center;' ><span>冒烟</span></td><td style='text-align:center;' ><span>小猪</span></td></tr><tr><td><span>16</span></td><td style='text-align:center;' ><span>傀儡</span></td><td style='text-align:center;' ><span>策略</span></td></tr><tr><td><span>17</span></td><td style='text-align:center;' ><span>胡萝卜</span></td><td style='text-align:center;' ><span>战争</span></td></tr><tr><td><span>18</span></td><td style='text-align:center;' ><span>粘糊</span></td><td style='text-align:center;' ><span>看看</span></td></tr><tr><td><span>19</span></td><td style='text-align:center;' ><span>婴儿</span></td><td style='text-align:center;' ><span>拖鞋</span></td></tr><tr><td><span>20</span></td><td style='text-align:center;' ><span>幸运</span></td><td style='text-align:center;' ><span>微笑</span></td></tr></tbody></table></figure><h1 id='深野-deep-country'><span>深野 Deep Country</span></h1><h2 id='了解深野-understanding-deep-country'><span>了解深野 Understanding Deep Country</span></h2><h3 id='原则-the-principles'><span>原则 The Principles</span></h3><ul><li><p><span>以前的一切都更好。</span></p></li><li><p><span>一切都很简单。</span></p></li><li><p><span>什么事情都不方便。</span></p></li></ul><h3 id='被遗忘之地-the-forgotten'><span>被遗忘之地 The Forgotten</span></h3><ul><li><p><span>堡垒不在乎这里发生了什么。</span></p></li><li><p><span>没人在乎几个镇子之外的事情。</span></p></li><li><p><span>每处都有历史，但没人在意未来。</span></p></li></ul><h3 id='自然统治着-nature-rule'><span>自然统治着 Nature Rule</span></h3><ul><li><p><span>每种野物都在那里。</span></p></li><li><p><span>每个地方都被人类接触过，但大多已经被抛在脑后。</span></p></li><li><p><span>人们了解自己的土地，但对其他地方一窍不通。</span></p></li></ul><figure class='table-figure'><table><thead><tr><th>&nbsp;</th><th style='text-align:center;' ><span>灵感 Spark Table</span><br/><span>投 2d20 然后合并结果</span></th><th>&nbsp;</th></tr></thead><tbody><tr><td>&nbsp;</td><td style='text-align:center;' ><span>灵感 1</span></td><td><span>灵感 2</span></td></tr><tr><td><span>1</span></td><td style='text-align:center;' ><span>土地</span></td><td><span>收获</span></td></tr><tr><td><span>2</span></td><td style='text-align:center;' ><span>雨</span></td><td><span>狩猎</span></td></tr><tr><td><span>3</span></td><td style='text-align:center;' ><span>缓慢</span></td><td><span>发酵</span></td></tr><tr><td><span>4</span></td><td style='text-align:center;' ><span>失败</span></td><td><span>睡眠</span></td></tr><tr><td><span>5</span></td><td style='text-align:center;' ><span>岩石</span></td><td><span>淘汰</span></td></tr><tr><td><span>6</span></td><td style='text-align:center;' ><span>迷失</span></td><td><span>旅者</span></td></tr><tr><td><span>7</span></td><td style='text-align:center;' ><span>鸟</span></td><td><span>劫掠</span></td></tr><tr><td><span>8</span></td><td style='text-align:center;' ><span>遗忘</span></td><td><span>魔鬼</span></td></tr><tr><td><span>9</span></td><td style='text-align:center;' ><span>血</span></td><td><span>燃烧</span></td></tr><tr><td><span>10</span></td><td style='text-align:center;' ><span>马</span></td><td><span>坑</span></td></tr><tr><td><span>11</span></td><td style='text-align:center;' ><span>古老</span></td><td><span>葬礼</span></td></tr><tr><td><span>12</span></td><td style='text-align:center;' ><span>盛宴</span></td><td><span>敌对</span></td></tr><tr><td><span>13</span></td><td style='text-align:center;' ><span>湿地</span></td><td><span>教堂</span></td></tr><tr><td><span>14</span></td><td style='text-align:center;' ><span>山</span></td><td><span>塔</span></td></tr><tr><td><span>15</span></td><td style='text-align:center;' ><span>野兽</span></td><td><span>祖先</span></td></tr><tr><td><span>16</span></td><td style='text-align:center;' ><span>河流</span></td><td><span>偶像</span></td></tr><tr><td><span>17</span></td><td style='text-align:center;' ><span>土豆</span></td><td><span>遗迹</span></td></tr><tr><td><span>18</span></td><td style='text-align:center;' ><span>树</span></td><td><span>保存</span></td></tr><tr><td><span>19</span></td><td style='text-align:center;' ><span>牛奶</span></td><td><span>怨恨</span></td></tr><tr><td><span>20</span></td><td style='text-align:center;' ><span>女儿</span></td><td><span>纪念</span></td></tr></tbody></table></figure><h3 id='历史的长影brhistorys-long-shadow'><span>历史的长影</span><br><span>History&#39;s Long Shadow</span></h3><ul><li><p><span>从堡垒而来，你在距离与时间上都逐渐深入。</span></p></li><li><p><span>相比好的回忆，那些最糟糕的记忆保存得更好。</span></p></li><li><p><span>改变会受到抵制。</span></p></li></ul><h3 id='村庄-villages'><span>村庄 Villages</span></h3><ul><li><p><span>每个村庄都建在什么东西周围，通常是桥、教堂、遗迹或土堆。</span></p></li><li><p><span>它们都自给自足。</span></p></li><li><p><span>相邻的村子几乎总是互相仇视。</span></p></li></ul><h3 id='失败的城市-failed-cities'><span>失败的城市 Failed Cities</span></h3><ul><li><p><span>堡垒之外还有别的城市，但没有哪一座能抵达现代。</span></p></li><li><p><span>它们都陷入衰落，只有堡垒欣欣向荣。</span></p></li><li><p><span>与堡垒的不同或其相反之处定义了这些城市。</span></p></li></ul><h3 id='乡下人-country-folk'><span>乡下人 Country Folk</span></h3><ul><li><p><span>他们是现代性之敌。</span></p></li><li><p><span>他们有着自己的关系，而且拒绝改变它们。</span></p></li><li><p><span>生活缓慢而安静。</span></p></li></ul><h3 id='荒野-wilderness'><span>荒野 Wilderness</span></h3><ul><li><p><span>只要找对方向，你能找到任何种类的环境。</span></p></li><li><p><span>人们去到了每一处，但都不会停留太久。</span></p></li><li><p><span>如果人们没理由去别的地方，他们就不会离开。</span></p></li></ul><h3 id='旅行-travel'><span>旅行 Travel</span></h3><ul><li><p><span>道路存在，但非常不便。</span></p></li><li><p><span>在破败的路两旁，总有别的东西会吸引你的注意。</span></p></li><li><p><span>偏离道路的旅行既不可靠，也很危险。</span></p></li></ul><h3 id='信仰与诸神-faith-and-gods'><span>信仰与诸神 Faith and Gods</span></h3><ul><li><p><span>来到这里的外星人与机械被视作神明或怪物的几率相同。</span></p></li><li><p><span>再平凡的东西也可能成为崇拜的对象。</span></p></li><li><p><span>每个地方通常只存在一种信仰。</span></p></li></ul><h2 id='绘制深野-mapping-deep-country'><span>绘制深野 Mapping Deep Country</span></h2><p><span>在深野地区，最好沿着现有的道路旅行。因此，可以使用类似堡垒的那种路径映射方法来制作地图，需要注意以下特殊事项。</span></p><p><span>尽可能直接在地图上写下注释，只将额外的信息保留在单独的纸张上。</span></p><h3 id='路线-routes-2'><span>路线 Routes</span></h3><ul><li><p><span>用不同颜色画两条交叉的弯曲线。</span></p></li><li><p><span>每条路线至少有两个分支，如有需要，可以用不同颜色表示。</span></p></li><li><p><span>用不同颜色标记每条路线，如小路、铁路、河流或其他类型的路线。</span></p></li></ul><h3 id='地标和路径-landmarks-and-paths'><span>地标和路径 Landmarks and Paths</span></h3><ul><li><p><span>在路线的每个交叉点、分叉点、拐角处或终点处都放置一个点。</span></p></li><li><p><span>为每个点命名，用废墟、村庄或自然特征。注明直接特征，将隐藏的细节用括号括起来。</span></p></li><li><p><span>对于每段路径之间的部分，详细说明在通过时会遭遇的意外。</span></p></li></ul><h3 id='意外-complications-2'><span>意外 Complications</span></h3><ul><li><p><span>意外可以简单，如茂密的植被或坍塌的桥梁。</span></p></li><li><p><span>意外也可以复杂，如漫长的迂回路径或穿越山洞的迷宫。</span></p></li><li><p><span>它们应始终反映着深野地区的特点。</span></p></li></ul><h3 id='偏离路线-going-off-route'><span>偏离路线 Going Off-Route</span></h3><ul><li><p><span>连接几个不相关但相邻的地标，表明它们之间互相可以看见/听见，但没有现成的路线。</span></p></li><li><p><span>大致标记出路线之间空白区域的环境类型。</span></p></li><li><p><span>在每个偏离路线的区域添加危险，解释为什么没有道路。</span></p></li></ul><h3 id='导航-navigation-2'><span>导航 Navigation</span></h3><ul><li><p><span>某些地方可能有地图，但大多数人只是学会了观察四周。</span></p></li><li><p><span>一般来说，在地标间旅行需要四个小时。</span></p></li><li><p><span>在恶劣条件下（如极端天气）旅行的人，将陷入窘困，直到采取适当的应对措施为止。</span></p></li></ul><h2 id='绘制深水'><span>绘制深水</span></h2><p><span>在开放水域，洋流和风也会起到路线的作用。绘制道路时，注意以下事项。</span></p><p><span>尽可能直接在地图上写下注释，只将额外的信息保留在单独的纸张上。</span></p><h3 id='洋流-currents'><span>洋流 Currents</span></h3><ul><li><p><span>用不同颜色绘制三条相互交叉的环形路线。</span></p></li><li><p><span>将每一个不同的颜色标记为一条洋流，然后用生动的名称和视觉线索描述团队是如何顺它前进的。</span></p></li><li><p><span>用箭头表示每条洋流的方向。</span></p></li></ul><h3 id='特征-features'><span>特征 Features</span></h3><ul><li><p><span>在每片由洋流环绕的开放水域区域内放置一个岛屿或其他地标。</span></p></li><li><p><span>为每个岛屿起一个能唤起清晰视觉效果的名字。记录其显眼的特征，将隐藏的细节用括号括起来。</span></p></li><li><p><span>绘制一条双向航道，将每个岛屿与洋流网络连接起来，通常用虚线表示。</span></p></li></ul><h3 id='意外-complications-3'><span>意外 Complications</span></h3><ul><li><p><span>为每段洋流列出一个意外状况，通常是危险的遭遇或环境威胁。</span></p></li><li><p><span>如果遭遇检定投出了意外状况，就触发之。</span></p></li><li><p><span>如果队伍返回，复用之前的意外状况，但稍稍移动它们。</span></p></li></ul><h3 id='逆流而上-going-upstream'><span>逆流而上 Going Upstream</span></h3><ul><li><p><span>逆流而上是可能的，但需要花费两倍的时间，并始终会触发意外状况。</span></p></li><li><p><span>当地的旅行者可能知道隐藏的捷径。</span></p></li><li><p><span>海洋中总是有更多的地方可以探索。</span></p></li></ul><h3 id='导航-navigation-3'><span>导航 Navigation</span></h3><ul><li><p><span>当地的水手有地图和航海图，但不会免费提供信息。</span></p></li><li><p><span>一般来说，在每个分支点间旅行需要半天。</span></p></li><li><p><span>在恶劣条件下（如极端天气）旅行的人，将陷入窘困，直到采取适当的应对措施为止。</span></p></li></ul><h2 id='引导深野-conducting-deep-country'><span>引导深野 Conducting Deep Country</span></h2><h3 id='当玩家们想要'><span>当玩家们想要……</span></h3><h3 id='忍耐艰苦环境brendure-a-hostile-environment'><span>忍耐艰苦环境</span><br><span>Endure a Hostile Environment</span></h3><ul><li><p><span>提醒他们，在没有合适装备的情况下，他们将会陷入窘困。</span></p></li><li><p><span>告诉他们在哪里能购买合适的装备，以及这些装备的价格。</span></p></li><li><p><span>不要让他们感到安逸。</span></p></li></ul><h3 id='露营-camp-out'><span>露营 Camp Out</span></h3><ul><li><p><span>让他们做选择：扎营地点可以好找但是危险，或者难找到但是安全。</span></p></li><li><p><span>每休息四小时都需要进行一次遭遇检定。</span></p></li><li><p><span>任何休息不满四小时的人都会陷入窘困，直到他们休息够为止。</span></p></li></ul><h3 id='与当地人交往-mingle-with-the-locals'><span>与当地人交往 Mingle with the Locals</span></h3><ul><li><p><span>让来自同一地区的人感觉相近。</span></p></li><li><p><span>让来自不同地区的人感觉截然不同。</span></p></li><li><p><span>永远不要直接给出答案。</span></p></li></ul><h3 id='返回堡垒-return-to-bastion'><span>返回堡垒 Return to Bastion</span></h3><ul><li><p><span>让他们在漫长、昂贵或复杂的旅程中进行选择。</span></p></li><li><p><span>让他们逐步感受到现代文明的回归。</span></p></li><li><p><span>夸张地描述他们离开堡垒期间错过的事情。</span></p></li></ul><p><strong><span>D6 遭遇，在能看见堡垒烟雾的范围内</span></strong></p><ol start='' ><li><p><span>5 只</span><strong><span>虫烟吸食者</span></strong><span>（5HP，烟雾喷嘴）驱赶着咬人的昆虫。</span></p></li><li><p><strong><span>红河马</span></strong><span>（力量 18，10HP，护甲 2，d10 噬咬）持续发狂。</span></p></li><li><p><strong><span>萨姆韦尔·瓦西尔史密特，灰乡村骑士</span></strong><span>（魅力 4，8HP，d8 敲杆，桶盔）与不听话的狗争吵。</span></p></li><li><p><span>12 名</span><strong><span>残骸崇拜者</span></strong><span>（3HP，d6 锤子，精美石帽）惊叹于一堆车辆残骸。</span></p></li><li><p><span>2 名</span><strong><span>女执法员</span></strong><span>（力量 14，5HP，d8 砍刀，铅衣（护甲 1），背幡）会拦下并检查所有人，而这些人总是有罪的。</span></p></li><li><p><strong><span>爬行的星石</span></strong><span>（力量 16，12HP，护甲 3，d10 岩石手臂）将牛压成浆状。</span></p></li></ol><p><strong><span>D6 不可思议的马</span></strong></p><ol start='' ><li><p><strong><span>H 大师</span></strong><span> - 红色战马（8HP），强壮的前腿训练有素，能打出 d6 伤害。只回应请求而非命令，并坚持被称为“大师”。任何试图对它发号施令的人都会被暴踢一顿。</span></p></li><li><p><strong><span>翡翠之梦</span></strong><span> - 偏绿色的马（5HP），鬃毛编织得很精美。它是如此美丽，以至于其他马儿都讨厌它，甚至不愿合作。如果它们未能通过豁免，甚至可能变为敌对。</span></p></li><li><p><strong><span>比约尔斯</span></strong><span> - 一匹有着稀薄熊类血统的马（5HP）。能像熊一样与其他熊交谈，不吃点肉就会不开心。</span></p></li><li><p><strong><span>杰雷米斯·法尔廷·格拉茨亚斯</span></strong><span> - 一匹蓝灰色的赛马（4HP），只吃精致食物。会试图吃掉附近的任何宝石或硬币，但如果吃饱了，当天它的速度就是平时的两倍。</span></p></li><li><p><strong><span>极度优雅</span></strong><span> - 盗贼马（5HP），能够无声移动和攀爬砖墙。</span></p></li><li><p><strong><span>负重者</span></strong><span> - 畸形的马（5HP），设计用于承重。看起来像是把四匹马塞进了一个身体里，但几乎可以扛起任何东西，同时速度也不落下风。</span></p></li></ol><p><strong><span>D6 遭遇 深入过去</span></strong></p><ol start='' ><li><p><strong><span>2 只地狱深喉－萨扎龙</span></strong><span>（力量 17，15HP，护甲 1，d10 喙击，造成重伤时整个吞下目标）将活着的受害者吐给自己的幼崽。</span></p></li><li><p><strong><span>7 名朝圣图书馆员</span></strong><span>（力量 5，3HP，一堆圣物，裸露的头顶）用蜡涂抹圣木块，以此保存它。</span></p></li><li><p><strong><span>加根 - 山猿</span></strong><span>（力量 15，5HP，d6 猛击）试图复刻一个人类的家。脾气暴躁。</span></p></li><li><p><strong><span>假先知</span></strong><span>（力量 8，3HP，烧焦橡皮般的身体）试图与任何倾听者进行存在主义辩论。</span></p></li><li><p><strong><span>3 个德雷米废品商</span></strong><span>（敏捷 14，3HP，破烂衣物与 d6 只钩子）试图出售无用的废品。</span></p></li><li><p><strong><span>嘟囔仿树</span></strong><span>（10HP，护甲 3，4 枝摇摆 d8）高喊着忧郁的诗歌。</span></p></li></ol><p><strong><span>D6 糟糕的马</span></strong></p><ol start='' ><li><p><strong><span>甜珍珠三世</span></strong><span> - 被宠坏的小马（2HP）。害怕孤独，擅长让你感到内疚。</span></p></li><li><p><strong><span>大奥兹</span></strong><span> - 史上最蠢的马（4HP）。有一颗巨大的马头，一只眼睛失明，没有牙齿。气味很难闻。没有人会收这匹马的钱，他们会在你购买任何其他马匹时把它免费送给你。</span></p></li><li><p><strong><span>威拉夫</span></strong><span> - 一匹肌肉发达的棕色骏马（6HP），会主动挑衅面前更大的动物。讨厌他的兄弟阿瓦拉夫，每次相遇时都会争斗至流血。</span></p></li><li><p><strong><span>无马</span></strong><span> - 你付钱买马，但你没得到马（0HP）。马贩子会试图说服你这其中有着更深层次的含义，或者说你应该“寻找内心的马”</span>
+<span>这只是一个骗局。</span></p></li><li><p><strong><span>威奇沃尔特</span></strong><span> - 浅棕色马（4HP），被打上了正义印章，它曾是赏金猎人的马。如果主人在它面前撒谎，这匹马会大声嘶鸣。</span></p></li><li><p><strong><span>自由的鲁西·拉索</span></strong><span> - 一匹聋子棕马（2HP），戴着卡在头上的牛仔帽。</span></p></li></ol><h2 id='引导深野续-conducting-deep-country-cont'><span>引导深野，续 Conducting Deep Country Cont.</span></h2><h3 id='基石-touchstones-2'><span>基石 Touchstones</span></h3><p><span>这些是影响人们生活的常见之物，也是老生常谈的话题。</span></p><p><span>要获取随机灵感，掷一个 d8 和 d4。</span></p><h4 id='1---孤立-isolation'><span>1 - 孤立 Isolation</span></h4><ol start='' ><li><p><span>来自文明世界的逃犯</span></p></li><li><p><span>未受影响的原始人</span></p></li><li><p><span>近亲繁殖</span></p></li><li><p><span>漫长的旅途</span></p></li></ol><h4 id='2---传统-tradition'><span>2 - 传统 Tradition</span></h4><ol start='' ><li><p><span>季节性庆典</span></p></li><li><p><span>向活体群星献祭</span></p></li><li><p><span>夸张的家族特征</span></p></li><li><p><span>不实用的衣物和武器</span></p></li></ol><h4 id='3---历史-history'><span>3 - 历史 History</span></h4><ol start='' ><li><p><span>祖先崇拜</span></p></li><li><p><span>遗物神龛</span></p></li><li><p><span>保存起来的文化</span></p></li><li><p><span>讲故事</span></p></li></ol><h4 id='4---劣性-pettiness'><span>4 - 劣性 Pettiness</span></h4><ol start='' ><li><p><span>记下的恩怨</span></p></li><li><p><span>屠戮战帮</span></p></li><li><p><span>传承下来的仇恨</span></p></li><li><p><span>血缘的诅咒</span></p></li></ol><h4 id='5---无知-ignorance'><span>5 - 无知 Ignorance</span></h4><ol start='' ><li><p><span>对堡垒的不信任</span></p></li><li><p><span>抵制技术</span></p></li><li><p><span>糟糕的医药</span></p></li><li><p><span>迷信</span></p></li></ol><h4 id='6---蛮荒-wildness'><span>6 - 蛮荒 Wildness</span></h4><ol start='' ><li><p><span>动物袭击</span></p></li><li><p><span>人被当作动物</span></p></li><li><p><span>动物被当作人</span></p></li><li><p><span>四处肮脏</span></p></li></ol><h4 id='7---停滞-stagation'><span>7 - 停滞 Stagation</span></h4><ol start='' ><li><p><span>废墟建筑</span></p></li><li><p><span>长老统治</span></p></li><li><p><span>被压抑的年轻人</span></p></li><li><p><span>任由问题恶化</span></p></li></ol><h4 id='8---无法无天-lawlessness'><span>8 - 无法无天 Lawlessness</span></h4><ol start='' ><li><p><span>决斗</span></p></li><li><p><span>强者统治</span></p></li><li><p><span>劫掠队</span></p></li><li><p><span>抵制法律</span></p></li></ol><figure class='table-figure'><table><thead><tr><th>&nbsp;</th><th style='text-align:center;' ><span>地点</span><br><span>掷 2d20 并合并结果</span></th><th>&nbsp;</th></tr></thead><tbody><tr><td>&nbsp;</td><td style='text-align:center;' ><span>地标</span></td><td><span>周围环境</span></td></tr><tr><td><span>1</span></td><td style='text-align:center;' ><span>巨树</span></td><td><span>崩塌的悬崖</span></td></tr><tr><td><span>2</span></td><td style='text-align:center;' ><span>山</span></td><td><span>恶臭沼泽</span></td></tr><tr><td><span>3</span></td><td style='text-align:center;' ><span>动物雕像</span></td><td><span>死去的树林</span></td></tr><tr><td><span>4</span></td><td style='text-align:center;' ><span>桥</span></td><td><span>尘土飞扬的沙漠</span></td></tr><tr><td><span>5</span></td><td style='text-align:center;' ><span>钟楼</span></td><td><span>山坡上的农田</span></td></tr><tr><td><span>6</span></td><td style='text-align:center;' ><span>船只残骸</span></td><td><span>薄雾弥漫的荒原</span></td></tr><tr><td><span>7</span></td><td style='text-align:center;' ><span>喷泉</span></td><td><span>红色的旱地</span></td></tr><tr><td><span>8</span></td><td style='text-align:center;' ><span>城堡废墟</span></td><td><span>盐质峭壁</span></td></tr><tr><td><span>9</span></td><td style='text-align:center;' ><span>长城</span></td><td><span>茂密丛林</span></td></tr><tr><td><span>10</span></td><td style='text-align:center;' ><span>湖</span></td><td><span>无尽冻原</span></td></tr><tr><td><span>11</span></td><td style='text-align:center;' ><span>教堂</span></td><td><span>烤焦的热带草原</span></td></tr><tr><td><span>12</span></td><td style='text-align:center;' ><span>庙宇废墟</span></td><td><span>雪地森林</span></td></tr><tr><td><span>13</span></td><td style='text-align:center;' ><span>瞭望塔</span></td><td><span>裸露的岩石</span></td></tr><tr><td><span>14</span></td><td style='text-align:center;' ><span>丰碑</span></td><td><span>风吹草地</span></td></tr><tr><td><span>15</span></td><td style='text-align:center;' ><span>灯塔</span></td><td><span>枯死的灌木丛</span></td></tr><tr><td><span>16</span></td><td style='text-align:center;' ><span>巨石</span></td><td><span>陡峭的台地</span></td></tr><tr><td><span>17</span></td><td style='text-align:center;' ><span>修道院</span></td><td><span>树木繁茂的山脉</span></td></tr><tr><td><span>18</span></td><td style='text-align:center;' ><span>巨大神像</span></td><td><span>白色沙滩</span></td></tr><tr><td><span>19</span></td><td style='text-align:center;' ><span>金字塔</span></td><td><span>红树林沼泽</span></td></tr><tr><td><span>20</span></td><td style='text-align:center;' ><span>蒸汽孔</span></td><td><span>沙丘</span></td></tr></tbody></table></figure><figure class='table-figure'><table><thead><tr><th>&nbsp;</th><th style='text-align:center;' ><span>当地旗帜</span><br><span>掷 2d20 并合并结果</span></th><th>&nbsp;</th></tr></thead><tbody><tr><td>&nbsp;</td><td style='text-align:center;' ><span>颜色</span></td><td><span>细节</span></td></tr><tr><td><span>1</span></td><td style='text-align:center;' ><span>红/白</span></td><td><span>条纹</span></td></tr><tr><td><span>2</span></td><td style='text-align:center;' ><span>蓝/白</span></td><td><span>菱形</span></td></tr><tr><td><span>3</span></td><td style='text-align:center;' ><span>红/金</span></td><td><span>星星</span></td></tr><tr><td><span>4</span></td><td style='text-align:center;' ><span>蓝/金</span></td><td><span>环</span></td></tr><tr><td><span>5</span></td><td style='text-align:center;' ><span>黑/白</span></td><td><span>太阳</span></td></tr><tr><td><span>6</span></td><td style='text-align:center;' ><span>黑/金</span></td><td><span>鸟</span></td></tr><tr><td><span>7</span></td><td style='text-align:center;' ><span>绿/白</span></td><td><span>山</span></td></tr><tr><td><span>8</span></td><td style='text-align:center;' ><span>绿/金</span></td><td><span>月亮</span></td></tr><tr><td><span>9</span></td><td style='text-align:center;' ><span>白/黑</span></td><td><span>十字</span></td></tr><tr><td><span>10</span></td><td style='text-align:center;' ><span>白/红</span></td><td><span>眼睛</span></td></tr><tr><td><span>11</span></td><td style='text-align:center;' ><span>白/蓝</span></td><td><span>蜥蜴</span></td></tr><tr><td><span>12</span></td><td style='text-align:center;' ><span>白/绿</span></td><td><span>手</span></td></tr><tr><td><span>13</span></td><td style='text-align:center;' ><span>金/黑</span></td><td><span>公牛</span></td></tr><tr><td><span>14</span></td><td style='text-align:center;' ><span>金/绿</span></td><td><span>熊</span></td></tr><tr><td><span>15</span></td><td style='text-align:center;' ><span>金/红</span></td><td><span>蜗牛</span></td></tr><tr><td><span>16</span></td><td style='text-align:center;' ><span>金/蓝</span></td><td><span>鲸鱼</span></td></tr><tr><td><span>17</span></td><td style='text-align:center;' ><span>紫/金</span></td><td><span>树</span></td></tr><tr><td><span>18</span></td><td style='text-align:center;' ><span>蓝绿/白</span></td><td><span>头骨</span></td></tr><tr><td><span>19</span></td><td style='text-align:center;' ><span>粉红/黑</span></td><td><span>蘑菇</span></td></tr><tr><td><span>20</span></td><td style='text-align:center;' ><span>棕/白</span></td><td><span>蛇</span></td></tr></tbody></table></figure><h1 id='地底brthe-underground'><span>地底</span><br><span>The Underground</span></h1><h2 id='理解地底-understanding-the-underground'><span>理解地底 Understanding the Underground</span></h2><h3 id='定律-the-principles'><span>定律 The Principles</span></h3><ul><li><p><span>它连接了一切。</span></p></li><li><p><span>一切都是考验。</span></p></li><li><p><span>它位于现实之下。</span></p></li></ul><h3 id='无规则-the-un-rules'><span>无规则 The Un-Rules</span></h3><ul><li><p><span>距离与看起来的不同。</span></p></li><li><p><span>下面的时间和上面的并不一致。</span></p></li><li><p><span>这里的事物不必遵循其他现实法则。</span></p></li></ul><h3 id='连接法则-the-law-of-connections'><span>连接法则 The Law of Connections</span></h3><ul><li><p><span>通过地底可以抵达任何地方。</span></p></li><li><p><span>任何地方都会渗进地底之中。</span></p></li><li><p><span>连接点越是有用，就越是危险。</span></p></li></ul><figure class='table-figure'><table><thead><tr><th>&nbsp;</th><th style='text-align:center;' ><span>灵感 Spark Table</span><br><span>投 2d20 然后合并结果</span></th><th>&nbsp;</th></tr></thead><tbody><tr><td>&nbsp;</td><td style='text-align:center;' ><strong><span>灵感 1</span></strong></td><td><strong><span>灵感 2</span></strong></td></tr><tr><td><span>1</span></td><td style='text-align:center;' ><span>黑暗</span></td><td><span>骨骼</span></td></tr><tr><td><span>2</span></td><td style='text-align:center;' ><span>腐朽</span></td><td><span>眼睛</span></td></tr><tr><td><span>3</span></td><td style='text-align:center;' ><span>带鳞</span></td><td><span>蠕虫</span></td></tr><tr><td><span>4</span></td><td style='text-align:center;' ><span>封存</span></td><td><span>幽灵</span></td></tr><tr><td><span>5</span></td><td style='text-align:center;' ><span>石头</span></td><td><span>污渍</span></td></tr><tr><td><span>6</span></td><td style='text-align:center;' ><span>华丽</span></td><td><span>螺旋</span></td></tr><tr><td><span>7</span></td><td style='text-align:center;' ><span>苍白</span></td><td><span>尖刺</span></td></tr><tr><td><span>8</span></td><td style='text-align:center;' ><span>腐蚀</span></td><td><span>嘴巴</span></td></tr><tr><td><span>9</span></td><td style='text-align:center;' ><span>发光</span></td><td><span>部落</span></td></tr><tr><td><span>10</span></td><td style='text-align:center;' ><span>复制</span></td><td><span>镜子</span></td></tr><tr><td><span>11</span></td><td style='text-align:center;' ><span>扭曲</span></td><td><span>机器</span></td></tr><tr><td><span>12</span></td><td style='text-align:center;' ><span>虚妄</span></td><td><span>池子</span></td></tr><tr><td><span>13</span></td><td style='text-align:center;' ><span>微小</span></td><td><span>门扉</span></td></tr><tr><td><span>14</span></td><td style='text-align:center;' ><span>死亡</span></td><td><span>锁链</span></td></tr><tr><td><span>15</span></td><td style='text-align:center;' ><span>伪造</span></td><td><span>外壳</span></td></tr><tr><td><span>16</span></td><td style='text-align:center;' ><span>遥远</span></td><td><span>时钟</span></td></tr><tr><td><span>17</span></td><td style='text-align:center;' ><span>遗忘</span></td><td><span>鼹鼠</span></td></tr><tr><td><span>18</span></td><td style='text-align:center;' ><span>诡计</span></td><td><span>阴影</span></td></tr><tr><td><span>19</span></td><td style='text-align:center;' ><span>吸引</span></td><td><span>盒子</span></td></tr><tr><td><span>20</span></td><td style='text-align:center;' ><span>融合</span></td><td><span>滑道</span></td></tr></tbody></table></figure><h3 id='异常的人造物-man-made-but-warped'><span>异常的人造物 Man-made but warped</span></h3><ul><li><p><span>天然洞窟和非人造的走廊旁，存在着地铁和地窖。</span></p></li><li><p><span>即使在深处最怪异的地方，也能感受到和周边的联系，以及相关的美感。</span></p></li><li><p><span>为某个目的建造的地区，其功能往往会被颠倒或夸张化。</span></p></li></ul><h3 id='机器-machines'><span>机器 Machines</span></h3><ul><li><p><span>它们与地底是一体的。</span></p></li><li><p><span>它们引发变化并监控结果。</span></p></li><li><p><span>它们想给你一点教训。</span></p></li></ul><h3 id='造物-creations'><span>造物 Creations</span></h3><ul><li><p><span>当观察无法提供充足的结果时，机器会开始创造事物。</span></p></li><li><p><span>它们不受地表规则的限制。</span></p></li><li><p><span>它们不会控制造物，只会进行观察。</span></p></li></ul><h3 id='考验-tests'><span>考验 Tests</span></h3><ul><li><p><span>如果地底很舒适，那谁都能来这。</span></p></li><li><p><span>机器永远在盯着，希望看到你的挣扎。</span></p></li><li><p><span>善于观察的人总能找到信息，警告和指引有时很显眼。</span></p></li></ul><h3 id='异常现实-wraped-reality'><span>异常现实 Wraped Reality</span></h3><ul><li><p><span>事物往往会显得不真实。</span></p></li><li><p><span>很容易迷路。</span></p></li><li><p><span>在这里花上太多时间，你就会开始脱离现实。</span></p></li></ul><h2 id='绘制地底-mapping-the-underground'><span>绘制地底 Mapping the Underground</span></h2><p><span>地底的路线图系统和堡垒类似，但有以下这些特别之处。</span>
+<span>尽量把你的笔记直接写在地图上，实在写不下再写到其他纸上。</span></p><h3 id='路线-routes-3'><span>路线 Routes</span></h3><ul><li><p><span>用不同的颜色，画出多个彼此交叉线路。</span></p></li><li><p><span>如果你愿意，可以给每条分支用上不同的颜色。</span></p></li><li><p><span>用不同的颜色标记不同的主题，比如风暴下水道、绚丽礼堂、黄铜金库、维修通道。</span></p></li></ul><h3 id='房间和通道-rooms-and-passages'><span>房间和通道 Rooms and Passages</span></h3><ul><li><p><span>在路线交叉、分叉、拐弯、终结的地方画个点，表示房间。</span></p></li><li><p><span>给每个房间取个容易概念化的名字，比如机器神龛、巨大坟墓。列出它们最突出的内容，在括号中记下细节。</span></p></li><li><p><span>至于房间之间的通道，细写穿过它时要面对的难题。至少留下一条没有难题的通道，用螺旋标记它。</span></p></li></ul><h3 id='意外-complications-4'><span>意外 Complications</span></h3><ul><li><p><span>难题可以很简单，像是陡坡或者害虫仿偶。</span></p></li><li><p><span>难题可以很复杂，像是死亡陷阱或者时空裂隙。</span></p></li><li><p><span>难题永远会带来挑战。</span></p></li></ul><h3 id='延展-stretches'><span>延展 Stretches</span></h3><ul><li><p><span>带螺旋标志的通道即是延展，需要走很远才能通过。</span></p></li><li><p><span>哪怕是穿越同一条延展，过程也很少一样。列出穿过延展时的 6 条路线，每条都有其独特的遭遇。</span></p></li><li><p><span>当团队进入延展时，骰 d6。结果既是穿过它所需的时间，也代表了在其中触发的遭遇。</span></p></li></ul><h3 id='导航-navigation-4'><span>导航 Navigation</span></h3><ul><li><p><span>地底不遵循常规的时空规律。</span></p></li><li><p><span>任何向你提供指引的存在只会把你带到他们想让你去的地方。</span></p></li><li><p><span>只要你知道在哪能找到出口，就不会走太远以至于回不到地表。</span></p></li></ul><h2 id='填充地底-stocking-the-underground'><span>填充地底 Stocking the Underground</span></h2><h3 id='宝藏-treasure'><span>宝藏 Treasure</span></h3><ul><li><p><span>金库里保存着来自地表、需要被保护或保存的东西。</span></p></li><li><p><span>机器会创造价值不菲的事物，但并不在乎那些价值。</span></p></li><li><p><span>和其他地方一样，这里可能有外星人丢失的宝藏。</span></p></li></ul><h3 id='生物-beings'><span>生物 Beings</span></h3><ul><li><p><span>机器喜欢创造类似生命的东西。</span></p></li><li><p><span>外星人和深野生物会迷失在这里，并被这里改变。</span></p></li><li><p><span>它们通常没有敌意，但热衷于给你考验。</span></p></li></ul><h3 id='门扉-doors'><span>门扉 Doors</span></h3><ul><li><p><span>大多数通道都是开放的，所以门很可能不只是门。</span></p></li><li><p><span>它们既有用，又危险。</span></p></li><li><p><span>机器很喜欢通过锁门或开门让你的旅途变得更有趣。</span></p></li></ul><h3 id='陷阱-traps'><span>陷阱 Traps</span></h3><ul><li><p><span>陷阱至少是部分清晰可见的，通常是触发器或危险本身。</span></p></li><li><p><span>它们始终是可以交互的。</span></p></li><li><p><span>机器不喜欢随便安置陷阱。陷阱会被精心安排，让路过的人做出有趣的反应。</span></p></li></ul><h2 id='引导地底-conducting-the-underground'><span>引导地底 Conducting the Underground</span></h2><h3 id='当玩家想要-2'><span>当玩家想要……</span></h3><h4 id='找到另一条路线时-find-an-alternative-route'><span>找到另一条路线时 Find an Alternative Route</span></h4><ul><li><p><span>让地底提供新的选项，仿佛它知道你想要什么。</span></p></li><li><p><span>明确地表现出这条路线对于当下的不便之处。</span></p></li><li><p><span>无论是否通过考验，地底都会做出回应。</span></p></li></ul><h4 id='前往远处时-travel-to-distant-place'><span>前往远处时 Travel to Distant Place</span></h4><ul><li><p><span>提供一条有代价的通道。</span></p></li><li><p><span>展示出其他目的地。</span></p></li><li><p><span>让旅途改变他们。</span></p></li></ul><h4 id='通过挑战-traverse-a-challenge'><span>通过挑战 Traverse a Challenge</span></h4><ul><li><p><span>危险应当明显。</span></p></li><li><p><span>危险应当有效。</span></p></li><li><p><span>通过应有奖励。</span></p></li></ul><h4 id='前往更深处-go-deeper'><span>前往更深处 Go Deeper</span></h4><ul><li><p><span>越深越接近地底的边缘。</span></p></li><li><p><span>地底的边缘即是现实的边缘。</span></p></li><li><p><span>现实的边缘是雾气弥漫的海洋和咆哮，而你感觉自己正在经受它的冲刷。</span></p></li><li><p><span>边缘是寒冷的。</span></p></li><li><p><span>你是迷雾和边缘和寒冷正在对你开放。</span></p></li><li><p><span>边缘寒冷。</span></p></li><li><p><span>你是迷雾和边缘和寒冷和</span></p></li><li><p><span>迷雾是</span></p></li><li><p><span>有 3</span></p></li><li><p><span>3</span></p></li><li><p><span>所有你</span></p></li><li><p><span>你</span></p></li><li><p><span>迷雾现在</span></p></li><li><p><span>再</span>
+<span>-</span>
+<span>-</span>
+<span>-</span></p></li></ul><figure class='table-figure'><table><thead><tr><th><span>D6</span></th><th><span>浅层遭遇 Shallow Encounters</span></th></tr></thead><tbody><tr><td><span>1</span></td><td><strong><span>5 个初级工程师</span></strong><span>（3HP）正在寻找同事。</span></td></tr><tr><td><span>2</span></td><td><strong><span>惩戒之眼</span></strong><span>（6HP，d8 激光）飘浮而过，正在寻找该要毁灭的丑东西。</span></td></tr><tr><td><span>3</span></td><td><strong><span>2 个迷路的通勤乘客</span></strong><span>（2HP）正在争论办公室政治。</span></td></tr><tr><td><span>4</span></td><td><strong><span>巨口</span></strong><span>（被装在墙上）正在回答上一个问题。</span></td></tr><tr><td><span>5</span></td><td><strong><span>火花蟑螂集群</span></strong><span>（5HP）正在寻找能吃的电池。</span></td></tr><tr><td><span>6</span></td><td><strong><span>地狱列车</span></strong><span>（14HP，护甲 3）正在一边尖叫一边大笑地穿过走廊。</span></td></tr></tbody></table></figure><figure class='table-figure'><table><thead><tr><th><span>D6</span></th><th><span>深层遭遇 Deep Encounters</span></th></tr></thead><tbody><tr><td><span>1</span></td><td><strong><span>融合人</span></strong><span>（7HP）正在寻找能融合的生物。</span></td></tr><tr><td><span>2</span></td><td><strong><span>3 个外星人聆听者</span></strong><span>（4HP）听到了游戏之外的你们在桌上说的话，正在兜售秘密。</span></td></tr><tr><td><span>3</span></td><td><strong><span>时光蜗牛</span></strong><span>（1HP）正在吃苔藓，它们很乐意聊聊历史上的事。</span></td></tr><tr><td><span>4</span></td><td><strong><span>苦行朝圣者</span></strong><span>（6HP）正在寻找最危险、最痛苦的路向下。</span></td></tr><tr><td><span>5</span></td><td><strong><span>星辰水蛭</span></strong><span>（12HP，护甲 2）蜷曲着，奄奄一息。</span></td></tr><tr><td><span>6</span></td><td><strong><span>黑暗化身</span></strong><span>（无形）正想要散播谣言，引起妄想。</span></td></tr></tbody></table></figure><figure class='table-figure'><table><thead><tr><th><span>D6</span></th><th><span>隧道动力 Tunnel Locomotives</span></th></tr></thead><tbody><tr><td><span>1</span></td><td><strong><span>泵车</span></strong><span> - （4HP）比步行快上三倍。人力驱动。</span></td></tr><tr><td><span>2</span></td><td><strong><span>老旧汽船</span></strong><span> - （7HP，护甲 2）比步行快上四倍。又吵又脏。</span></td></tr><tr><td><span>3</span></td><td><strong><span>铁路货车</span></strong><span> - （6HP）比步行快上三倍。要用马来拉，不过马知道近路怎么走。</span></td></tr><tr><td><span>4</span></td><td><strong><span>斥力舱</span></strong><span> - （5HP，护甲 2）比步行快上八倍。旅行前需要用一个小时加热，乘坐起来非常舒服。</span></td></tr><tr><td><span>5</span></td><td><strong><span>隧道兽</span></strong><span> - （12HP，护甲 1）比步行快上三倍。需要许多食物，而且会产生许多废物。</span></td></tr><tr><td><span>6</span></td><td><strong><span>轨道船</span></strong><span> - （8HP，护甲 1）有隧道风时比步行快上 d6 倍。每小时的开始重掷一次。有些甲板包含自助餐、赌场、舞厅。</span></td></tr></tbody></table></figure><figure class='table-figure'><table><thead><tr><th><span>D6</span></th><th><span>被群星驱逐之物 Things Banished from the Star</span></th></tr></thead><tbody><tr><td><span>1</span></td><td><strong><span>白噪声</span></strong><span> - 发着嚎叫的白色闪光聚合物，痴迷于自身的纯净。害怕因接触低等生物而被污染。</span></td></tr><tr><td><span>2</span></td><td><strong><span>乌特沼泽</span></strong><span> - 有感情的沼泽，会送恶心的礼物给喂他的人。只会通过苔藓上的神秘符号索要报偿。做什么事都要花上很多时间。</span></td></tr><tr><td><span>3</span></td><td><strong><span>玻璃心</span></strong><span> - 会和进入它身体的人交谈。如果她认为你的请求是真诚的，就会与你做交易。</span></td></tr><tr><td><span>4</span></td><td><strong><span>阿克西格特</span></strong><span> - 蜷曲着的黄色鸟类，延展开来似乎能达到无限远。痴迷于惩罚那些破誓、说谎、虚情假意的人。</span></td></tr><tr><td><span>5</span></td><td><strong><span>费舍尔·赫勒</span></strong><span> - 由肿胀尸体组成的聚合物，连接着各种身体部位。除了言说者之外，所有部位都无法发声。言说者会献祭一部分连接的身体来换取恩赐。</span></td></tr><tr><td><span>6</span></td><td><strong><span>阿多</span></strong><span> - 一位黄金巨人，想要满足低等生物的需要，以此来为它过去的罪孽赎罪。给他某个东西作为回报即可，而他可能会把这个东西传给其他人。</span></td></tr></tbody></table></figure><h2 id='引导地底续-conducting-the-underground-cont'><span>引导地底续 Conducting the Underground Cont.</span></h2><h3 id='基石-touchstones-3'><span>基石 Touchstones</span></h3><p><span>这些是地底部分常见的主题，也是常有的研究题目。</span>
+<span>掷 d8 和 d4 来获得随机灵感。</span></p><h4 id='1---连接-connections'><span>1 - 连接 Connections</span></h4><ol start='' ><li><p><span>通向群星</span></p></li><li><p><span>走私通道</span></p></li><li><p><span>公共运输</span></p></li><li><p><span>前往过去</span></p></li></ol><h4 id='2---突变-mutation'><span>2 - 突变 Mutation</span></h4><ol start='' ><li><p><span>机器人类</span></p></li><li><p><span>崩溃旅人</span></p></li><li><p><span>变异野兽</span></p></li><li><p><span>异界生物</span></p></li></ol><h4 id='3---困难-difficulty'><span>3 - 困难 Difficulty</span></h4><ol start='' ><li><p><span>死亡陷阱</span></p></li><li><p><span>极端距离</span></p></li><li><p><span>无法导航</span></p></li><li><p><span>资源短缺</span></p></li></ol><h4 id='4---黑暗-darkness'><span>4 - 黑暗 Darkness</span></h4><ol start='' ><li><p><span>渗入的严寒</span></p></li><li><p><span>消散的光芒</span></p></li><li><p><span>黑暗中的事物</span></p></li><li><p><span>冬眠</span></p></li></ol><h4 id='5---幽闭-claustrophobia'><span>5 - 幽闭 Claustrophobia</span></h4><ol start='' ><li><p><span>收缩的空间</span></p></li><li><p><span>漫长的爬行</span></p></li><li><p><span>单行通道</span></p></li><li><p><span>空气短缺</span></p></li></ol><h4 id='6---残酷-cruelty'><span>6 - 残酷 Cruelty</span></h4><ol start='' ><li><p><span>观测的机器</span></p></li><li><p><span>有害的生物</span></p></li><li><p><span>地表的放逐者</span></p></li><li><p><span>实验主题</span></p></li></ol><h4 id='7---秘密-secrets'><span>7 - 秘密 Secrets</span></h4><ol start='' ><li><p><span>被遗忘的金库</span></p></li><li><p><span>严谨的档案</span></p></li><li><p><span>情报交易</span></p></li><li><p><span>黑社会犯罪</span></p></li></ol><h4 id='8---打破规则-rule-breaking'><span>8 - 打破规则 Rule-Breaking</span></h4><ol start='' ><li><p><span>异常的重力</span></p></li><li><p><span>不可能的造物</span></p></li><li><p><span>忽视生态学</span></p></li><li><p><span>信念化作现实</span></p></li></ol><figure class='table-figure'><table><thead><tr><th>&nbsp;</th><th style='text-align:center;' ><span>隧道风格 Tunnel Asethetic</span><br/><span>投 2d20 然后合并结果</span></th><th>&nbsp;</th></tr></thead><tbody><tr><td>&nbsp;</td><td style='text-align:center;' ><span>阻碍</span></td><td><span>外观</span></td></tr><tr><td><span>1</span></td><td style='text-align:center;' ><span>呼啸狂风</span></td><td><span>黑色瓷砖</span></td></tr><tr><td><span>2</span></td><td style='text-align:center;' ><span>恶心气味</span></td><td><span>木质镶板</span></td></tr><tr><td><span>3</span></td><td style='text-align:center;' ><span>金属害虫</span></td><td><span>红色大理石</span></td></tr><tr><td><span>4</span></td><td style='text-align:center;' ><span>径直坠落</span></td><td><span>昆虫巢穴</span></td></tr><tr><td><span>5</span></td><td style='text-align:center;' ><span>刺骨严寒</span></td><td><span>冷漠的纯白</span></td></tr><tr><td><span>6</span></td><td style='text-align:center;' ><span>时间膨胀</span></td><td><span>立石雕塑</span></td></tr><tr><td><span>7</span></td><td style='text-align:center;' ><span>绝对寂静</span></td><td><span>油腻的机器</span></td></tr><tr><td><span>8</span></td><td style='text-align:center;' ><span>禁光黑暗</span></td><td><span>奢华内饰</span></td></tr><tr><td><span>9</span></td><td style='text-align:center;' ><span>铡刀利刃</span></td><td><span>带衬垫的墙</span></td></tr><tr><td><span>10</span></td><td style='text-align:center;' ><span>好辩的门</span></td><td><span>白色瓷砖</span></td></tr><tr><td><span>11</span></td><td style='text-align:center;' ><span>完全淹没</span></td><td><span>镜子迷宫</span></td></tr><tr><td><span>12</span></td><td style='text-align:center;' ><span>震耳噪音</span></td><td><span>光滑黑曜石</span></td></tr><tr><td><span>13</span></td><td style='text-align:center;' ><span>神经毒气</span></td><td><span>钢铁珊瑚</span></td></tr><tr><td><span>14</span></td><td style='text-align:center;' ><span>难耐高温</span></td><td><span>铜与翡翠</span></td></tr><tr><td><span>15</span></td><td style='text-align:center;' ><span>空间循环</span></td><td><span>花岗岩和苔藓</span></td></tr><tr><td><span>16</span></td><td style='text-align:center;' ><span>酸液瀑布</span></td><td><span>裸露的砖墙</span></td></tr><tr><td><span>17</span></td><td style='text-align:center;' ><span>坚韧的网</span></td><td><span>染血的墙纸</span></td></tr><tr><td><span>18</span></td><td style='text-align:center;' ><span>腌制尸体</span></td><td><span>金属格栅</span></td></tr><tr><td><span>19</span></td><td style='text-align:center;' ><span>煤与烟雾</span></td><td><span>纠缠的管道</span></td></tr><tr><td><span>20</span></td><td style='text-align:center;' ><span>干燥空气</span></td><td><span>巨树根系</span></td></tr></tbody></table></figure><figure class='table-figure'><table><thead><tr><th>&nbsp;</th><th style='text-align:center;' ><span>暗中的威胁 Hazards in the Dark</span><br><span>投 2d20 然后合并结果</span></th><th style='text-align:left;' >&nbsp;</th></tr></thead><tbody><tr><td>&nbsp;</td><td style='text-align:center;' ><strong><span>警示</span></strong></td><td style='text-align:left;' ><strong><span>危险</span></strong></td></tr><tr><td><span>1</span></td><td style='text-align:center;' ><span>喃喃声</span></td><td style='text-align:left;' ><span>劫持</span></td></tr><tr><td><span>2</span></td><td style='text-align:center;' ><span>摩擦声</span></td><td style='text-align:left;' ><span>吞食</span></td></tr><tr><td><span>3</span></td><td style='text-align:center;' ><span>嘶嘶声</span></td><td style='text-align:left;' ><span>寄生</span></td></tr><tr><td><span>4</span></td><td style='text-align:center;' ><span>大笑声</span></td><td style='text-align:left;' ><span>悲痛</span></td></tr><tr><td><span>5</span></td><td style='text-align:center;' ><span>咬碎声</span></td><td style='text-align:left;' ><span>囚禁</span></td></tr><tr><td><span>6</span></td><td style='text-align:center;' ><span>尖叫声</span></td><td style='text-align:left;' ><span>压缩</span></td></tr><tr><td><span>7</span></td><td style='text-align:center;' ><span>咔哒声</span></td><td style='text-align:left;' ><span>奴役</span></td></tr><tr><td><span>8</span></td><td style='text-align:center;' ><span>振翼声</span></td><td style='text-align:left;' ><span>实验</span></td></tr><tr><td><span>9</span></td><td style='text-align:center;' ><span>咆哮声</span></td><td style='text-align:left;' ><span>污染</span></td></tr><tr><td><span>10</span></td><td style='text-align:center;' ><span>不谐哨声</span></td><td style='text-align:left;' ><span>恶心</span></td></tr><tr><td><span>11</span></td><td style='text-align:center;' ><span>微小的嗓音</span></td><td style='text-align:left;' ><span>沉醉</span></td></tr><tr><td><span>12</span></td><td style='text-align:center;' ><span>无数脚步声</span></td><td style='text-align:left;' ><span>责任</span></td></tr><tr><td><span>13</span></td><td style='text-align:center;' ><span>噼啪声</span></td><td style='text-align:left;' ><span>吸收</span></td></tr><tr><td><span>14</span></td><td style='text-align:center;' ><span>咿呀声</span></td><td style='text-align:left;' ><span>羞辱</span></td></tr><tr><td><span>15</span></td><td style='text-align:center;' ><span>深沉的歌声</span></td><td style='text-align:left;' ><span>承诺</span></td></tr><tr><td><span>16</span></td><td style='text-align:center;' ><span>哇哇声</span></td><td style='text-align:left;' ><span>同化</span></td></tr><tr><td><span>17</span></td><td style='text-align:center;' ><span>咀嚼声</span></td><td style='text-align:left;' ><span>羞愧</span></td></tr><tr><td><span>18</span></td><td style='text-align:center;' ><span>叫喊声</span></td><td style='text-align:left;' ><span>饥饿</span></td></tr><tr><td><span>19</span></td><td style='text-align:center;' ><span>啁啾声</span></td><td style='text-align:left;' ><span>储藏</span></td></tr><tr><td><span>20</span></td><td style='text-align:center;' ><span>磨刀声</span></td><td style='text-align:left;' ><span>转化</span></td></tr></tbody></table></figure></div></div>
+</body>
+</html>

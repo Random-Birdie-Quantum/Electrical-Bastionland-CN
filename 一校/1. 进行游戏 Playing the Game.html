@@ -1,0 +1,626 @@
+<!doctype html>
+<html>
+<head>
+<meta charset='UTF-8'><meta name='viewport' content='width=device-width initial-scale=1'>
+
+<link href='https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&display=swap' rel='stylesheet' type='text/css' /><link href='https://fonts.googleapis.com/css2?family=Alegreya:ital,wght@0,400;0,500;0,700;0,800;0,900;1,400;1,500;1,700;1,800;1,900&display=swap' rel='stylesheet' type='text/css' /><link href='https://fonts.googleapis.com/css2?family=Source+Code+Pro:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap' rel='stylesheet' type='text/css' /><style type='text/css'>html {overflow-x: initial !important;}:root { --bg-color:#ffffff; --text-color:#333333; --select-text-bg-color:#B5D6FC; --select-text-font-color:auto; --monospace:"Lucida Console",Consolas,"Courier",monospace; --title-bar-height:20px; }
+.mac-os-11 { --title-bar-height:28px; }
+html { font-size: 14px; background-color: var(--bg-color); color: var(--text-color); font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; -webkit-font-smoothing: antialiased; }
+h1, h2, h3, h4, h5 { white-space: pre-wrap; }
+body { margin: 0px; padding: 0px; height: auto; inset: 0px; font-size: 1rem; line-height: 1.42857; overflow-x: hidden; background: inherit; }
+iframe { margin: auto; }
+a.url { word-break: break-all; }
+a:active, a:hover { outline: 0px; }
+.in-text-selection, ::selection { text-shadow: none; background: var(--select-text-bg-color); color: var(--select-text-font-color); }
+#write { margin: 0px auto; height: auto; width: inherit; word-break: normal; overflow-wrap: break-word; position: relative; white-space: normal; overflow-x: visible; padding-top: 36px; }
+#write.first-line-indent p { text-indent: 2em; }
+#write.first-line-indent li p, #write.first-line-indent p * { text-indent: 0px; }
+#write.first-line-indent li { margin-left: 2em; }
+.for-image #write { padding-left: 8px; padding-right: 8px; }
+body.typora-export { padding-left: 30px; padding-right: 30px; }
+.typora-export .footnote-line, .typora-export li, .typora-export p { white-space: pre-wrap; }
+.typora-export .task-list-item input { pointer-events: none; }
+@media screen and (max-width: 500px) {
+  body.typora-export { padding-left: 0px; padding-right: 0px; }
+  #write { padding-left: 20px; padding-right: 20px; }
+}
+#write li > figure:last-child { margin-bottom: 0.5rem; }
+#write ol, #write ul { position: relative; }
+img { max-width: 100%; vertical-align: middle; image-orientation: from-image; }
+button, input, select, textarea { color: inherit; font: inherit; }
+input[type="checkbox"], input[type="radio"] { line-height: normal; padding: 0px; }
+*, ::after, ::before { box-sizing: border-box; }
+#write h1, #write h2, #write h3, #write h4, #write h5, #write h6, #write p, #write pre { width: inherit; }
+#write h1, #write h2, #write h3, #write h4, #write h5, #write h6, #write p { position: relative; }
+p { line-height: inherit; }
+h1, h2, h3, h4, h5, h6 { break-after: avoid-page; break-inside: avoid; orphans: 4; }
+p { orphans: 4; }
+h1 { font-size: 2rem; }
+h2 { font-size: 1.8rem; }
+h3 { font-size: 1.6rem; }
+h4 { font-size: 1.4rem; }
+h5 { font-size: 1.2rem; }
+h6 { font-size: 1rem; }
+.md-math-block, .md-rawblock, h1, h2, h3, h4, h5, h6, p { margin-top: 1rem; margin-bottom: 1rem; }
+.hidden { display: none; }
+.md-blockmeta { color: rgb(204, 204, 204); font-weight: 700; font-style: italic; }
+a { cursor: pointer; }
+sup.md-footnote { padding: 2px 4px; background-color: rgba(238, 238, 238, 0.7); color: rgb(85, 85, 85); border-radius: 4px; cursor: pointer; }
+sup.md-footnote a, sup.md-footnote a:hover { color: inherit; text-transform: inherit; text-decoration: inherit; }
+#write input[type="checkbox"] { cursor: pointer; width: inherit; height: inherit; }
+figure { overflow-x: auto; margin: 1.2em 0px; max-width: calc(100% + 16px); padding: 0px; }
+figure > table { margin: 0px; }
+thead, tr { break-inside: avoid; break-after: auto; }
+thead { display: table-header-group; }
+table { border-collapse: collapse; border-spacing: 0px; width: 100%; overflow: auto; break-inside: auto; text-align: left; }
+table.md-table td { min-width: 32px; }
+.CodeMirror-gutters { border-right: 0px; background-color: inherit; }
+.CodeMirror-linenumber { user-select: none; }
+.CodeMirror { text-align: left; }
+.CodeMirror-placeholder { opacity: 0.3; }
+.CodeMirror pre { padding: 0px 4px; }
+.CodeMirror-lines { padding: 0px; }
+div.hr:focus { cursor: none; }
+#write pre { white-space: pre-wrap; }
+#write.fences-no-line-wrapping pre { white-space: pre; }
+#write pre.ty-contain-cm { white-space: normal; }
+.CodeMirror-gutters { margin-right: 4px; }
+.md-fences { font-size: 0.9rem; display: block; break-inside: avoid; text-align: left; overflow: visible; white-space: pre; background: inherit; position: relative !important; }
+.md-fences-adv-panel { width: 100%; margin-top: 10px; text-align: center; padding-top: 0px; padding-bottom: 8px; overflow-x: auto; }
+#write .md-fences.mock-cm { white-space: pre-wrap; }
+.md-fences.md-fences-with-lineno { padding-left: 0px; }
+#write.fences-no-line-wrapping .md-fences.mock-cm { white-space: pre; overflow-x: auto; }
+.md-fences.mock-cm.md-fences-with-lineno { padding-left: 8px; }
+.CodeMirror-line, twitterwidget { break-inside: avoid; }
+svg { break-inside: avoid; }
+.footnotes { opacity: 0.8; font-size: 0.9rem; margin-top: 1em; margin-bottom: 1em; }
+.footnotes + .footnotes { margin-top: 0px; }
+.md-reset { margin: 0px; padding: 0px; border: 0px; outline: 0px; vertical-align: top; background: 0px 0px; text-decoration: none; text-shadow: none; float: none; position: static; width: auto; height: auto; white-space: nowrap; cursor: inherit; -webkit-tap-highlight-color: transparent; line-height: normal; font-weight: 400; text-align: left; box-sizing: content-box; direction: ltr; }
+li div { padding-top: 0px; }
+blockquote { margin: 1rem 0px; }
+li .mathjax-block, li p { margin: 0.5rem 0px; }
+li blockquote { margin: 1rem 0px; }
+li { margin: 0px; position: relative; }
+blockquote > :last-child { margin-bottom: 0px; }
+blockquote > :first-child, li > :first-child { margin-top: 0px; }
+.footnotes-area { color: rgb(136, 136, 136); margin-top: 0.714rem; padding-bottom: 0.143rem; white-space: normal; }
+#write .footnote-line { white-space: pre-wrap; }
+@media print {
+  body, html { border: 1px solid transparent; height: 99%; break-after: avoid; break-before: avoid; font-variant-ligatures: no-common-ligatures; }
+  #write { margin-top: 0px; border-color: transparent !important; padding-top: 0px !important; padding-bottom: 0px !important; }
+  .typora-export * { -webkit-print-color-adjust: exact; }
+  .typora-export #write { break-after: avoid; }
+  .typora-export #write::after { height: 0px; }
+  .is-mac table { break-inside: avoid; }
+  #write > p:nth-child(1) { margin-top: 0px; }
+  .typora-export-show-outline .typora-export-sidebar { display: none; }
+  figure { overflow-x: visible; }
+}
+.footnote-line { margin-top: 0.714em; font-size: 0.7em; }
+a img, img a { cursor: pointer; }
+pre.md-meta-block { font-size: 0.8rem; min-height: 0.8rem; white-space: pre-wrap; background: rgb(204, 204, 204); display: block; overflow-x: hidden; }
+p > .md-image:only-child:not(.md-img-error) img, p > img:only-child { display: block; margin: auto; }
+#write.first-line-indent p > .md-image:only-child:not(.md-img-error) img { left: -2em; position: relative; }
+p > .md-image:only-child { display: inline-block; width: 100%; }
+#write .MathJax_Display { margin: 0.8em 0px 0px; }
+.md-math-block { width: 100%; }
+.md-math-block:not(:empty)::after { display: none; }
+.MathJax_ref { fill: currentcolor; }
+[contenteditable="true"]:active, [contenteditable="true"]:focus, [contenteditable="false"]:active, [contenteditable="false"]:focus { outline: 0px; box-shadow: none; }
+.md-task-list-item { position: relative; list-style-type: none; }
+.task-list-item.md-task-list-item { padding-left: 0px; }
+.md-task-list-item > input { position: absolute; top: 0px; left: 0px; margin-left: -1.2em; margin-top: calc(1em - 10px); border: none; }
+.math { font-size: 1rem; }
+.md-toc { min-height: 3.58rem; position: relative; font-size: 0.9rem; border-radius: 10px; }
+.md-toc-content { position: relative; margin-left: 0px; }
+.md-toc-content::after, .md-toc::after { display: none; }
+.md-toc-item { display: block; color: rgb(65, 131, 196); }
+.md-toc-item a { text-decoration: none; }
+.md-toc-inner:hover { text-decoration: underline; }
+.md-toc-inner { display: inline-block; cursor: pointer; }
+.md-toc-h1 .md-toc-inner { margin-left: 0px; font-weight: 700; }
+.md-toc-h2 .md-toc-inner { margin-left: 2em; }
+.md-toc-h3 .md-toc-inner { margin-left: 4em; }
+.md-toc-h4 .md-toc-inner { margin-left: 6em; }
+.md-toc-h5 .md-toc-inner { margin-left: 8em; }
+.md-toc-h6 .md-toc-inner { margin-left: 10em; }
+@media screen and (max-width: 48em) {
+  .md-toc-h3 .md-toc-inner { margin-left: 3.5em; }
+  .md-toc-h4 .md-toc-inner { margin-left: 5em; }
+  .md-toc-h5 .md-toc-inner { margin-left: 6.5em; }
+  .md-toc-h6 .md-toc-inner { margin-left: 8em; }
+}
+a.md-toc-inner { font-size: inherit; font-style: inherit; font-weight: inherit; line-height: inherit; }
+.footnote-line a:not(.reversefootnote) { color: inherit; }
+.reversefootnote { font-family: ui-monospace, sans-serif; }
+.md-attr { display: none; }
+.md-fn-count::after { content: "."; }
+code, pre, samp, tt { font-family: var(--monospace); }
+kbd { margin: 0px 0.1em; padding: 0.1em 0.6em; font-size: 0.8em; color: rgb(36, 39, 41); background: rgb(255, 255, 255); border: 1px solid rgb(173, 179, 185); border-radius: 3px; box-shadow: rgba(12, 13, 14, 0.2) 0px 1px 0px, rgb(255, 255, 255) 0px 0px 0px 2px inset; white-space: nowrap; vertical-align: middle; }
+.md-comment { color: rgb(162, 127, 3); opacity: 0.6; font-family: var(--monospace); }
+code { text-align: left; vertical-align: initial; }
+a.md-print-anchor { white-space: pre !important; border-width: initial !important; border-style: none !important; border-color: initial !important; display: inline-block !important; position: absolute !important; width: 1px !important; right: 0px !important; outline: 0px !important; background: 0px 0px !important; text-decoration: initial !important; text-shadow: initial !important; }
+.os-windows.monocolor-emoji .md-emoji { font-family: "Segoe UI Symbol", sans-serif; }
+.md-diagram-panel > svg { max-width: 100%; }
+[lang="flow"] svg, [lang="mermaid"] svg { max-width: 100%; height: auto; }
+[lang="mermaid"] .node text { font-size: 1rem; }
+table tr th { border-bottom: 0px; }
+video { max-width: 100%; display: block; margin: 0px auto; }
+iframe { max-width: 100%; width: 100%; border: none; }
+.highlight td, .highlight tr { border: 0px; }
+mark { background: rgb(255, 255, 0); color: rgb(0, 0, 0); }
+.md-html-inline .md-plain, .md-html-inline strong, mark .md-inline-math, mark strong { color: inherit; }
+.md-expand mark .md-meta { opacity: 0.3 !important; }
+mark .md-meta { color: rgb(0, 0, 0); }
+@media print {
+  .typora-export h1, .typora-export h2, .typora-export h3, .typora-export h4, .typora-export h5, .typora-export h6 { break-inside: avoid; }
+}
+.md-diagram-panel .messageText { stroke: none !important; }
+.md-diagram-panel .start-state { fill: var(--node-fill); }
+.md-diagram-panel .edgeLabel rect { opacity: 1 !important; }
+.md-fences.md-fences-math { font-size: 1em; }
+.md-fences-advanced:not(.md-focus) { padding: 0px; white-space: nowrap; border: 0px; }
+.md-fences-advanced:not(.md-focus) { background: inherit; }
+.typora-export-show-outline .typora-export-content { max-width: 1440px; margin: auto; display: flex; flex-direction: row; }
+.typora-export-sidebar { width: 300px; font-size: 0.8rem; margin-top: 80px; margin-right: 18px; }
+.typora-export-show-outline #write { --webkit-flex:2; flex: 2 1 0%; }
+.typora-export-sidebar .outline-content { position: fixed; top: 0px; max-height: 100%; overflow: hidden auto; padding-bottom: 30px; padding-top: 60px; width: 300px; }
+@media screen and (max-width: 1024px) {
+  .typora-export-sidebar, .typora-export-sidebar .outline-content { width: 240px; }
+}
+@media screen and (max-width: 800px) {
+  .typora-export-sidebar { display: none; }
+}
+.outline-content li, .outline-content ul { margin-left: 0px; margin-right: 0px; padding-left: 0px; padding-right: 0px; list-style: none; overflow-wrap: anywhere; }
+.outline-content ul { margin-top: 0px; margin-bottom: 0px; }
+.outline-content strong { font-weight: 400; }
+.outline-expander { width: 1rem; height: 1.42857rem; position: relative; display: table-cell; vertical-align: middle; cursor: pointer; padding-left: 4px; }
+.outline-expander::before { content: ""; position: relative; font-family: Ionicons; display: inline-block; font-size: 8px; vertical-align: middle; }
+.outline-item { padding-top: 3px; padding-bottom: 3px; cursor: pointer; }
+.outline-expander:hover::before { content: ""; }
+.outline-h1 > .outline-item { padding-left: 0px; }
+.outline-h2 > .outline-item { padding-left: 1em; }
+.outline-h3 > .outline-item { padding-left: 2em; }
+.outline-h4 > .outline-item { padding-left: 3em; }
+.outline-h5 > .outline-item { padding-left: 4em; }
+.outline-h6 > .outline-item { padding-left: 5em; }
+.outline-label { cursor: pointer; display: table-cell; vertical-align: middle; text-decoration: none; color: inherit; }
+.outline-label:hover { text-decoration: underline; }
+.outline-item:hover { border-color: rgb(245, 245, 245); background-color: var(--item-hover-bg-color); }
+.outline-item:hover { margin-left: -28px; margin-right: -28px; border-left: 28px solid transparent; border-right: 28px solid transparent; }
+.outline-item-single .outline-expander::before, .outline-item-single .outline-expander:hover::before { display: none; }
+.outline-item-open > .outline-item > .outline-expander::before { content: ""; }
+.outline-children { display: none; }
+.info-panel-tab-wrapper { display: none; }
+.outline-item-open > .outline-children { display: block; }
+.typora-export .outline-item { padding-top: 1px; padding-bottom: 1px; }
+.typora-export .outline-item:hover { margin-right: -8px; border-right: 8px solid transparent; }
+.typora-export .outline-expander::before { content: "+"; font-family: inherit; top: -1px; }
+.typora-export .outline-expander:hover::before, .typora-export .outline-item-open > .outline-item > .outline-expander::before { content: "−"; }
+.typora-export-collapse-outline .outline-children { display: none; }
+.typora-export-collapse-outline .outline-item-open > .outline-children, .typora-export-no-collapse-outline .outline-children { display: block; }
+.typora-export-no-collapse-outline .outline-expander::before { content: "" !important; }
+.typora-export-show-outline .outline-item-active > .outline-item .outline-label { font-weight: 700; }
+.md-inline-math-container mjx-container { zoom: 0.95; }
+mjx-container { break-inside: avoid; }
+
+
+@import url('https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Alegreya:ital,wght@0,400;0,500;0,700;0,800;0,900;1,400;1,500;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+:root {
+  --head: 'Crimson Text';
+  --body: 'Alegreya', sans-serif;
+  --mono: 'Source Code Pro';
+  font-family: var(--body);
+  font-size: 10pt;
+
+  --white: rgb(251,251,251)
+  --offwhite: rgb(246, 246, 246);
+  --green: rgb(235, 236, 236);
+  --yellow: #c9ad6a;
+  --red: #822000;
+  --purple: #704cd9;
+}
+
+/** Background **/
+
+/* content, .typora-export-content {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  overflow-y: scroll;
+  background-size: cover;
+  background-position: center;
+}
+.typora-export-content {
+  top: 0;
+}
+content:after, .typora-export-content:after {
+  content: "Background: Dmitry Demidov via Pexels [#3843969]";
+  position: fixed;
+  bottom: 1cm;
+  left: 0;
+  width: 6.5cm;
+  background-color: rgba(0, 0, 0, 0);
+  color: white;
+  z-index: -1;
+  font-size: 8pt;
+  padding: 2mm 3mm;
+  border-radius: 0 2mm 2mm 0;
+} */
+
+
+/** Page **/
+#write, #typora-source {
+  position: relative;
+  margin: 4rem auto;
+  width: 21cm;
+  min-height: 80vh;
+  padding: 1cm;
+  overflow-y: hidden;
+  box-shadow:
+    inset 0cm -0cm 0.1cm 0.05cm rgba(0, 0, 0, 0.1),
+    1cm 1cm 1cm 1cm rgba(0, 0, 0, 0.5);
+  transform-style: preserve-3d;
+  background-color: var(--offwhite);
+  background-image: url("file:///C://Users//tyron//AppData//Roaming//Typora/themes/electric-bastionland-bg.png");
+  /* Add columns */
+  column-count: 2;
+  column-gap: 1cm;
+  column-width: 8cm;
+}
+#typora-source {
+  font-family: var(--mono) !important;
+  column-count: 1 !important;
+  column-width: auto !important;
+}
+#write p, #write h1, #write h2, #write h3, #write h4, #write h5, #write h6, #write div, #write pre {
+  width: auto;
+}
+#write > *:first-child {
+  margin-block-start: 0;
+}
+.ty-on-typewriter-mode #write {
+  column-count: 1;
+  padding-bottom: 50%;
+}
+
+/** Responsivity **/
+/* Compress for small windows */
+@media only screen and (max-width: 22cm) {
+  #write, #typora-source {
+    column-count: 1;
+    width: calc(100% - 2rem);
+    margin: 1rem;
+  }
+}
+/* Hide background credit if there's no width */
+@media only screen and (max-width: 37cm) {
+  content:after, .typora-export-content:after {
+    left: -6.1cm
+  }
+}
+
+/** Export **/
+@media print, (overflow-block: paged) or (overflow-block: optional-paged){
+  h1
+  {
+    page-break-before: right; /* CSS 2 */
+    break-before: recto;      /* CSS 3+, 
+      also works for languages written and paginated right-to-left */
+  }
+  /* Override the previous ruleset for the very first heading: */
+  h1:first-of-type,
+  section > h1:first-child
+  {
+    page-break-before: avoid; /* CSS 2 */
+    break-before: avoid;      /* CSS 3+ */
+  }
+  /* Force second-level headings to begin in a new column or
+     possiblyon a new page if it was in the last of multiple columns otherwise: */
+  h2
+  {
+    break-before: column;
+  }
+  /* Headings should not be the last paragraph on a page: */
+  h1, h2, h3, h4, h5, h6
+  {
+    page-break-after: avoid;
+  }
+  /* Consecutive headings with deepening level should not be split across pages: */
+  h1+h2, h2+h3, h3+h4, h4+h5, h5+h6
+  {
+    page-break-before: avoid;
+  }
+  
+  content, .typora-export-content {
+    position: relative;
+    background: none;
+    overflow-y: visible;
+  }
+  content:after, .typora-export-content:after {
+    display: none;
+  }
+  #write, #typora-source {
+      /* min-height: 0; */
+      /* padding: 0; */
+      overflow-y: visible;
+      box-shadow: none;
+      background: none;
+      height: 100%;
+  }
+
+  #write, #typora-source {
+      /* column-count: 2; */
+      width: 100%;
+      padding: 2.5cm 2cm;
+  }
+
+  body {
+      font-size: 12pt;
+      /* column-count: 2; */
+  }
+
+  /* Prevent breaks inside list elements */
+  ul, ol {
+    break-inside: avoid;
+  }
+  
+  /* Prevent breaks inside individual list items */
+  li {
+    page-break-inside: avoid; /* CSS 2 */
+    break-inside: avoid;      /* CSS 3+ */
+  }
+}
+
+
+/** Headings **/
+
+/* All headings */
+h1, h2, h3, h4, h5, h6 {
+  margin-block-end: 2pt;
+  margin-block-start: 1em;
+  line-height: 1em;
+  break-inside: avoid;
+  break-after: avoid;
+}
+
+/* Major headings */
+h1, h2, h3, h4 {
+  font-family: var(--head);
+  font-weight: 700;
+  font-variant: small-caps;
+}
+
+/* Individual headings */
+h1 {
+  font-size: 60pt;
+  column-span: all;
+  margin-bottom: 60px;
+}
+
+h2 {
+  font-size: 24pt;
+  column-span: all;
+  margin-bottom: 30px;
+  page-break-before: always;
+}
+
+h3 {
+  font-size: 16pt;
+  margin-bottom: 18px;
+  line-height: 1.8;
+}
+
+h4 {
+  font-size: 13pt;
+  margin-bottom: 18px;
+}
+
+h4 a {
+  text-decoration: none;
+}
+
+h5 {
+  font-size: 12pt;
+}
+
+h6 {
+  font-weight: 700;
+  font-size: 10pt;
+}
+
+h6 {
+  font-size: 8pt;
+  font-weight: 400;
+  text-decoration: underline;
+}
+
+hr {
+  /* Common to all hr's */
+  border-top: 2pt solid transparent;
+  border-bottom: 2pt solid transparent;
+  border-left-style: solid;
+
+  /* Top-level hr (aka page delineator) */
+  column-span: all;
+  border-left-width: 16cm;
+  margin-top: 18pt;
+  margin-bottom: 36pt;
+}
+
+/** Body **/
+p {
+  margin-block-start: 2pt;
+  break-inside: avoid;
+}
+
+/* strong {
+  color: var(--red);
+} */
+
+a {
+  color: var(--text-color);
+  text-decoration-color: var(--yellow);
+}
+a:visited {
+  text-decoration-color: var(--green);
+}
+a:hover {
+  color: var(--text-color);
+  text-decoration-color: var(--purple);
+}
+h1 a,
+h2 a,
+h3 a,
+h4 a
+/* strong a {
+  color: var(--red);
+} */
+
+/* del {
+  text-decoration-color: var(--red);
+} */
+
+mark {
+  background-color: var(--green);
+}
+
+code, pre {
+  background: auto;
+  font-family: var(--mono);
+}
+
+ol, ul {
+  padding-left: 1rem;
+}
+
+li::marker {
+  font-weight: 700;
+  /* color: var(--red); */
+}
+
+ul {
+  list-style-type: none;
+}
+
+ul li {
+  position: relative;
+  padding-left: 1.5em;
+}
+
+ul li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0.5em;
+  width: 0.5em;
+  height: 0.5em;
+  border: 1px solid black;
+  border-radius: 50%;
+}
+
+
+/** Tables **/
+table {
+  break-inside: avoid;
+}
+
+table tr:first-child {
+  background-color: black;
+}
+
+table tr:first-child th{
+  color: white;
+  text-align: center;
+  font-size: 1.2em;
+}
+
+table th:first-child,
+table td:first-child {
+  font-weight: bold;
+}
+
+table th:not(:nth-child(1))::before,
+table td:not(:nth-child(1))::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  /* border-left: 1px solid #ccc; */
+}
+
+table th:nth-child(1),
+table td:nth-child(1) {
+  position: relative;
+}
+
+thead, th {
+  font-weight: 700;
+}
+
+tbody tr:nth-child(odd) {
+  background-color: var(--green);
+}
+
+td, th {
+  padding: 3pt 6pt;
+}
+
+/** Blocks **/
+pre, pre.md-meta-block {
+  background-color: var(--green);
+  padding: 6pt;
+}
+
+blockquote {
+  position: relative;
+  background-color: var(--white);
+  padding: 12pt;
+  border: 1px solid black;
+  border-radius: 15px;
+  break-inside: avoid;
+}
+
+blockquote > *:first-child::first-line {
+  font-weight: bold;
+  font-size: 1.0em;
+  text-align: center;
+  display: inline-block;
+  width: 100%;
+}
+
+/** Images **/
+
+.md-image {
+  z-index: 0;
+}
+
+.md-image:before {
+  position: absolute;
+  top: -1.5cm;
+  left: -1.5cm;
+  right: -1.5cm;
+  bottom: -0.5cm;
+  // background-image: url("file:///C://Users//tyron//AppData//Roaming//Typora/themes/torillic/splash.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center top;
+  content: " ";
+  z-index: -1;
+}
+.on-focus-mode .md-image:before {
+  opacity: 0.2;
+}
+
+
+</style><title>1. 进行游戏 Playing the Game</title>
+</head>
+<body class='typora-export os-windows'><div class='typora-export-content'>
+<div id='write'  class=''><p><strong><span>堡垒</span></strong></p><p><strong><span>人类的电气之都</span></strong></p><p><strong><span>世间唯一重要的城市</span></strong></p><p><strong><span>深野</span></strong></p><p><strong><span>它的边界无限</span></strong></p><p><strong><span>是我们那狭长的往日之影</span></strong></p><p><strong><span>地底</span></strong></p><p><strong><span>机械削弱着现实</span></strong></p><p><strong><span>外星人也在这里</span></strong></p><p><strong><span>它们来自活体群星之间</span></strong></p><p><strong><span>你有一项失败的事业</span></strong></p><p><strong><span>你有一笔巨大的债务</span></strong></p><p><strong><span>宝藏是你唯一的出路</span></strong></p><h1 id='进行游戏brplaying-the-game'><span>进行游戏</span><br><span>Playing the Game</span></h1><p><span>这一章会说明如何创建角色并进行游戏。</span></p><p><span>如果玩家们不想阅读规则，那么就不需要读。游戏的规则非常简单，可以边玩边学。</span></p><p><span>一个玩家将成为引导者[Conductor]，在游戏中引导其他玩家。引导者应该对规则足够自信，这样才能把规则教授给新玩家们。其他游戏会用主持人、裁判或 MC 之类的词。但这里是堡垒，我们特立独行。</span></p><p><span>电气堡垒之地的规则被写得尽量简单迅捷。游戏的真正乐趣通常存在于规则之外的地方。</span></p><p><span>装备那一节会列出那些东西，好让你知道如何花掉那刀头舔血赚来的钱。</span></p><p><span>但列表里的东西并不完全，引导者应该将这些物品当作指南，以此创造（并为之定价）那些在游戏叙事中浮现的各类物品。</span></p><h2 id='角色-characters'><span>角色 Characters</span></h2><p><span>不管曾经是谁，你都因债务沦为了宝藏猎人。</span></p><p><span>而探险即将改变你。</span></p><p><span>为每个</span><strong><span>属性值</span></strong><span>掷 3d6</span></p><ul><li><p><strong><span>力量(STR)</span></strong><span> - 力气与耐力</span></p></li><li><p><strong><span>敏捷(DEX)</span></strong><span> - 速度与灵巧</span></p></li><li><p><strong><span>魅力(CHA)</span></strong><span> - 吸引力与自信</span></p></li></ul><p><span>角色开始时拥有 d6 防护值（HP），代表他们避免攻击的能力。</span></p><p><span>当角色变得更加老练时，会获得更多 HP。</span></p><p><span>角色还有 d6 新镑（£）零钱，够买各种品质的三明治了。</span></p><h3 id='引导者-the-conductor'><span>引导者 The Conductor</span></h3><ul><li><p><span>有个玩家不会拥有自己的角色，而是会成为引导者。</span></p></li><li><p><span>引导者的工作是描述这个世界，做出裁决，让事件持续向前发展。</span></p></li></ul><h3 id='债务-debt'><span>债务 Debt</span></h3><ul><li><p><span>你们将作为一个团队共享 £10k 的债务。</span></p></li><li><p><span>由年纪最小的玩家的落魄事业决定你们的债主是谁。</span></p></li><li><p><span>债主会强烈要求还债。</span></p></li></ul><h3 id='对手-rival'><span>对手 Rival</span></h3><ul><li><p><span>引导者会骰出一个角色，他将领导另一支宝藏探险队。</span></p></li><li><p><span>对手在获得起始装备后，还会额外获得 d6HP。他们还可能有助手。</span></p></li><li><p><span>如果你们拖延时间，对手可能会抢先一步获得宝藏。</span></p></li></ul><h3 id='助手-lackys'><span>助手 Lackys</span></h3><p><span>小队可以为每个玩家创造一个或更多助手。</span></p><p><span>依次为每个属性值骰 2d6，赋予助手们 1HP，再为他们的武器骰 1d6。</span></p><figure class='table-figure'><table><thead><tr><th>&nbsp;</th><th style='text-align:left;' ><strong><span>助手装备</span></strong></th></tr></thead><tbody><tr><td><span>1</span></td><td style='text-align:left;' ><span>长柄锤（d6，笨重）</span></td></tr><tr><td><span>2</span></td><td style='text-align:left;' ><span>手枪（d6）</span></td></tr><tr><td><span>3</span></td><td style='text-align:left;' ><span>撬棍（d6）</span></td></tr><tr><td><span>4</span></td><td style='text-align:left;' ><span>马刀（d6）</span></td></tr><tr><td><span>5</span></td><td style='text-align:left;' ><span>斧头（d6，笨重）</span></td></tr><tr><td><span>6</span></td><td style='text-align:left;' ><span>土枪（d6，笨重）</span></td></tr></tbody></table></figure><h3 id='替换角色-replacement-characters'><span>替换角色 Replacement Characters</span></h3><p><span>当角色死亡时，对应的玩家将照常创造一个新角色，并将继承前角色的财产与债务。新角色会立刻加入新团队。</span></p><p><span>除此之外，玩家还可以选择获得一位助手或仆从的控制权。</span></p><p><span>由于角色过早死亡带来的行政损耗，团队的债务将额外增加 £1K。</span></p><h3 id='角色成长-character-growth'><span>角色成长 Character Growth</span></h3><p><span>当角色变得更加老练，背负更多伤痕时，他们会变得更加坚强，而世上的奇物将开始磨砺他们。</span></p><h2 id='落魄事业-failed-careers'><span>落魄事业 Failed Careers</span></h2><p><span>根据下方的表格，探索你在成为宝藏猎人前做过的事。</span></p><ul><li><p><span>搭配你的最高属性与最低属性以获得你的落魄事业</span></p></li><li><p><span>如果其他玩家已拥有该落魄事业，则掷 D100 直到得出一个不重复的数字。</span></p></li><li><p><span>落魄事业自 17 页始，每个都将赋予你起始装备。</span></p></li><li><p><span>你初始的 HP 和镑数将根据你的落魄事业赋予你更多东西。</span></p></li><li><p><span>如果想要更随机的体验，你可以直接掷 D100 来决定落魄事业。</span></p></li><li><p><span>若事业有 A、B 选项，则选择其一。</span></p></li></ul><p><span>作为团队，你的探险队还拥有：</span></p><ul><li><p><span>提灯与电池</span></p></li><li><p><span>攀爬与野营用的工具</span></p></li><li><p><span>食物与水</span></p></li></ul><p><span>武器将列出其伤害，可能还会列出一点细节。若包含“笨重”标签则需要双手使用。</span></p><p><span>对于那些特殊的武器，引导者会说明其效果与限制。</span></p><figure class='table-figure'><table><thead><tr><th>&nbsp;</th><th>&nbsp;</th><th><span>最</span></th><th><span>低</span></th><th><span>的</span></th><th><span>属</span></th><th><span>性</span></th><th><span>值</span></th><th>&nbsp;</th><th>&nbsp;</th><th>&nbsp;</th><th>&nbsp;</th></tr></thead><tbody><tr><td>&nbsp;</td><td>&nbsp;</td><td><span>3</span></td><td><span>4</span></td><td><span>5</span></td><td><span>6</span></td><td><span>7</span></td><td><span>8</span></td><td><span>9</span></td><td><span>10</span></td><td><span>11</span></td><td><span>12</span></td></tr><tr><td><span>最</span></td><td><span>9-</span></td><td><span>1</span></td><td><span>2</span></td><td><span>3</span></td><td><span>4</span></td><td><span>5</span></td><td><span>6</span></td><td><span>7</span></td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr><tr><td><span>高</span></td><td><span>10</span></td><td><span>8</span></td><td><span>9</span></td><td><span>10</span></td><td><span>11</span></td><td><span>12</span></td><td><span>13</span></td><td><span>14</span></td><td><span>15</span></td><td>&nbsp;</td><td>&nbsp;</td></tr><tr><td><span>的</span></td><td><span>11</span></td><td><span>16</span></td><td><span>17</span></td><td><span>18</span></td><td><span>19</span></td><td><span>20</span></td><td><span>21</span></td><td><span>22</span></td><td><span>23</span></td><td><span>24</span></td><td>&nbsp;</td></tr><tr><td><span>属</span></td><td><span>12</span></td><td><span>25</span></td><td><span>26</span></td><td><span>27</span></td><td><span>28</span></td><td><span>29</span></td><td><span>39</span></td><td><span>31</span></td><td><span>32</span></td><td><span>33</span></td><td><span>34</span></td></tr><tr><td><span>性</span></td><td><span>13</span></td><td><span>35</span></td><td><span>36</span></td><td><span>37</span></td><td><span>38</span></td><td><span>39</span></td><td><span>40</span></td><td><span>41</span></td><td><span>42</span></td><td><span>43</span></td><td><span>44</span></td></tr><tr><td><span>值</span></td><td><span>14</span></td><td><span>45</span></td><td><span>46</span></td><td><span>47</span></td><td><span>48</span></td><td><span>49</span></td><td><span>50</span></td><td><span>51</span></td><td><span>52</span></td><td><span>53</span></td><td><span>54</span></td></tr><tr><td>&nbsp;</td><td><span>15</span></td><td><span>55</span></td><td><span>56</span></td><td><span>57</span></td><td><span>58</span></td><td><span>59</span></td><td><span>60</span></td><td><span>61</span></td><td><span>62</span></td><td><span>63</span></td><td><span>64</span></td></tr><tr><td>&nbsp;</td><td><span>16</span></td><td><span>65</span></td><td><span>66</span></td><td><span>67</span></td><td><span>68</span></td><td><span>69</span></td><td><span>70</span></td><td><span>71</span></td><td><span>72</span></td><td><span>73</span></td><td><span>74</span></td></tr><tr><td>&nbsp;</td><td><span>17</span></td><td><span>75</span></td><td><span>76</span></td><td><span>77</span></td><td><span>78</span></td><td><span>79</span></td><td><span>80</span></td><td><span>81</span></td><td><span>82</span></td><td><span>83</span></td><td><span>84</span></td></tr><tr><td>&nbsp;</td><td><span>18</span></td><td><span>85</span></td><td><span>86</span></td><td><span>87</span></td><td><span>88</span></td><td><span>89</span></td><td><span>90</span></td><td><span>91</span></td><td><span>92</span></td><td><span>93</span></td><td><span>94</span></td></tr></tbody></table></figure><h2 id='进行游戏-playing-the-game'><span>进行游戏 Playing the Game</span></h2><p><strong><span>目标</span></strong><span>：你们是宝藏猎人，引导者会给你们一个秘密情报，事关一份在危险地带的宝藏。你们的目标就是将它带回来。</span></p><p><strong><span>引导者</span></strong><span>：引导者会描述这个世界，展现所有非玩家的角色与事物，并裁定如何使用规则。</span></p><p><strong><span>豁免</span></strong><span>：在进行有风险的行动或面临危险处境时，豁免便是用于避开威胁的掷骰。掷 d20,。若骰值低于或等于对应属性值，则成功。骰值为 1 时必然成功，骰值为 20 时必然失败。</span></p><p><strong><span>回合</span></strong><span>：在某一方的回合中，每个个体都能移动并进行一次行动。在不确定战斗中的哪一方该先行动时，每个角色都必须进行敏捷豁免，以此先于敌人行动。</span></p><p><strong><span>攻击</span></strong><span>：所有玩家在掷骰之前都必须他们的攻击目标。攻击者根据其武器掷伤害骰，并对目标造成对应的伤害。</span></p><p><span>当攻击者使用两把武器攻击目标时，为每把武器掷伤害骰，取其中最高值。</span></p><p><span>多个攻击者攻击同一个目标时，共同掷骰并取其中最高值。</span></p><blockquote><p><span>攻击范例 Attack Example</span></p><p><span>三个孤儿正在用他们的土豆枪（d4）对着过路的人开火。他们分别投出了 2, 2 和 4。因为 4 是最高值，所以其联合攻击会造成 4 点伤害。</span></p></blockquote><p><strong><span>增益</span></strong><span>：在一些特定的情况下，攻击会获得增益，例如+d6、+d8。该掷骰视作对相同目标进行的额外攻击。记住，只有骰值最高的单次掷骰才会造成伤害。攻击完全无助的目标时，必然会获得+d12。</span></p><blockquote><p><span>增益范例 Bonus Example</span></p><p><span>暴徒莫里什正对着一个线人挥舞手中的斯诺克球棍（d6），同时正有两个壮汉正抓着受害者，让他无从抵挡。这会让攻击获得 +d12 的增益，所以莫里什投了一颗 d6 与一颗 d12，得到 5 与 8。因为 8 是最高值，所以线人受到了 8 点伤害。</span></p></blockquote><p><strong><span>护甲</span></strong><span>：护甲会减少攻击穿着者的伤害骰的骰值。护甲永远不能高于 3。</span></p><p><strong><span>削弱</span></strong><span>：被削弱的攻击只能掷 d4 伤害骰，且不能获得增益，比如在掩体之后射击，或带着手铐战斗。</span></p><p><strong><span>伤害</span></strong><span>：但个体受到伤害时，他们会损失相应的 HP。当其所受伤害大于剩余 HP 时，剩下的伤害将扣除其力量。他们必须进行力量豁免来避免受到重伤。</span></p><blockquote><p><span>战斗提示 Combat Tips</span></p><ul><li><p><span>在掷骰之前，确认一下是否有其他人想要攻击相同目标，然后再一起掷骰，否则他们就会错过攻击该目标的机会。</span></p></li><li><p><span>在正常的战斗序列外受到的伤害会立刻产生，比如在你自己的回合内踩到陷阱。</span></p></li><li><p><span>当你被卷入近战时，无法使用远程攻击。</span></p></li></ul></blockquote><p><strong><span>重伤</span></strong><span>：在得到同伴照料或休息一场之前，受到重伤的角色除了爬行之外什么都做不了。如果一小时内没有得到照料，受重伤者就会因伤口而死。</span></p><p><strong><span>范围伤害</span></strong><span>：标有范围的攻击会影响对应范围内的所有目标，并为每个目标分别掷骰。它可能来来自爆炸、自动武器或是横扫而过的巨型肢体。如果不清楚具体会影响到多少目标，就掷武器的骰子来决定。</span></p><p><strong><span>休息</span></strong><span>：几分钟的休息与饮水可以恢复角色的 HP，但要面临游荡遭遇的风险。</span></p><p><strong><span>恢复</span></strong><span>：恢复属性损失或治愈其他病痛需要专业的服务。虽然存在免费的服务，但快速恢复需要花钱。</span></p><p><strong><span>属性损失</span></strong><span>：如果角色的力量变为零，则角色死亡。如果角色的敏捷或魅力变为零，则角色会陷入瘫痪或崩溃状态，且在属性恢复之前，他们将无法行动。必须把他们带到安全的地方。</span></p><p><strong><span>战技</span></strong><span>：当玩家想要在战斗中缴械或绊倒某人时，风险最大的那一方需要进行豁免以避免某种后果。</span></p><p><strong><span>笨重物件</span></strong><span>：一般来说，物件若需要两只手携带，或在其他方面显得沉重，便被视为笨重。任何携带两件以上笨重物件的角色，HP 降低至 0。</span></p><p><strong><span>窘困</span></strong><span>：当某人无法满足必要需求（如食物、水源、温度）时，将无法从休息中获益。</span></p><p><strong><span>奇物</span></strong><span>：角色在探索世界的过程中，会获得有着独特能力的物品。这些奇物不需要掷骰就可使用，但它们往往有着特定的能力、有限的使用次数或者其他的缺陷</span></p><p><strong><span>回应</span></strong><span>：当针对角色的社交反应并不明确时，角色必须通过魅力豁免以避免负面反应。</span></p><p><strong><span>士气</span></strong><span>：在队伍第一次出现伤员及失去半数同伴时，其领袖必须通过魅力豁免以避免追随者溃退。该机制作用于敌人或盟友，而不影响玩家角色。</span></p><p><strong><span>撤退</span></strong><span>：在被追逐时撤往安全地点需要一次敏捷豁免，及一个可以逃往的地点。</span></p><p><strong><span>假定属性值</span></strong><span>：未具体列出的属性值一律视作 10。</span></p><p><strong><span>集群</span></strong><span>：一群共同战斗的团体将被视作一个集群。</span></p><ul><li><p><span>当受到重伤时，他们会溃退。</span></p></li><li><p><span>当力量变为 0 时，他们会被抹除。</span></p></li><li><p><span>个体对集群的攻击都会受削弱，除非是范围伤害。</span></p></li><li><p><span>集群对个体的攻击会获得+d12 的增益，并造成范围伤害。</span></p></li></ul><p><strong><span>建筑与载具</span></strong><span>：建筑与载具的 HP 降为 0 时会受到损坏，其中的所有东西都受到 d6 伤害。不适合用于破坏建筑的武器在攻击时会受到削弱。</span></p><p><span>HP 可以通过小修小补来恢复，但损坏的建筑和载具需要专家长期的修复。</span></p><p><span>相撞的载具会互相造成 d6 伤害。如果双方的重量差距极大，则更重的一方获得 +d12 的增益。</span></p><p><span>载具碾过像人类这样柔软的目标时，不会受到伤害。</span></p><p><strong><span>伤痕</span></strong><span>：当攻击将你的 HP 正好降至 0 时，你会获得一个永久性的伤痕。根据伤害值查询下方的伤痕表。</span></p><p><span>专家可以掩盖掉大部分的伤痕，但总会留下些痕迹。</span></p><figure class='table-figure'><table><thead><tr><th>&nbsp;</th><th><span>伤痕表</span><br /><span>造成伤痕的伤害</span></th></tr></thead><tbody><tr><td><span>1</span></td><td><strong><span>战痕</span></strong><span>：你的某一部分被留下了受伤的痕迹。掷 1d6：</span><br/><span>1：眼睛　 2：脸颊　 3：颈部</span><br/><span>4：胸部　 5：腹部　 6：手部</span><br/><span>重新为 HP 上限掷 d6，若结果更高则保留。</span></td></tr><tr><td><span>2</span></td><td><strong><span>精神震荡</span></strong><span>：你受到震撼，陷入呆滞。</span><br/><span>在你服下什么东西来恢复冷静后，重新为 HP 上限掷 d6，若结果更高则保留。</span></td></tr><tr><td><span>3</span></td><td><strong><span>蹒跚</span></strong><span>：在得到修复前，行动变得踉跄。</span></td></tr><tr><td><span>4</span></td><td><strong><span>破嘴</span></strong><span>：你吐出牙齿和鲜血。在去看牙医前，你看起来一团糟。</span></td></tr><tr><td><span>5</span></td><td><strong><span>血肉四溅</span></strong><span>：你需要缝合手术。在被专家治疗之前，你会持续陷入窘困。</span><br/><span>重新为 HP 上限掷 2d6，若结果更高则保留。</span></td></tr><tr><td><span>6</span></td><td><strong><span>器官受创</span></strong><span>：某一重要器官岌岌可危，在你得到专家的看护前，若受到重伤则直接死亡。</span><br/><span>如果你接受治疗，重新为 HP 上限掷骰 2d6，若结果更高则保留。</span></td></tr><tr><td><span>7</span></td><td><strong><span>残缺</span></strong><span>：你身体的一部分脱落。掷 1d6：</span><br/><span>1：鼻子　 2：耳朵　 3：手指</span><br/><span>4：拇指　 5：眼睛　 6：大块头皮</span></td></tr><tr><td><span>8</span></td><td><strong><span>肢体破裂</span></strong><span>：一个随机肢体受损，需要截肢。</span></td></tr><tr><td><span>9</span></td><td><strong><span>精神崩溃</span></strong><span>：在花上一晚舒缓自己的情绪前，你会持续陷入窘困。</span></td></tr><tr><td><span>10</span></td><td><strong><span>自尊受挫</span></strong><span>：你承受了羞辱性的一击。</span><br/><span>如果你成功地复仇，重新为 HP 上限掷 3d6，若结果更高则保留。</span></td></tr><tr><td><span>11</span></td><td><strong><span>脑震荡</span></strong><span>：你感觉自己有些不一样了。重新为魅力掷 2d6。</span></td></tr><tr><td><span>12</span></td><td><strong><span>毁灭性死亡</span></strong><span>：你本不该活下来的。死亡的噩梦缠上了你。</span><br/><span>如果你下次对抗重伤的豁免失败，你会死得很惨。如果你成功了，消除这个效果，并重新为 HP 上限掷 2d6，若结果更高则保留。</span></td></tr></tbody></table></figure><h2 id='游戏范例-example-of-play'><span>游戏范例 Example of Play</span></h2><h3 id='危险与豁免-dangers-and-saves'><span>危险与豁免 Dangers and Saves</span></h3><p><strong><span>引导者</span></strong><span>：废弃的铁路隧道分出两个方向。你感到从向左的楼梯上方吹来一阵冷风，而前方的隧道有一股潮湿的霉味，铁轨延伸到黑暗中。凯西的手电筒是唯一的光源。</span></p><p><strong><span>凯西</span></strong><span>：冷风可能意味着有出路！那个方向有什么气味吗？</span></p><p><strong><span>引导者</span></strong><span>：绝对是新鲜空气的味道！</span></p><p><strong><span>凯西</span></strong><span>：我们走那边吧。</span></p><p><strong><span>丹特</span></strong><span>：等等，之前外面并不冷。</span></p><p><strong><span>凯西</span></strong><span>：别管那么多，我们走。</span></p><p><strong><span>引导者</span></strong><span>：你们蹑手蹑脚地爬上瓷砖台阶，随着你们向上，空气变得更加凉爽。黑暗在蔓延，或者是你的手电筒快没电了。</span></p><p><strong><span>丹特</span></strong><span>：快点！我们一直向着有新鲜空气的方向走。</span></p><p><strong><span>引导者</span></strong><span>：你感到一股寒意涌过你。你的手电筒里的光都消失了，你可以听到楼上有着蠕动的声音。</span></p><p><strong><span>凯西</span></strong><span>：算了吧！我们快点跑回去！</span></p><p><strong><span>引导者</span></strong><span>：这里一片漆黑，这会很危险。</span></p><p><strong><span>凯西</span></strong><span>：我不管，我也要跑！</span></p><p><strong><span>引导者</span></strong><span>：好吧！你们俩都要进行敏捷豁免来穿过黑暗。像往常一样是 d20。</span></p><p><em><span>凯西的敏捷豁免结果是 11，对他们的敏捷属性值 14 而言，是成功。</span></em></p><p><em><span>丹特的敏捷豁免结果是 18，对他们的敏捷属性值 9 而言，是失败。</span></em></p><p><strong><span>引导者</span></strong><span>：凯西，你已经走得足够远，注意到了从你们来时的方向传来的远处的光亮，但是你发现丹特不在你身边。丹特……你在黑暗中跌倒……然后感觉到一团刺耳作响的金属落到你身上。一个机械化的声音尖叫着：“未经检查，禁止离开！”</span></p><h3 id='简单的战斗-simple-combat'><span>简单的战斗 Simple Combat</span></h3><p><strong><span>引导者</span></strong><span>：好吧，既然一切都发生在电光火石之间，让我们来进行敏捷豁免，看看谁能够在这个奇怪的生物之前抢占先机。</span></p><p><em><span>凯西的敏捷豁免结果是 20，对他们的敏捷属性值 14 而言是失败。</span></em></p><p><em><span>丹特的敏捷豁免结果是 9，对他们的敏捷属性值 9 而言是成功。</span></em></p><p><strong><span>引导者</span></strong><span>：凯西，我想你离得太远了，第一轮无法采取任何行动！丹特，你现在独自一人，被这些金属利爪包围着。你打算怎么做？</span></p><p><strong><span>丹特</span></strong><span>：啊！我拿出我的手斧开始猛砍！</span></p><p><strong><span>引导者</span></strong><span>：通常来说，在黑暗中战斗你会受到影响，但这一堆冰冷的金属感觉像是包裹在你周围，所以你不需要瞄准。你的手斧造成 d6 的伤害，所以请投掷你的伤害。</span></p><p><em><span>丹特投出了 2 点伤害。这个生物有 3 HP，所以现在只剩下 1 HP，它不算重伤。</span></em></p><p><strong><span>引导者</span></strong><span>：你疯狂地挥舞着手斧，这个生物似乎有一瞬间被你击退，但是接下来……</span></p><p><em><span>指挥官为这个生物掷骰子，它有 2d6 的攻击。掷骰子结果是 2 和 6，所以更高的 6 被选用。</span></em></p><p><strong><span>引导者</span></strong><span>：它向你扑过来，造成 6 点伤害，你还剩下多少 HP？</span></p><p><strong><span>丹特</span></strong><span>：我还剩下 5 HP，所以我失去了所有 5 HP，并且我的力量属性值还降低了 1 点，降至 9。</span></p><p><strong><span>引导者</span></strong><span>：这会需要你进行一次力量豁免以避免承受重伤。</span></p><p><em><span>丹特投掷了一个 d20，投出了 2。通过了豁免。</span></em></p><p><strong><span>丹特</span></strong><span>：我不会那么轻易倒下的！</span></p><p><strong><span>引导者</span></strong><span>：好的，轮到你们的回合了。这一次你们俩都可以行动！更好的是，凯西的手电筒慢慢重新点亮了。隧道被照亮，你们看清楚了前面的这个东西。它有着接近人类的形态，身体由带刺铁丝和金属碎片组成，勉强塞进了一件灰色制服里…………而在它身后，还有另外两个！</span></p><h3 id='范围与额外伤害-blast-and-bonus-damage'><span>范围与额外伤害 Blast and Bonus Damage</span></h3><p><strong><span>凯西</span></strong><span>：我有一件好东西！一颗科技炸弹，正是为这种情况准备的。</span></p><p><em><span>科技炸弹的范围伤害为 d6，对机械目标+d8，在这里用很合适。</span></em></p><p><strong><span>引导者</span></strong><span>：太好了！我想你可以在一次爆炸中击中它们三个。但现在不要投掷骰子。丹特，你的计划是什么？</span></p><p><strong><span>丹特</span></strong><span>：我受伤了，但我想了结刚才伤害我的那个生物。我会用我的斧头攻击它。</span></p><p><strong><span>引导者</span></strong><span>：如果你不小心，你会被卷入爆炸范围中……如果你能通过一次敏捷豁免，我会让你在爆炸之前进行攻击。</span></p><p><strong><span>丹特</span></strong><span>：好的，我要试一试！</span></p><p><em><span>丹特投掷了 4，对比他的敏捷值 9，豁免通过。</span></em></p><p><strong><span>引导者</span></strong><span>：你们成功地安全地协调了彼此的攻击。让我先来结算对那个受伤生物的攻击。</span></p><p><em><span>丹特为他的手斧投掷了 d6，投出 6。</span></em></p><p><em><span>凯西为她的科技炸弹投掷了 d6 和 d8，投出 2 和 5。</span></em></p><p><strong><span>引导者</span></strong><span>：最高点数为 6，因此我们取这个数字。炸弹的爆炸让这个生物眩晕，丹特的斧头得以准确地砍入它的躯体。</span></p><p><em><span>这个生物只有 1 HP，所以 6 点伤害使它的力量值减少了 5 点，降至力量 5 点。它在 d20 上投掷一个力量豁免，投出 12，豁免失败。</span></em></p><p><strong><span>引导者</span></strong><span>：斧头的一击使金属体撞在墙上，散乱的碎片在地上抽搐着，变成一堆废料。</span></p><p><strong><span>凯西</span></strong><span>：太好了，现在让我们看看我的炸弹对另外两个生物有什么影响。</span></p><p><em><span>凯西为第二个生物投了 d6 和 d8，投出 5 和 2，保留 5 作为最高点数。造成 5 点伤害将这个生物的力量减少到 8，在投出 19 后，它也未能通过力量豁免。</span></em></p><p><strong><span>引导者</span></strong><span>：第二个生物被爆炸撕碎了！它尖叫的噪声戛然而止。</span></p><p><em><span>凯西为最后一个生物再次投掷 d6 和 d8，投出了 2 和 2。只造成 2 点伤害，将这个生物的 HP 降至 1 点。</span></em></p><p><strong><span>引导者</span></strong><span>：最后一个生物被爆炸震住了，但它并没有放弃。</span></p><h3 id='重伤与伤疤-critical-damage-and-scars'><span>重伤与伤疤 Critical Damage and Scars</span></h3><p><strong><span>引导者</span></strong><span>：最后一只生物如今形单影只了，让我们看看它能否维持士气。</span></p><p><em><span>引导者为生物投掷了一个魅力豁免，投出了 5。这胜过了它的魅力值 10，因此豁免通过。</span></em></p><p><strong><span>引导者</span></strong><span>：它保持了冷静，并重复了它的尖叫：“严禁逃避检查！”它有两次攻击，将它带刺的线圈在通道中挥舞，一次攻击丹特，一次攻击凯西。</span></p><p><em><span>这个生物对丹特进行一次 d6 攻击，投出了 4。</span></em></p><p><strong><span>引导者</span></strong><span>：4 点伤害，丹特！你已经没有 HP 了，所以这些伤害直接从你的力量值中扣除，你力量降至 5，因为这些爪子扎进了你的皮肤。进行一次力量豁免以避免重伤。</span></p><p><em><span>丹特为他的力量豁免投掷了 d20，投出了 9，未能通过豁免。</span></em></p><p><strong><span>引导者</span></strong><span>：这是重伤！你被摔到地上，感觉到带刺的金属正在撕扯你。你还没死，但流血不止，除非有人帮助你起身，否则你将在一小时内死亡。凯西，轮到你遭受攻击了！</span></p><p><strong><span>凯西</span></strong><span>：我不喜欢这个状况，丹特……</span></p><p><strong><span>丹特</span></strong><span>：你现在必须活下去，否则我们就完了！</span></p><p><em><span>这个生物对凯西进行一次 d6 攻击，投出了 3。</span></em></p><p><strong><span>凯西</span></strong><span>：我有来自防弹衣的 1 点护甲！</span></p><p><strong><span>引导者</span></strong><span>：好的！这将把伤害从 3 减少到 2。你有多少 HP？</span></p><p><strong><span>凯西</span></strong><span>：恰好是 2HP……这好吗？</span></p><p><strong><span>引导者</span></strong><span>：你免于受到重伤，但由于 HP 降至 0，你将留下伤疤。根据伤害表，你的伤疤是……精神震荡。那个金属物体将你推到墙上，你感觉到它的线圈刺向你的眼睛和嘴巴，你堪堪躲开。一次勉强的逃脱，你感觉全身颤抖，需要一些东西来缓解压力，但你的最大 HP 可能会在之后增加。</span></p><p><strong><span>凯西</span></strong><span>：我现在更担心还能不能活下来……你认为我还能在一回合中击败它吗？</span></p><p><em><span>引导者看到这个生物只剩下 1 HP，而凯西有一根 d8 伤害的巨木棍。</span></em></p><p><strong><span>引导者</span></strong><span>：机会不小，但这得看你了……</span></p><h2 id='装备-equipment'><span>装备 Equipment</span></h2><p><strong><span>徒手攻击</span></strong><span>：d4 伤害</span></p><h3 id='武器-arms'><span>武器 Arms</span></h3><p><span>（£X/£Y 分别代表近战/远程的费用）</span></p><p><strong><span>粗制武器</span></strong><span>（£10/£50）：笨重，d6 伤害。</span></p><p><span>例：街头枪只、干草叉、伐木斧、十字弩、棍棒……</span></p><p><strong><span>单手武器</span></strong><span>（£50/£200）：d6 伤害。</span></p><p><span>例：手枪、匕首、剑、警棍……</span></p><p><strong><span>战场武器</span></strong><span>（£100/£500）：笨重，d8 伤害。</span></p><p><span>例：来复枪、大剑、长柄武器……</span></p><p><strong><span>贵族武器</span></strong><span>（£500/£1k）：d8 伤害。</span></p><p><span>例：决斗手枪、细剑、指挥棒……</span></p><p><strong><span>动力武器</span></strong><span>（£1k/£2k）：笨重，d10 伤害。</span></p><p><span>例：捕鲸枪、肩炮、电锯……</span></p><p><strong><span>震慑枪械</span></strong><span>（£1k）：d6 范围伤害，笨重。</span></p><p><span>例：喷火器、散弹枪、酸液枪……</span></p><p><strong><span>火力压制枪械</span></strong><span>（£5k）：d8 范围伤害，笨重。</span></p><p><span>例：机关枪、炸弹发射器……</span></p><p><strong><span>弹幕炮击</span></strong><span>（£20k）：d10 范围伤害，固定。</span></p><p><span>例：迫击炮、高射炮……</span></p><p><strong><span>重型枪炮</span></strong><span>（£50k）：d12 范围伤害，固定。</span></p><p><span>例：舰炮、榴弹炮……</span></p><h3 id='护甲-armour'><span>护甲 Armour</span></h3><p><strong><span>现代护甲</span></strong><span>（£1k）：1 护甲。</span></p><p><strong><span>粗制护甲</span></strong><span>（£500）：1 护甲、笨重。</span></p><p><strong><span>盾牌</span></strong><span>（£200）：+1 护甲、笨重。</span></p><h3 id='爆炸物-explosives'><span>爆炸物 Explosives</span></h3><p><strong><span>手榴弹</span></strong><span>（£100）：d8 范围伤害。</span></p><p><strong><span>炸弹</span></strong><span>（£200）：d10 范围伤害。</span></p><p><strong><span>闪光弹</span></strong><span>（£100）：立刻致盲所有未通过敏捷豁免的人。</span></p><p><strong><span>火焰弹</span></strong><span>（£50）：点燃一片区域。在熄灭之前，其中的所有人每轮受到 d6 伤害。</span></p><p><strong><span>烟雾弹</span></strong><span>（£100）：让屋内充满烟雾，在雾中的攻击都会受到削弱。</span></p><p><strong><span>火箭弹</span></strong><span>（£500）：笨重、d10 范围伤害。</span></p><h3 id='普通物品-general'><span>普通物品 General</span></h3><p><strong><span>毒药</span></strong><span>（£50）：摄入后失去 d20 力量。</span></p><p><strong><span>乙醚</span></strong><span>（£50）：吸入后进行力量豁免或直接昏迷。</span></p><p><strong><span>酸液</span></strong><span>（£50）：在洗掉之前，每轮受到 d6 伤害。能融穿绝大多数的材料。</span></p><p><strong><span>抗毒血清</span></strong><span>（£100）：能迅速地中和毒素。</span></p><p><strong><span>住宿</span></strong><span>（每晚）：宿舍床位（£10）、租屋房间（£30）、城镇别墅（£100）。</span></p><p><strong><span>食物</span></strong><span>：一包口香糖（£1、强力粘合剂）、鳗鱼罐头（£2）、热派（£5）、肉冻（£10）、高档肉类（£100）</span></p><p><strong><span>饮料</span></strong><span>：啤酒（£2）、鸡尾酒（£5）、潘趣酒（£30）</span></p><p><strong><span>书籍</span></strong><span>：杂书（£5）、严肃书籍（£20）、神秘书籍（£100）</span></p><p><span>免费的图书馆到处都有，但水平最高的那些，会要你花钱才能找到好东西。</span></p><h3 id='工具-tools'><span>工具 Tools</span></h3><p><strong><span>简单工具</span></strong><span>（£10）：撬棍、锯子、胶水、放大镜、手铐、动物陷阱、撬锁器、镜子、鱼竿、铲子、抓钩、折叠长杆、绳子、钉子……</span></p><p><strong><span>现代工具</span></strong><span>（£100）：温度计、电灯、赶牛鞭（无害）、便携式风扇/加热器、留声机。</span></p><p><strong><span>尖端工具</span></strong><span>（£1k）：摄像机、幻灯机、低级思维机械。</span></p><p><strong><span>能源</span></strong><span>：个人用（£1）或载具用（£50）。</span></p><h3 id='动物-animals'><span>动物 Animals</span></h3><p><strong><span>驮兽</span></strong><span>：骡子（£100，3HP）、马匹（£1k，6HP）、大象（£10k，力量 18，10HP，1 护甲）</span></p><p><strong><span>狗</span></strong><span>：从杂种犬（£50，2HP，d4 啮咬伤害）到猎犬（£500，5HP，d6 啮咬伤害）</span></p><p><strong><span>鸟</span></strong><span>：从鹦鹉、乌鸦（£50，2HP，d4 爪击伤害）到红隼、鹰（£200，5HP，d6 爪击伤害）</span></p><h3 id='仆从每日）-servants'><span>仆从（每日） Servants</span></h3><p><strong><span>提灯侍从</span></strong><span>（£10）：3HP、提灯、小刀（d6）。</span></p><p><strong><span>保镖</span></strong><span>（£50）：5HP、子弹枪（d6，笨重）、口香糖。</span></p><p><strong><span>专家</span></strong><span>（£100）：3HP、专业技能。例：入室盗窃，官僚行政、航行、烹饪、都市传说、化学……</span></p><h3 id='佣兵队每日）-mercenary-detachments'><span>佣兵队（每日） Mercenary Detachments</span></h3><p><strong><span>乌合之众</span></strong><span>（£500）：5HP、干草叉（d6，笨重）</span></p><p><strong><span>街头帮派</span></strong><span>（£1k）：7HP、街头枪只（d6，笨重）</span></p><p><strong><span>老兵战队</span></strong><span>（£2k）：8HP、来复枪（d8，笨重）、脏制服</span></p><p><strong><span>伟大骑兵队</span></strong><span>（£5K）：10HP、胸甲（1 护甲）、马刀（d8）、一对手枪（每把各 d6）、骏马</span></p><h3 id='特殊服务-specialist-services'><span>特殊服务 Specialist Services</span></h3><p><strong><span>医院</span></strong><span>（免费）：在此过夜之后恢复力量和敏捷。支付 £100 可以快速恢复。假肢、轮椅等工具都有劣质的免费版，但你可以付 £1k 来买些更加舒适、实用的物品。</span></p><p><strong><span>休闲场所</span></strong><span>（免费）：花上一天一夜的时间恢复魅力。支付 £100 可以快速获得满足。</span></p><p><strong><span>协助或秘密情报</span></strong><span>（从价值 £100 的小事到价值 £10k 的大事）：价格依据那人的重要性，以及要他们违背多少自身利益。</span></p><p><strong><span>实验性的提升课程</span></strong><span>（£1k，一周）：永久性地为某一属性掷 3d6，无论高低都保留其结果。不可退款。</span></p><h3 id='奢侈品-luxuries'><span>奢侈品 Luxuries</span></h3><p><strong><span>外套</span></strong><span>：大众（£50），潮流（£200），个性（£1k）。</span></p><p><strong><span>珠宝</span></strong><span>：仿品（£50），真品（£5k）。</span></p><p><strong><span>艺术品</span></strong><span>：装饰（£500），画像（£5k），雕像（£10k）。</span></p><p><strong><span>授勋仪式</span></strong><span>（£10k）：还会有一只铜管乐队与当地官员出席。</span></p><p><strong><span>仿真蜡像</span></strong><span>（£10k）：看起来非常像你，会在名人博物馆里有一席之地。</span></p><p><strong><span>舞会</span></strong><span>（每位客人 £100）：费用翻倍的话，舞会将更奢华。</span></p><p><strong><span>合法决斗</span></strong><span>（£10k）：由一位注册裁判进行监督，费用包括你所选决斗形式的各种装备（手枪决斗、捕虎坑、铁笼赛）及一些文件，后者用以消除这场谋杀带来的法律问题。</span></p><p><strong><span>豪华葬礼</span></strong><span>（£10k）：包括一块纪念牌匾，至少一世纪内都不会被移除。</span></p><p><strong><span>广播站</span></strong><span>（£10k）：一些允许你向临近城区的听众进行广播的装备。</span></p><p><strong><span>原型机械</span></strong><span>（£100k）：如果你能描述你所需要的设备，这么多的钱能就让你搞到这样一件孤品及它的专利证明。</span></p><h3 id='公共交通-public-transport'><span>公共交通 Public Transport</span></h3><p><span>有轨电车，船，电马车或是旅行火车：</span></p><ul><li><p><span>在城区内（£1，数分钟）</span></p></li><li><p><span>穿越堡垒（£20，数小时）</span></p></li><li><p><span>堡垒之外（£100，数日）</span></p></li></ul><p><span>豪华舱或是飞行工具的价格翻五倍。</span></p><p><span>地底的交通忽略了通常的时间与空间法则。</span></p><h3 id='船只-ships'><span>船只 Ships</span></h3><p><strong><span>小艇</span></strong><span>（5k）：6 HP，护甲 2。</span></p><p><strong><span>船</span></strong><span>（£10k）：10HP，护甲 3。机枪（d8，范围），重炮（d10）。</span></p><p><strong><span>战舰</span></strong><span>（£500k）：12HP，护甲 3，舰炮（d12，范围）</span></p><h3 id='个人载具-personal-vehicles'><span>个人载具 Personal Vehicles</span></h3><p><strong><span>单车</span></strong><span>（£100）：3 HP，护甲 1。</span></p><p><strong><span>摩托车</span></strong><span>（£1k）：5HP，护甲 1。</span></p><p><strong><span>量产车</span></strong><span>（£10k）：6HP，护甲 2。</span></p><p><strong><span>豪车</span></strong><span>（£50k）：6HP，护甲 2。</span></p><h3 id='资产-property'><span>资产 Property</span></h3><p><strong><span>排屋</span></strong><span>（£100k）： 10HP，护甲 3。</span></p><p><strong><span>舒适屋子</span></strong><span>（£500k）：12HP，护甲 3。</span></p><p><strong><span>要塞</span></strong><span>（£500k）：18HP，护甲 3。火炮（d12 范围）。</span></p><h3 id='战斗机械-fighting-machines'><span>战斗机械 Fighting Machines</span></h3><p><strong><span>冲击者</span></strong><span>（£100k）： 7HP，护甲 3。</span></p><p><span>火焰炮（d8 范围），动力锯（d10）。</span></p><p><span>一位驾驶员兼炮手。</span></p><p><strong><span>爬行者</span></strong><span>（£100k）： 10HP，护甲 3。</span></p><p><span>两挺机枪（d8 范围每挺）。</span></p><p><span>一位驾驶员，一位枪手。</span></p><p><strong><span>巡航者</span></strong><span>（£500k）： 14HP，护甲 3。两栖。</span></p><p><span>两门长管加农炮（d12 每门），榴弹发射器（d8 范围）。</span></p><p><span>一位驾驶员，两位炮手。</span></p><figure class='table-figure'><table><thead><tr><th>&nbsp;</th><th><center><span>卖家是谁？Who is Selling?</span><br/><span>投 2d20 然后合并</span></center></th><th>&nbsp;</th></tr></thead><tbody><tr><td>&nbsp;</td><td><strong><span>灵感 1</span></strong></td><td><strong><span>灵感 2</span></strong></td></tr><tr><td><span>1</span></td><td><span>仿蜘蛛</span></td><td><span>过于礼貌</span></td></tr><tr><td><span>2</span></td><td><span>机械</span></td><td><span>冒犯性的粗鲁</span></td></tr><tr><td><span>3</span></td><td><span>外星人（长爪之物）</span></td><td><span>沉迷于死亡</span></td></tr><tr><td><span>4</span></td><td><span>主教</span></td><td><span>沉迷于时尚</span></td></tr><tr><td><span>5</span></td><td><span>教授</span></td><td><span>庞大家族的首领</span></td></tr><tr><td><span>6</span></td><td><span>艺术家</span></td><td><span>沉迷于科技</span></td></tr><tr><td><span>7</span></td><td><span>仿蜗牛</span></td><td><span>醉酒</span></td></tr><tr><td><span>8</span></td><td><span>商业牧师</span></td><td><span>天才</span></td></tr><tr><td><span>9</span></td><td><span>手艺人</span></td><td><span>迷糊而上当</span></td></tr><tr><td><span>10</span></td><td><span>顽童</span></td><td><span>不可思议地富有</span></td></tr><tr><td><span>11</span></td><td><span>音乐家</span></td><td><span>服务所有人</span></td></tr><tr><td><span>12</span></td><td><span>佣兵将军</span></td><td><span>被当作圣人崇拜</span></td></tr><tr><td><span>13</span></td><td><span>仿猛犸</span></td><td><span>过于喜欢你</span></td></tr><tr><td><span>14</span></td><td><span>社区长老</span></td><td><span>沉迷于星辰</span></td></tr><tr><td><span>15</span></td><td><span>外星人（眼球）</span></td><td><span>似乎厌恶你</span></td></tr><tr><td><span>16</span></td><td><span>工厂老板</span></td><td><span>品味糟糕的吹牛大王</span></td></tr><tr><td><span>17</span></td><td><span>厨师</span></td><td><span>隐匿避世</span></td></tr><tr><td><span>18</span></td><td><span>上等人</span></td><td><span>特立独行</span></td></tr><tr><td><span>19</span></td><td><span>外星人（粘液鸟）</span></td><td><span>沉迷于知识</span></td></tr><tr><td><span>20</span></td><td><span>孩子帮</span></td><td><span>依靠恐惧而统治</span></td></tr></tbody></table></figure></div></div>
+</body>
+</html>
